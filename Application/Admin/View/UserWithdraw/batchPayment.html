@@ -1,0 +1,88 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/UserWithdraw/batchUpdate')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">付款方式</label>
+                        <div class="layui-input-inline">
+                            <select name="payment_type" lay-filter="payment-type" lay-verify="required">
+                                <option value="">请选择付款方式</option>
+                                <volist name="payment_type_list" id="vo">
+                                <option value="{$key}">{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline hide" id="online-type-div">
+                            <select name="online_type" lay-filter="online-type">
+                                <volist name="online_type_list" id="vo">
+                                <option value="{$key}">{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">付款流水号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="payment_no" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">付款时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="payment_time" id="payment-time" required lay-verify="required" class="layui-input layer-date">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="payment_remark" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="ids" value="{$ids}">
+                            <input type="hidden" name="_action" value="payment">
+                            <button class="layui-btn" lay-submit lay-filter="*">确认付款</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        var $form = $('form');
+        form.on('select(payment-type)', function(data) {
+            var paymentType = data.value;
+            if (paymentType == 1) {
+                $('#online-type-div').show();
+            } else {
+                $('#online-type-div').hide();
+            }
+            form.render();
+        });
+        $(function(){
+            var paymentTime = {
+                elem: '#payment-time',
+                format: 'YYYY-MM-DD hh:mm:ss',
+                istime: true,
+                min: '1900-01-01 00:00:00',
+                max: '2099-06-16 23:59:59',
+                istoday: false,
+                choose: function (datas) {
+                    
+                }
+            };
+            document.getElementById('payment-time').onclick = function(){
+                paymentTime.elem = this;
+                laydate(paymentTime);
+            };
+        });
+    </script>
+</block>

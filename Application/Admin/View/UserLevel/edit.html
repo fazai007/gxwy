@@ -1,0 +1,80 @@
+<extend name="Public:iframe_base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/UserLevel/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">等级名称</label>
+                        <div class="layui-input-inline w500">
+                            <input type="text" name="name" value="{$user_level.name}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="icon" id="icon" value="{$user_level.icon}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-icon" data-input-id="icon" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">直推佣金比例</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="direct_commission_percent" value="{$user_level.direct_commission_percent}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> %</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">团队佣金比例</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="team_commission_percent" value="{$user_level.team_commission_percent}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> %</div>
+                    </div>
+                    <!--
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">可得佣金层数</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="get_commission_number" value="{$user_level.get_commission_number}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+                    -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">升级条件</label>
+                        <div class="layui-form-mid">直推人数达到</div>
+                        <div class="layui-input-inline" style="width:100px">
+                            <input type="text" name="level_up_direct_user_number" value="{$user_level.level_up_direct_user_number}" required lay-verify="required" class="layui-input"> 
+                        </div>
+                        <div class="layui-form-mid">人并且团队人数达到</div>
+                        <div class="layui-input-inline" style="width:100px">
+                            <input type="text" name="level_up_team_user_number" value="{$user_level.level_up_team_user_number}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid">人</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$user_level.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-icon');
+    </script>
+</block>

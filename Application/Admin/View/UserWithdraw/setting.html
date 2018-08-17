@@ -1,0 +1,40 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/UserWithdraw/index')}">用户提现列表</a></li>
+            <li class="layui-this">用户提现设置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/UserWithdraw/setting')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">最低提现金额</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="min_withdraw_money" value="{$withdraw_config.min_withdraw_money}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> 提现金额将不小于此值才能提现</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">提现提示信息</label>
+                        <div class="layui-input-block">
+                            <textarea name="withdraw_tips" class="layui-textarea">{$withdraw_config.withdraw_tips}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

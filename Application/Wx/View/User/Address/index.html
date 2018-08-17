@@ -1,0 +1,146 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <div class="foot_fixed">
+            <a href="{:U('Wx/Address/add')}" class="btnbarfix fs14 col3">新增地址</a>
+        </div>
+        <section class="main">
+            <div class="myscroll">
+                <ul class="address_admin" id="data-list">
+                    
+                </ul>
+                <div class="myscroll-empty hide">
+                    <p class="empty-tip">暂无数据</p>
+                </div>
+                <div class="myscroll-upwarp myscroll-hardware">
+                    <p class="upwarp-progress myscroll-rotate"></p>
+                    <p class="upwarp-tip">加载中..</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Address/getListData')}", {page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                html += '<li class="bg_own">';
+                html += '<div class="p10 bbf0">';
+                html += '<div class="m-list-flex fontbd">';
+                html += '<span class="fs16  m-cell-bd single-line">' + data.name + '</span>';
+                html += '<span class="fs16 colf">' + data.mobile + '</span>';
+                html += '</div>';
+                html += '<p class="pt10 fs12 col9">' + data.address + '</p>';
+                html += '</div>';
+                html += '<div class="clearfix p10 bt">';
+                html += '<div class="fl">';
+                html += '<label class="addr">';
+                html += '<input type="radio" value="' + data.id + '" name="ids[]" data-is-default="' + data.is_default + '" class="weui-check"';
+                if (data.is_default == 1) {
+                    html += ' checked';
+                }
+                html += '>';
+                html += '<div class="fs12 col_own check-main">默认</div>';
+                html += '</label>';
+                html += '</div>';
+                html += '<span class="fr link">';
+                html += '<a href="javascript:;" data-id="' + data.id + '" class="fs12 col_own address-delete">删除</a>';
+                html += '<a href="' + data.href + '" class="ml15 fs12 col_own">编辑</a>';
+                html += '</span>';
+                html += '</div>';
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        $(function(){
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            //设为默认地址
+            $('#data-list').on('click', "input[name='ids[]']", function(){
+                var $this = $(this),
+                    id = $this.val(),
+                    is_default = $this.data('is-default');
+                if (is_default == 1) {
+                    return;
+                }
+                var id = $this.val();
+                $.showLoading();
+                $.post("{:U('Wx/Address/setDefault')}", {id: id}, function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        $.toast(data.info, function () {
+                            location.href = data.url;
+                        });
+                    } else {
+                        $.alert(data.info);
+                    }
+                });
+            });
+            //删除收货地址
+            $('#data-list').on('click', '.address-delete', function(){
+                var id = $(this).data('id');
+                if (!id)
+                    return;
+                $.confirm({
+                    title: '确认要删除该收货地址吗？',
+                    text: '',
+                    onOK: function () {
+                        $.showLoading();
+                        $.post("{:U('Wx/Address/delete')}", {id: id}, function (data) {
+                            $.hideLoading();
+                            if (data.status === 1) {
+                                $.toast(data.info, function () {
+                                    resetUpScroll();
+                                });
+                            } else {
+                                $.alert(data.info);
+                            }
+                        });
+                    },
+                    onCancel: function () {
+
+                    }
+                });
+            }); 
+        });
+    </script>
+</block>

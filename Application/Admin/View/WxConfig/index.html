@@ -1,0 +1,138 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">公众号管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/WxConfig/index')}" method="post">
+                    <blockquote class="layui-elem-quote">微信公众号设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-inline w300">
+                            <input type="text" name="name" value="{$wx_config.name}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">APPID</label>
+                        <div class="layui-input-inline w300">
+                            <input type="text" name="app_id" value="{$wx_config.app_id}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">APP密钥</label>
+                        <div class="layui-input-inline w300">
+                            <input type="text" name="app_secret" value="{$wx_config.app_secret}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">AppID以及Appsecret来自于您申请开发接口时提供的账号和密码，且公众号为已认证服务号</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关注时回复</label>
+                        <div class="layui-input-block">
+                            <textarea name="subscribe_reply" class="layui-textarea">{$wx_config.subscribe_reply}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">默认回复</label>
+                        <div class="layui-input-block">
+                            <textarea name="default_reply" class="layui-textarea">{$wx_config.default_reply}</textarea>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">服务器配置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">URL</label>
+                        <div class="layui-input-inline w500">
+                            <input type="text" id="url" value="{$wx_config.url}" readonly class="layui-input important-note" style="border:none;padding-left:0">
+                        </div>
+                        <div class="layui-input-inline">
+                            <button type="button" onclick="jsCopy('url')" class="layui-btn layui-btn-normal">复制</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Token</label>
+                        <div class="layui-input-inline w500">
+                            <input type="text" id="token" name="token" value="{$wx_config.token|default='token'}" maxlength="32" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" onpaste="return false" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <button type="button" onclick="jsCopy('token')" class="layui-btn layui-btn-normal">复制</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">必须为英文或数字，长度为3-32字符。如不填写则默认为“token”。</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">EncodingAESKey</label>
+                        <div class="layui-input-inline w500">
+                            <input type="text" id="encoding-aes-key" name="encoding_aes_key" value="{$wx_config.encoding_aes_key}" maxlength="43" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" onpaste="return false" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <button type="button" onclick="jsCopy('encoding-aes-key')" class="layui-btn layui-btn-normal">复制</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">消息加密密钥由43位字符组成，可随机修改，字符范围为A-Z，a-z，0-9。</div>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">配置说明</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"></label>
+                        <div class="layui-input-block">
+                            <p class="ptb2">
+                                请将以上URL及Token填到微信公众平台中，以完成绑定。
+                            </p>
+                            <p class="ptb2">
+                                设置业务域名（设置业务域名后，在微信内访问该域名下页面时，不会被重新排版。用户在该域名上进行输入时，不出现下图所示的安全提示）
+                            </p>
+                            <p class="ptb2">
+                                <a href="https://mp.weixin.qq.com/" target="_blank" class="xl_link_col">登录微信公众平台</a>点击公众号设置>功能设置>业务域名，依次填写：
+                            </p>
+                            <p class="ptb2">
+                                域名1：<i class="important-note">{$_SERVER['HTTP_HOST']}</i>
+                            </p>
+                            <p class="ptb2">
+                                设置JS接口安全域名（设置JS接口安全域名后，公众号开发者可在该域名下调用微信开放的JS接口）
+                            </p>
+                            <p class="ptb2">
+                                <a href="https://mp.weixin.qq.com/" target="_blank" class="xl_link_col">登录微信公众平台</a>点击公众号设置>功能设置>JS接口安全域名，依次填写：
+                            </p>
+                            <p class="ptb2">
+                                域名1：<i class="important-note">{$_SERVER['HTTP_HOST']}</i>
+                            </p>
+                            <p class="ptb2">
+                                设置网页授权域名（用户在网页授权页同意授权给公众号后，微信会将授权数据传给一个回调页面，回调页面需在此域名下，以确保安全可靠）
+                            </p>
+                            <p class="ptb2">
+                                <a href="https://mp.weixin.qq.com/" target="_blank" class="xl_link_col">登录微信公众平台</a>点击公众号设置>功能设置>网页授权域名>填写：
+                            </p>
+                            <p class="ptb2">
+                                授权回调页面域名：<i class="important-note">{$_SERVER['HTTP_HOST']}</i>
+                            </p>
+                            <p class="ptb2">
+                                业务域名设置完毕！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

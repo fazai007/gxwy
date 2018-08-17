@@ -1,0 +1,49 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">回复内容</li>
+            <li><a href="{:U('Admin/WxAutoReplyContent/add',['auto_reply_id'=>$auto_reply_id])}">添加回复内容</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:U('Admin/WxAutoReplyContent/delete')}">批量删除</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>回复类型</th>
+                                <th>添加时间</th>
+                                <th style="width:30px">排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="wx_auto_reply_content_list" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>{$wx_auto_replu_content_types[$vo['type']]}</td>
+                                <td>{$vo.create_time}</td>
+                                <td>{$vo.sort}</td>
+                                <td>
+                                    <a href="{:U('Admin/WxAutoReplyContent/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <a href="{:U('Admin/WxAutoReplyContent/delete',['ids'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    {$page}
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/admin.js"></script>
+</block>

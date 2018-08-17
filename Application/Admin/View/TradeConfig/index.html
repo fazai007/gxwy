@@ -1,0 +1,222 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:130px}
+        .layui-input-block{margin-left:160px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">交易设置</li>
+            <li><a href="{:U('Admin/TradeConfig/paymentConfig')}">支付配置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/TradeConfig/index')}" method="post">
+                    <blockquote class="layui-elem-quote">基础设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">自动收货时间</label>
+                        <div class="layui-input-block">
+                            <div class="layui-input-inline">
+                                <input type="number" name="order_auto_delinery" min="0.00" step="1.00" onkeyup="value=value.replace(/[^\d+(\.\d+)?]/g,'')" value="{$trade_config.order_auto_delinery}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">天</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">订单多长时间后自动收货，单位为/天(注：若为0，则订单不会自动收货)</div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">订单自动关闭时间</label>
+                        <div class="layui-input-block">
+                            <div class="layui-input-inline">
+                                <input type="number" name="order_buy_close_time" min="0.00" step="1.00" onkeyup="value=value.replace(/[^\d+(\.\d+)?]/g,'')" value="{$trade_config.order_buy_close_time}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">分钟</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">订单开始后多长时间未付款自动关闭，单位为/分钟(注：不填写或0订单将不会自动关闭)</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启余额支付</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="order_balance_pay" value="1" title="是"<?php if(isset($trade_config['order_balance_pay']) && $trade_config['order_balance_pay'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="order_balance_pay" value="0" title="否"<?php if(isset($trade_config['order_balance_pay']) && $trade_config['order_balance_pay'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否启用余额支付功能</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启货到付款</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="order_delivery_pay" value="1" title="是"<?php if(isset($trade_config['order_delivery_pay']) && $trade_config['order_delivery_pay'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="order_delivery_pay" value="0" title="否"<?php if(isset($trade_config['order_delivery_pay']) && $trade_config['order_delivery_pay'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否开启货到付款功能</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">订单完成时间</label>
+                        <div class="layui-input-inline">
+                            <select name="order_delivery_complete_time">
+                                <volist name="order_delivery_complete_time_list" id="vo">
+                                <option value="{$key}"<?php if(isset($trade_config['order_delivery_complete_time']) && $trade_config['order_delivery_complete_time'] == $key): ?> selected<?php endif; ?>>{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">收货后，多少时间订单自动完成，单位为/天</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">购物返积分设置</label>
+                        <div class="layui-input-inline">
+                            <select name="shopping_back_integral">
+                                <volist name="shopping_back_integral_list" id="vo">
+                                <option value="{$key}"<?php if(isset($trade_config['shopping_back_integral']) && $trade_config['shopping_back_integral'] == $key): ?> selected<?php endif; ?>>{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">在什么时间将购物返积分添加到用户账户</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否显示购买记录</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="order_show_buy_record" value="1" title="是"<?php if(isset($trade_config['order_show_buy_record']) && $trade_config['order_show_buy_record'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="order_show_buy_record" value="0" title="否"<?php if(isset($trade_config['order_show_buy_record']) && $trade_config['order_show_buy_record'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否显示购买记录</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启虚拟商品</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_open_virtual_goods" value="1" title="是"<?php if(isset($trade_config['is_open_virtual_goods']) && $trade_config['is_open_virtual_goods'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_open_virtual_goods" value="0" title="否"<?php if(isset($trade_config['is_open_virtual_goods']) && $trade_config['is_open_virtual_goods'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否开启虚拟商品</div>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">配送设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启买家自提</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="buyer_self_lifting" value="1" title="是"<?php if(isset($trade_config['buyer_self_lifting']) && $trade_config['buyer_self_lifting'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="buyer_self_lifting" value="0" title="否"<?php if(isset($trade_config['buyer_self_lifting']) && $trade_config['buyer_self_lifting'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否启用买家自提</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启商家配送</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="seller_dispatching" value="1" title="是"<?php if(isset($trade_config['seller_dispatching']) && $trade_config['seller_dispatching'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="seller_dispatching" value="0" title="否"<?php if(isset($trade_config['seller_dispatching']) && $trade_config['seller_dispatching'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否启用商家配送</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否开启本地配送</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_open_o2o" value="1" title="是"<?php if(isset($trade_config['is_open_o2o']) && $trade_config['is_open_o2o'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_open_o2o" value="0" title="否"<?php if(isset($trade_config['is_open_o2o']) && $trade_config['is_open_o2o'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否开启本地配送</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否允许选择物流</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_logistics" value="1" title="是"<?php if(isset($trade_config['is_logistics']) && $trade_config['is_logistics'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_logistics" value="0" title="否"<?php if(isset($trade_config['is_logistics']) && $trade_config['is_logistics'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否允许用户选择物流</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开启指定配送时间</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="order_designated_delivery_time" value="1" title="是"<?php if(isset($trade_config['order_designated_delivery_time']) && $trade_config['order_designated_delivery_time'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="order_designated_delivery_time" value="0" title="否"<?php if(isset($trade_config['order_designated_delivery_time']) && $trade_config['order_designated_delivery_time'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">是否开启指定配送时间</div>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">发票设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">发票税率</label>
+                        <div class="layui-input-block">
+                            <div class="layui-input-inline">
+                                <input type="number" name="order_invoice_tax" min="0.00" step="0.01" value="{$trade_config.order_invoice_tax}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">%</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">设置开发票的税率，单位为%</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">发票内容</label>
+                        <div class="layui-input-block">
+                            <textarea name="order_invoice_content" maxlength="50" class="layui-textarea">{$trade_config.order_invoice_content}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">客户要求开发票时可以选择的内容，逗号分格代表一个选项，例如：办公用品,明细</div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

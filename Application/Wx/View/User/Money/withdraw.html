@@ -1,0 +1,98 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <form id="form" method="post" action="{:U('Wx/Money/withdraw')}" onsubmit="return checkForm()">
+                <ul class="getmoney">
+                    <li class="m-list-flex">
+                        <i>支付宝账号：</i>
+                        <div class="m-cell-bd">
+                            <input type="text" name="alipay_account" id="alipay-account" class="form-unify tr" />
+                        </div>
+                    </li>
+                    <li class="m-list-flex">
+                        <i>姓名：</i>
+                        <div class="m-cell-bd">
+                            <input type="text" name="name" id="name" class="form-unify tr" />
+                        </div>
+                    </li>
+                </ul>
+                <div class="getnum">
+                    <h3 class="fs12">提现金额</h3>
+                    <div class="m-list-flex gem">
+                        <i>￥</i>
+                        <div class="m-cell-bd">
+                            <input type="tel" name="money" id="money" class="form-unify" />
+                        </div>
+                    </div>
+                </div>
+                <div class="maxmo fs11">最大可提现金额{$userinfo.money}元</div>
+                <div class="maxmo">
+                    {:nl2br($SYSTEM['withdraw_config']['withdraw_tips'])}
+                </div>
+                <div class="btn_wrap">
+                    <button type="submit" class="btnbar fs14 col3 my-btn">确认提现</button>
+                </div>
+            </form>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/jquery.form.js"></script>
+    <script src="__PUBLIC__/Common/js/utils.js"></script>
+</block>
+<block name="script">
+    <script>
+        var minWithdrawMoney = {$SYSTEM.withdraw_config.min_withdraw_money};
+        /**
+         * 表单验证
+         */
+        function checkForm() {
+            var alipayAccount = $('#alipay-account').val();
+            if (Utils.isEmpty(alipayAccount)) {
+                $.alert('请填写支付宝账号');
+                return false;
+            }
+            var name = $('#name').val();
+            if (Utils.isEmpty(name)) {
+                $.alert('请填写姓名');
+                return false;
+            }
+            var money = $('#money').val();
+            if (Utils.isEmpty(money)) {
+                $.alert('请填写提现金额');
+                return false;
+            }
+            if (!Utils.isInt(money) || money < 0) {
+                $.alert('提现金额必须是正整数');
+                return false;
+            }
+            if (money < minWithdrawMoney) {
+                $.alert('提现金额必须大于等于' + minWithdrawMoney);
+                return false;
+            }
+            return true;
+        }
+        $(function () {
+            //表单提交
+            var options = {
+                beforeSubmit: function () {
+                    $.showLoading();
+                },
+                success: function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        $.toast(data.info);
+                        setTimeout(function () {
+                            location.reload();
+                        }, 2000);
+                    } else {
+                        $.alert(data.info);
+                    }
+                },
+                clearForm: false
+            };
+            $('#form').ajaxForm(options);
+        });
+    </script>
+</block>

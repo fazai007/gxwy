@@ -1,0 +1,39 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/UserIntegral/recharge')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">当前积分</label>
+                        <div class="layui-input-block">
+                            <input type="text" value="{$user_account.integral}" class="layui-input layui-disabled" readonly>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">调整积分</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="integral" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">增加或减少</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="description" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="user_id" value="{$user_account.user_id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">确认调整</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

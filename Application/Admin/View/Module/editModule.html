@@ -1,0 +1,43 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/Module/moduleList')}">模板列表</a></li>
+            <li><a href="{:U('Admin/Module/addModule')}">添加分类</a></li>
+            <li class="layui-this">编辑分类</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Module/editModule')}" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="module_name" value="{$moduleInfo.module_name}" required lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                        </div>
+                    </div>
+
+                    <!--<div class="layui-form-item">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="describe" class="layui-textarea">{$moduleInfo.describe}</textarea>
+                        </div>
+                    </div>-->
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="module_id" value="{$moduleInfo.module_id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-icon');
+    </script>
+</block>

@@ -1,0 +1,26 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Order/sellerMemo')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="seller_memo" class="layui-textarea">{$orderinfo.seller_memo}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="id" value="{$orderinfo.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

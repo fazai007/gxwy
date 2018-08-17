@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-122简历-有简历</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<section class="wrap">
+
+	<footer class="foot_fixed bgf">
+		<div class="table footer">
+			<a href="" class="table-cell fs10 active"><i class="fi-1"></i>简历</a>
+			<a href="" class="table-cell fs10"><i class="fi-2"></i>实习</a>
+			<a href="" class="table-cell fs10 "><i class="fi-3"></i>网申</a>
+			<a href="" class="table-cell fs10"><i class="fi-4"></i>攻略</a>
+			<a href="" class="table-cell fs10"><i class="fi-5"></i>我的</a>
+		</div>
+	</footer>
+	<!-- 底部悬浮 end -->
+
+	<section class="main">
+		
+		
+		<div class="swiper-container bannerindex">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img data-src="images/banner.png"  class="imgm swiper-lazy">
+							<div class="swiper-lazy-preloader "></div>
+						</div>
+						<div class="swiper-slide">
+							<img data-src="images/banner.png"  class="imgm swiper-lazy">
+							<div class="swiper-lazy-preloader "></div>
+						</div>
+						<div class="swiper-slide">
+							<img data-src="images/banner.png" class="imgm swiper-lazy">
+							<div class="swiper-lazy-preloader "></div>
+						</div>
+					
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				<!-- banner end -->
+				<script src="weui/js/swiper.js"></script>       
+				<script>
+				$(function(){
+					var swiperWidth = $(".bannerindex").width();
+						swiperHeight = swiperWidth * 0.4;
+						$(".bannerindex").css("height",swiperHeight);
+					$(".bannerindex").swiper({
+						pagination: '.swiper-pagination',
+						loop: true,
+						autoplay: 3000,
+						autoplayDisableOnInteraction : false,
+						lazyLoading:true,
+					    lazyLoadingInPrevNext:true,
+					    lazyLoadingInPrevNextAmount:1,
+				        lazyLoadingonTransitionStart:true,
+					});
+				});
+				</script>
+				
+			<!--结束轮播图-->
+
+			<div class="login_tabs  clearfix">
+					<a href="javascript:;"><div class="tabin"style="background-image: url(images/tabin1.png);"></div></a>
+					<a href="javascript:;"><div class="tabin"style="background-image: url(images/tabin2.png);"></div></a>
+					<a href="javascript:;"><div class="tabin"style="background-image: url(images/tabin3.png);"></div></a>
+			</div>
+		
+		<!--tab结束-->
+
+		
+		
+		<div class="table tabs_change tc fs16 bgf">
+				<div class="table-cell active"><span>简历</span></div>
+				<div class="table-cell"><span>求职信</span></div>
+				<div class="table-cell"><span>邮件</span></div>
+		</div>
+		<!--切换结束-->
+		
+				
+				
+				
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script>
+	$(function(){
+//		iphonex底部兼容
+			function isIPhoneX(fn){
+			    var u = navigator.userAgent;
+			    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			    if (isIOS) {        
+			        if (screen.height == 812 && screen.width == 375){
+				//	        alert('我是iphoneX')//是iphoneX
+				//把.main的底部增大20px
+							var pb_num= parseInt(  $('.main').css('padding-bottom'));
+							var x_pb_num=pb_num + 20 + 'px';
+							$('.main').css('padding-bottom',x_pb_num);  
+				//把底部菜单往上移动20px			
+							var pb_foot= parseInt(  $('.footer').css('padding-bottom'));
+							var x_pb_foot=pb_foot+ 20 + 'px';
+							$('.footer').css('padding-bottom',x_pb_foot);
+	
+			        }else{
+		//	            alert('我不是iphoneX') //不是iphoneX
+			        } 
+			    }
+			}
+			
+			isIPhoneX(); //执行代码
+			
+			
+			
+
+			
+			
+			
+			
+	})
+	
+</script>
+</body>
+</html>

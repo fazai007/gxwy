@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="telephone=no" name="format-detection" />
+        <meta name="renderer" content="webkit">
+        <title>提示</title>
+        <link rel="stylesheet" href="__PUBLIC__/plugins/weui/lib/weui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/weui/css/jquery-weui.min.css" />
+        <!--[if lt IE 9 ]>
+        <script src="__PUBLIC__/plugins/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body ontouchstart>
+        <script src="__PUBLIC__/plugins/weui/lib/jquery-2.1.4.js"></script>
+        <script src="__PUBLIC__/plugins/weui/js/jquery-weui.min.js"></script>
+        <script>
+            (function () {
+                var message = '{$message}';
+                $.alert(message, function () {
+                    if ('{$jump_url}') {
+                        location.href = '{$jump_url}';
+                    } else {
+                        history.back(-1);
+                    }
+                });
+            })();
+        </script>
+    </body>
+</html>

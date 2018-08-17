@@ -1,0 +1,26 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="msgreback box-flex">
+                <div class="box-bd">
+                    <div class="table">
+                        <div class="table-cell tc">
+                            <h3 class="fs12 mb10">客服二维码</h3>
+                            <div class="relative msg-code">
+                                <img src="__CDN__{$SYSTEM.web_config.kf_qrcode}" alt="" class="imgm" />
+                            </div>
+                            <h3 class="fs12 mt10">长按二维码加客服咨询</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="sertel">
+                    <h5 class="fs12">客服电话</h5>
+                    <h6 class="fs16"><a href="tel:{$SYSTEM.web_config.web_phone}" class="col_own">{$SYSTEM.web_config.web_phone}</a></h6>
+                </div>
+                <div class="bg1"></div>
+                <div class="bg2"></div>
+            </div>
+        </section>
+    </section>
+</block>

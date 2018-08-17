@@ -1,0 +1,88 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <form id="form" method="post" action="{:U('Wx/Address/save')}" onsubmit="return checkForm()">
+                <ul class="fs14 col_own bg_own newaddress">
+                    <li class="table plr10 bb">
+                        <div class="table-cell vm col_own w80">收 货 人 </div>
+                        <div class="table-cell vm">
+                            <input type="text" name="name" id="name" class="form-unify" />
+                        </div>
+                    </li>
+                    <li class="table  plr10 bb">
+                        <div class="table-cell vm col_own w80">手机号码</div>
+                        <div class="table-cell vm">
+                            <input type="tel" name="mobile" id="mobile" maxlength="11" class="form-unify" />
+                        </div>
+                    </li>
+                    <li class="table  plr10">
+                        <div class="table-cell vt pt10 col_own w80">详细地址</div>
+                        <div class="table-cell vt">
+                            <textarea name="address" id="address" cols="" rows="4" class="form-unify"></textarea>
+                        </div>
+                    </li>
+                </ul>
+                <div class="add-switch bg_own mt15">
+                    <div class="switch clearfix">
+                        <input type="checkbox" name="is_default" value="1" class="weui-switch fr" />
+                        <i class="fl col_own">设为默认地址</i>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button type="submit" class="btnbar fs14 col3 my-btn">保存</button>
+                </div>
+            </form>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/jquery.form.js"></script>
+    <script src="__PUBLIC__/Common/js/utils.js"></script>
+</block>
+<block name="script">
+    <script>
+        /**
+         * 表单验证
+         */
+        function checkForm() {
+            var name = $('#name').val();
+            if (Utils.isEmpty(name)) {
+                $.alert('请填写收货人');
+                return false;
+            }
+            var mobile = $('#mobile').val();
+            if (Utils.isEmpty(mobile) || !Utils.isMobile(mobile)) {
+                $.alert('请填写正确的手机号码');
+                return false;
+            }
+            var address = $('#address').val();
+            if (Utils.isEmpty(address)) {
+                $.alert('请填写详细地址');
+                return false;
+            }
+            return true;
+        }
+        $(function () {
+            //表单提交
+            var options = {
+                beforeSubmit: function () {
+                    $.showLoading();
+                },
+                success: function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        $.toast(data.info);
+                        setTimeout(function () {
+                            location.href = data.url;
+                        }, 2000);
+                    } else {
+                        $.alert(data.info);
+                    }
+                },
+                clearForm: false
+            };
+            $('#form').ajaxForm(options);
+        });
+    </script>
+</block>

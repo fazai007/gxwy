@@ -1,0 +1,29 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div id="poster-div">
+                
+            </div>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        function getPoster(){
+            $.showLoading();
+            $.get("{:U('Wx/User/getPoster')}", {}, function (data) {
+                $.hideLoading();
+                if (data.status == 1) {
+                    var image = '<img src="' + data.info + '?' + + new Date().getTime() + '" alt="" class="imgm" />';
+                    $('#poster-div').html(image);
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+        $(function(){
+            getPoster();
+        });
+    </script>
+</block>

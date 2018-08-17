@@ -1,0 +1,34 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/UserWithdraw/batchUpdate')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">审核状态</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="review_status" value="3" title="通过">
+                            <input type="radio" name="review_status" value="2" title="拒绝">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="review_remark" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="ids" value="{$ids}">
+                            <input type="hidden" name="_action" value="review">
+                            <button class="layui-btn" lay-submit lay-filter="*">确认审核</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

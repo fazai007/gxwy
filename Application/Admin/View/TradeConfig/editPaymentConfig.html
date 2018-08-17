@@ -1,0 +1,218 @@
+<extend name="Public:iframe_base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/TradeConfig/editPaymentConfig')}" method="post">
+                    <!--微信支付-->
+                    <?php if($type == 'wxpay'): ?>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">应用ID</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="app_id" value="{$payment_config.app_id}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux"><i class="important-note">[AppID]</i>微信支付对应公众账号AppID</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">应用密钥</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="app_secret" value="{$payment_config.app_secret}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux"><i class="important-note">[AppSecrect]</i>微信支付对应公众账号AppSecret</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">支付专用签名串</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="pay_sign_key" value="{$payment_config.pay_sign_key}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux"><i class="important-note">[paySignKey]</i>微信商户API密钥</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">微信支付商户号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="mch_id" value="{$payment_config.mch_id}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux"><i class="important-note">[MCHID]</i>微信支付商户号</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">apiclient_cert</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="apiclient_cert" value="{$payment_config.apiclient_cert}" placeholder="请填写绝对路径" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">apiclient_key.pem</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="apiclient_key" value="{$payment_config.apiclient_key}" placeholder="请填写绝对路径" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用支付</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_use" value="1" title="是"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_use" value="0" title="否"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用退款</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="refund_is_use" value="1" title="是"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="refund_is_use" value="0" title="否"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">需要配置微信支付同时配置好apiclient_cert和apiclient_key的绝对路径才可以进行后续操作</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用转账</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="transfer_is_use" value="1" title="是"<?php if(isset($payment_config['transfer_is_use']) && $payment_config['transfer_is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="transfer_is_use" value="0" title="否"<?php if(isset($payment_config['transfer_is_use']) && $payment_config['transfer_is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">需要配置微信支付同时配置好apiclient_cert和apiclient_key的绝对路径才可以进行后续操作</div>
+                        </div>
+                    </div>
+                    <!--支付宝支付-->
+                    <?php elseif($type == 'alipay'): ?>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">账号</label>
+                        <div class="layui-input-inline w500">
+                            <input type="text" name="seller" value="{$payment_config.seller}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">支付宝账户</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">合作者身份ID</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="partner_id" value="{$payment_config.partner_id}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">支付宝合作者身份ID（PID）</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">安全校验码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="key" value="{$payment_config.key}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">支付宝老版MD5密钥</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用支付</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_use" value="1" title="是"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_use" value="0" title="否"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用退款</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="refund_is_use" value="1" title="是"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="refund_is_use" value="0" title="否"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">开启支付宝支付才可以进行后续操作</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用转账</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="transfer_is_use" value="1" title="是"<?php if(isset($payment_config['transfer_is_use']) && $payment_config['transfer_is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="transfer_is_use" value="0" title="否"<?php if(isset($payment_config['transfer_is_use']) && $payment_config['transfer_is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">开启支付宝支付才可以进行后续操作</div>
+                        </div>
+                    </div>
+                    <!--银联卡支付-->
+                    <?php elseif($type == 'unionpay'): ?>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商户号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="merchant_number" value="{$payment_config.merchant_number}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">签名证书秘钥</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="certificate_key" value="{$payment_config.certificate_key}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">手续费</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="service_charge" value="{$payment_config.service_charge}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">元</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用支付</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="is_use" value="1" title="是"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="is_use" value="0" title="否"<?php if(isset($payment_config['is_use']) && $payment_config['is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否启用退款</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="refund_is_use" value="1" title="是"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="refund_is_use" value="0" title="否"<?php if(isset($payment_config['refund_is_use']) && $payment_config['refund_is_use'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">开启银联卡支付才可以进行后续操作</div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="type" value="{$type}">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

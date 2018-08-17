@@ -1,0 +1,53 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/GoodsTag/index')}">商品标签</a></li>
+            <li><a href="{:U('Admin/GoodsTag/add')}">添加标签</a></li>
+            <li class="layui-this">编辑标签</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/GoodsTag/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">标签名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="{$goods_tag.name}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$goods_tag.sort}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="icon" id="icon" value="{$goods_tag.icon}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-icon" data-input-id="icon" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="description" class="layui-textarea">{$goods_tag.description}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$goods_tag.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-icon');
+    </script>
+</block>

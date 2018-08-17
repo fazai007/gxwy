@@ -1,0 +1,385 @@
+<?php
+/**
+ * __CONTROLNAME__类
+ *
+ */
+class Mcp__CONTROL__Action extends McpAction {
+	
+	
+	 /**
+     * 构造函数
+     * @author xl
+     * @return void
+     * @todo
+     */
+	public function Mcp__CONTROL__Action()
+	{
+            parent::_initialize();
+	}
+
+
+	/**
+     * 接收搜索表单数据，组织返回where子句
+     * @author cc
+     * @param void
+     * @return void
+     * @todo 接收表单提交的参数，过滤合法性，组织成where子句并返回
+     */
+    public function get_search_condition($where)
+    {
+        //初始化查询条件
+        $where = $where ? $where : ' true ';
+
+        $merchant_name = I('request.merchant_name','','trim');
+        if($merchant_name)
+        {
+            $where .= ' AND merchant_name LIKE "%' . $merchant_name . '%"';
+            $this->assign('merchant_name',$merchant_name);
+        }
+
+        $merchant_type = I('request.merchant_type');
+        if($merchant_type)
+        {
+            $where .= ' AND merchant_type =' . $merchant_type;
+            $this->assign('merchant_type',$merchant_type);
+        }
+
+        $is_enable = I('request.is_enable');
+        if($is_enable)
+        {
+            $where .= ' AND is_enable =' . $is_enable;
+            $this->assign('is_enable',$is_enable);
+        }
+
+
+        /*
+        //商品名称
+        $item_name = $this->_request('item_name');
+        if ($item_name)
+        {
+            $where .= ' AND item_name LIKE "%' . $item_name . '%"';
+        }
+
+        //商品货号
+        $item_sn = $this->_request('item_sn');
+        if ($item_sn)
+        {
+            $where .= ' AND item_sn = "' . $item_sn . '"';
+        }
+
+        //分类
+        $category_id = $this->_request('category_id');
+        if ($category_id)
+        {
+            $arr_category = explode('.', $category_id);
+            if ($arr_category[0] == 1)
+            {
+                $where .= ' AND class_id = ' . $arr_category[1];
+            }
+            elseif ($arr_category[0] == 2)
+            {
+                $where .= ' AND sort_id = ' . $arr_category[1];
+            }
+        }
+
+        // 商品状态
+        $item_status = $this->_request('item_status');
+        if ($item_status) {
+            if ($item_status == 'onsale') {
+                // $condition['_string'] = 'stock > 0 AND stock > stock_alarm';
+                $where .= ' AND isuse = 1';
+            }
+            elseif ($item_status == 'outofstock')
+            {
+                $where .= ' AND isuse = 0';
+            }
+        }
+
+        //添加时间范围起始时间
+        $start_date = $this->_request('start_date');
+        $start_date = str_replace('+', ' ', $start_date);
+        $start_date = strtotime($start_date);
+        if ($start_date)
+        {
+            $where .= ' AND addtime >= ' . $start_date;
+        }
+
+        //添加时间范围结束时间
+        $end_date = $this->_request('end_date');
+        $end_date = str_replace('+', ' ', $end_date);
+        $end_date = strtotime($end_date);
+        if ($end_date)
+        {
+            $where .= ' AND addtime <= ' . $end_date;
+        }
+
+        //销售量范围起点
+        $start_sales_num = $this->_request('start_sales_num');
+        if ($start_sales_num != -1 && $start_sales_num != '')
+        {
+            $where .= ' AND sales_num >= ' . intval($start_sales_num);
+        }
+
+        //销售量范围结束点
+        $end_sales_num = $this->_request('end_sales_num');
+        if ($end_sales_num != -1 && $end_sales_num != '')
+        {
+            $where .= ' AND sales_num <= ' . intval($end_sales_num);
+        }
+
+        //重新赋值到表单
+        $this->assign('item_name', $item_name);
+        $this->assign('item_sn', $item_sn);
+        $this->assign('start_sales_num', $start_sales_num);
+        $this->assign('end_sales_num', $end_sales_num);
+        $this->assign('start_date', $start_date ? $start_date : '');
+        $this->assign('end_date', $end_date ? $end_date : '');
+        $this->assign('category_id', $category_id);
+        $this->assign('item_status', $item_status);
+        */
+        return $where;
+    }
+
+    /**
+     * @author  xl
+     * @todo 添加__CONTROLNAME__
+     */
+    public function add___crontrol__()
+    {
+    	$merchant_obj = new MerchantModel();
+
+    	$act = I('post.act');
+    	if($act == 'add')
+    	{
+            $merchant_name = I('post.merchant_name');
+            $contact       = I('post.contact');
+            $mobile        = I('post.mobile');
+            $province_id   = I('post.province_id');
+            $city_id       = I('post.city_id');
+            $area_id       = I('post.area_id');
+            $address       = I('post.address');
+            $remark        = I('post.remark');
+            $merchant_type = I('post.merchant_type');
+            $merchant_class = I('post.merchant_class');            //主营品类
+            $merchant_class = implode(',', $merchant_class);
+            // dump($merchant_class);die;
+
+            
+            $check_base_rate = I('post.check_base_rate');          //查看总部库存比例
+            $check_other_stock = I('post.check_other_stock');      //服务站是否可以查看其它服务站库存
+            $check_seriver_stock = I('post.check_seriver_stock');  //供应商是否可以查看服务站库存
+            
+
+            if(!$merchant_name)   $this->error('请填写商家名称');
+            if(!$contact)         $this->error('请填写联系人');
+            if(!$mobile)          $this->error('请填写手机号');
+            if(!$province_id)     $this->error('请选择省份');
+            if(!$city_id)         $this->error('请选择城市');
+            if(!$address)         $this->error('请填写详细地址');
+            if(!$check_base_rate)  $this->error('请填写查看总部库存比例');
+            if(!in_array($merchant_type, array(2,3)))  $this->error('请选择合作商类型');
+
+            if($merchant_type == 2)
+            {
+                $check_seriver_stock = 0;
+            }else if($merchant_type == 3)
+            {
+                $check_other_stock = 0;
+            }
+
+
+            $arr = array(
+                'merchant_name'  => $merchant_name,
+                'contact'        => $contact,
+                'mobile'         => $mobile,
+                'province_id'    => $province_id,
+                'city_id'        => $city_id,
+                'area_id'        => $area_id,
+                'address'        => $address,
+                'remark'         => $remark,
+                'merchant_type'  => $merchant_type,
+                'check_base_rate'=> $check_base_rate,
+                'check_other_stock'    => $check_other_stock,
+                'check_seriver_stock'  => $check_seriver_stock,
+                'merchant_class' => $merchant_class,
+            );
+
+            $merchant_id = $merchant_obj->addPartnerMerchant($arr);
+            if($merchant_id)
+            {
+                $this->success('合作商信息添加成功','/McpMerchant/partner_list/mod_id/1');
+            }else{
+                $this->error('添加失败，请重试!');
+            }
+    	}
+
+		//地址列表
+        $province_list = M('AddressProvince')->field('province_id, province_name')->select();
+        $this->assign('province_list', $province_list);
+
+        //获取当前商家的所有商品一级分类
+        $m_class_list = MerchantModel::getMerchantClass();
+        // dump($m_class_list);
+        $this->assign('m_class_list',$m_class_list);
+
+		
+        $this->assign('act','add');
+		$this->assign('head_title','新增商家');
+		$this->display();
+
+    }
+
+    //__CONTROLNAME__列表
+    public function __crontrol___list()
+    {
+        $merchant_id = session('merchant_id');
+        $where = ' parent_id ='.$merchant_id .' ';
+    	$where = $this->get_search_condition($where);
+        // dump($where);
+    	$merchant_obj = new MerchantModel();
+        // $merchant_code = $merchant_obj->getPartnerMerchantCode(4);dump($merchant_code);die;
+    	$total = $merchant_obj->getMerchantNum($where);
+    	
+    	//处理分页
+    	import('ORG.Util.Pagelist');
+        $Page = new Pagelist($total,C('PER_PAGE_NUM'));
+		$merchant_obj->setStart($Page->firstRow);
+        $merchant_obj->setLimit($Page->listRows);
+        $show = $Page->show();
+        $this->assign('show',$show);
+
+        $merchant_list = $merchant_obj->getMerchantList('',$where,'addtime DESC');
+        $merchant_list = $merchant_obj->getListData($merchant_list);
+        $merchant_list = $merchant_list ? $merchant_list : array();
+        $this->assign('merchant_list',$merchant_list);
+
+    	$this->assign('head_title','商家管理/商家列表');
+    	$this->display();
+    }
+
+
+    /**
+     * @author  xl
+     * @todo 编辑__CONTROLNAME__
+     */
+    public function edit___crontrol__()
+    {
+        $id = I('request.id');
+        $merchant_obj = new MerchantModel();
+        if(!$id)
+        {
+            $this->error('参数非法');
+        }
+
+        $act = I('post.act');
+        if($act == 'edit')
+        {
+            $merchant_name = I('post.merchant_name');
+            $contact       = I('post.contact');
+            $mobile        = I('post.mobile');
+            $province_id   = I('post.province_id');
+            $city_id       = I('post.city_id');
+            $area_id       = I('post.area_id');
+            $address       = I('post.address');
+            $remark        = I('post.remark');
+            $merchant_type = I('post.merchant_type');
+            $merchant_class = I('post.merchant_class');            //主营品类
+            $merchant_class = implode(',', $merchant_class);
+
+            $check_base_rate = I('post.check_base_rate');          //查看总部库存比例
+            $check_other_stock = I('post.check_other_stock');      //服务站是否可以查看其它服务站库存
+            $check_seriver_stock = I('post.check_seriver_stock');  //供应商是否可以查看服务站库存
+
+            if(!$merchant_name)   $this->error('请填写商家名称');
+            if(!$contact)         $this->error('请填写联系人');
+            if(!$mobile)          $this->error('请填写手机号');
+            if(!$province_id)     $this->error('请选择省份');
+            if(!$city_id)         $this->error('请选择城市');
+            if(!$address)         $this->error('请填写详细地址');
+            if(!$check_base_rate)  $this->error('请填写查看总部库存比例');
+            if(!in_array($merchant_type, array(2,3)))  $this->error('请选择合作商类型');
+
+            if($merchant_type == 2)
+            {
+                $check_seriver_stock = 0;
+            }else if($merchant_type == 3)
+            {
+                $check_other_stock = 0;
+            }
+
+            $arr = array(
+                'merchant_name'  => $merchant_name,
+                'contact'        => $contact,
+                'mobile'         => $mobile,
+                'province_id'    => $province_id,
+                'city_id'        => $city_id,
+                'area_id'        => $area_id,
+                'address'        => $address,
+                'remark'         => $remark,
+                'merchant_type'  => $merchant_type,
+                'check_base_rate'=> $check_base_rate,
+                'check_other_stock'    => $check_other_stock,
+                'check_seriver_stock'  => $check_seriver_stock,
+                'merchant_class' => $merchant_class,
+            );
+
+            $res = $merchant_obj->editMerchant('merchant_id='.$id,$arr);
+            if($res !==false)
+            {
+                $this->success('合作商信息保存成功','/McpMerchant/partner_list/mod_id/1');
+            }else{
+                $this->error('保存失败，请重试!');
+            }
+        }
+
+        //获取商家店铺的信息
+        $fields = 'merchant_id,merchant_code,merchant_name,contact,mobile,province_id,city_id,area_id,address,remark,is_enable,merchant_type,check_base_rate,check_other_stock,check_seriver_stock,merchant_class';
+        $merchant_info = $merchant_obj->getMerchantInfo('merchant_id='.$id,$fields);
+        $this->assign('info',$merchant_info);
+
+        //地址列表
+        $province_list = M('AddressProvince')->field('province_id, province_name')->select();
+        $this->assign('province_list', $province_list);
+
+        $city_list = M('address_city')->where('province_id='.$merchant_info['province_id'])->select();
+        $this->assign('city_list',$city_list);
+
+        $area_list = M('address_area')->where('city_id='.$merchant_info['city_id'])->select();
+        $this->assign('area_list',$area_list);
+
+        //获取当前商家的所有商品一级分类
+        $m_class_list = MerchantModel::getMerchantClass();
+        $this->assign('m_class_list',$m_class_list);
+
+        $edit_class_list = explode(',', $merchant_info['merchant_class']);
+        $this->assign('edit_class_list',$edit_class_list);
+
+        $this->assign('act','edit');
+        $this->assign('head_title','编辑商家信息');
+        $this->display();
+
+    }
+
+    /**
+     * @author xl
+     * @todo  启用/禁用__CONTROLNAME__
+     */
+    public function set___crontrol___enable_ajax()
+    {
+        if(IS_POST && IS_AJAX)
+        {
+            $merchant_id = I('post.merchant_id');
+            $enable = I('post.enable');
+
+            $merchant_obj = new MerchantModel();
+            $res = $merchant_obj->setEnable($merchant_id,$enable);
+            if($res)
+            {
+                $this->ajaxReturn(['code'=>0,'msg'=>'操作成功']);
+            }else{
+                $this->ajaxReturn(['code'=>1,'msg'=>'操作失败，请重试!']);
+            }
+        }
+    }
+}
+?>

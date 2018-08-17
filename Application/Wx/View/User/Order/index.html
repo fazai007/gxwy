@@ -1,0 +1,142 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="table mtabs">
+                <a href="javascript:;" data-status="1" class="nav-item table-cell fs14<?php if($status == 1): ?> active<?php endif; ?>">未付款</a>
+                <a href="javascript:;" data-status="2" class="nav-item table-cell fs14<?php if($status == 2): ?> active<?php endif; ?>">已付款</a>
+            </div>
+            <div class="myscroll">
+                <ul class="mt15" id="data-list">
+
+                </ul>
+                <div class="myscroll-empty hide">
+                    <p class="empty-tip">暂无订单</p>
+                </div>
+                <div class="myscroll-upwarp myscroll-hardware">
+                    <p class="upwarp-progress myscroll-rotate"></p>
+                    <p class="upwarp-tip">加载中..</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var curStatus = 1;
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Order/getListData')}", {status:curStatus,page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                var goods = data.goods_list[0];
+                html += '<li class="relative">';
+                html += '<a href="' + goods.href + '" class="buy_course m-list-flex bg_own relative">';
+                html += '<div class="pic-view ml0">';
+                html += '<img src="' + cdnUrl(goods.thumb) + '" alt="" class="imgm"/>';
+                html += '</div>';
+                html += '<div class="m-cell-bd pl10">';
+                html += '<h3 class="fs116 colf">' + goods.name + '</h3>';
+                html += '<h4 class="fs12">' + goods.tag + '</h4>';
+                html += '<h5 class="fs16 mt5"><i class="fs12">￥</i>' + goods.sale_price + '</h5>';
+                html += '</div>';
+                html += '</a>';
+                if (data.payment_status == 0) {
+                    html += '<a href="javascript:;" onclick="checkPayment(' + data.id + ')" class="paytobtn fs12 col3">去支付</a>';
+                }
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        function checkPayment(id) {
+            $.showLoading();
+            $.post("{:U('Wx/Order/checkPayment')}", {id: id}, function (data) {
+                $.hideLoading();
+                if (data.status === 1) {
+                    if (data.info.payment_type == 'alipay') {
+                        //todo_list
+                    } else if (data.info.payment_type == 'wxpay') {
+                        openWxPay(data.info.payment_info, data.url);
+                    }
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+        /**
+         * 打开微信支付
+         */
+        function openWxPay(param, url) {
+            WeixinJSBridge.invoke('getBrandWCPayRequest', {
+                'appId': param.appId,
+                'timeStamp': param.timeStamp,
+                'nonceStr': param.nonceStr,
+                'package': param.package,
+                'signType': param.signType,
+                'paySign': param.paySign
+            }, function (res) {
+                WeixinJSBridge.log(res.err_msg);
+                if (res.err_msg == 'get_brand_wcpay_request:ok') {
+                    $.alert('支付成功', function () {
+                        location.href = url;
+                    });
+                } else if (res.err_msg == 'get_brand_wcpay_request:cancel') {
+                    $.alert('支付取消');
+                } else if (res.err_msg == 'get_brand_wcpay_request:fail') {
+                    $.alert('支付失败');
+                } else {
+                    $.alert(res.errMsg);
+                }
+            });
+        }
+        $(function(){
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            $('.nav-item').on('click', function () {
+                var $this = $(this),
+                    status = $this.data('status');
+                if (status != curStatus) {
+                    $this.addClass('active').siblings().removeClass('active');
+                    curStatus = status;
+                    resetUpScroll();
+                }
+            });
+        });
+    </script>
+</block>

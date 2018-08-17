@@ -1,0 +1,133 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote">提现信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="250">
+                        <col width="300">
+                        <col width="250">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>用户ID</td>
+                            <td>{$user_withdraw.user_id}</td>
+                            <td>提现流水号</td>
+                            <td>{$user_withdraw.withdraw_no}</td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>提现银行</td>
+                            <td>{$user_withdraw.bank|default='--'}</td>
+                            <td>提现账户</td>
+                            <td>{$user_withdraw.account|default='--'}</td>
+                        </tr>
+                        -->
+                        <tr>
+                            <td>支付宝账号</td>
+                            <td>{$user_withdraw.alipay_account|default='--'}</td>
+                            <td>姓名</td>
+                            <td>{$user_withdraw.name|default='--'}</td>
+                        </tr>
+                        <tr>
+                            <td>提现金额</td>
+                            <td>{$user_withdraw.money}</td>
+                            <td>提现时间</td>
+                            <td>{$user_withdraw.create_time}</td>
+                        </tr>
+                        <tr>
+                            <td>状态</td>
+                            <td clospan="3">
+                                <?php if($user_withdraw['review_status'] == 1): ?>
+                                审核中
+                                <?php elseif($user_withdraw['review_status'] == 2): ?>
+                                审核拒绝
+                                <?php elseif($user_withdraw['review_status'] == 3): if($user_withdraw['payment_status'] == 1): ?>
+                                待付款
+                                <?php elseif($user_withdraw['payment_status'] == 2): ?>
+                                付款失败
+                                <?php elseif($user_withdraw['payment_status'] == 3): ?>
+                                付款成功
+                                <?php endif; endif; ?>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <blockquote class="layui-elem-quote">审核信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="250">
+                        <col width="300">
+                        <col width="250">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>审核时间</td>
+                            <td>{$user_withdraw.review_time}</td>
+                            <td>审核备注</td>
+                            <td>{$user_withdraw.review_remark}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <blockquote class="layui-elem-quote">付款信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="250">
+                        <col width="300">
+                        <col width="250">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>付款方式</td>
+                            <td>
+                                {$payment_type_list[$user_withdraw['payment_type']]}
+                                <?php if($user_withdraw['payment_type'] == 1): ?>
+                                - {$online_type_list[$user_withdraw['online_type']]}
+                                <?php endif; ?>
+                            </td>
+                            <td>付款金额</td>
+                            <td>{$user_withdraw.payment_money}</td>
+                        </tr>
+                        <tr>
+                            <td>付款流水号</td>
+                            <td>{$user_withdraw.payment_no}</td>
+                            <td>付款时间</td>
+                            <td>{$user_withdraw.payment_time}</td>
+                        </tr>
+                        <tr>
+                            <td>付款备注</td>
+                            <td colspan="3">{$user_withdraw.payment_remark}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <blockquote class="layui-elem-quote">日志信息</blockquote>
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>记录人</th>
+                            <th>记录内容</th>
+                            <th>记录时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="withdraw_log_list" id="vo">
+                        <tr>
+                            <td>{$vo['operator_name']}</td>
+                            <td>{$vo['content']}</td>
+                            <td>{$vo['create_time']}</td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

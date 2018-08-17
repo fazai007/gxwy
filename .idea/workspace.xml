@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="21423ffd-3aab-4a7e-bfc6-e2a919bbb3a8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/font/font.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/addm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/banner.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/btn1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/btn2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/cha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/dm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/email.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/en.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/gou.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer1-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer2-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer3-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer4-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer5-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/icon_footer5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/key.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/lala.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/login_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/m3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/m6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/remove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/such.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/tabin1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/tabin2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/tabin3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/tel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/um.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/useban.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/wx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/yes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹 (2)/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/0815补切图.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/btn/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/icons/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/icons/._1.19.2勾@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/icons/._1.19.2勾@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/__MACOSX/补切图/icons/1.19.1@1x/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1切换模板-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1切换模板-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1排版格式-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1排版格式-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1时间倒序-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1时间倒序-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1模块照片-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1模块照片-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1自动一页纸-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1自动一页纸-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1行距-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1页边距-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1切换模板-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1切换模板-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1排版格式-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1排版格式-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1时间倒序-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1时间倒序-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1模块照片-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1模块照片-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1自动一页纸-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1自动一页纸@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1行距-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1页边距-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1切换模板-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1切换模板-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1排版格式-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1排版格式-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1时间倒序-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1时间倒序-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1模块照片-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1模块照片-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1自动一页纸-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1自动一页纸-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1行距-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1页边距-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.1@2x/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.2勾@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/images/新建文件夹/补切图/icons/1.19.2勾@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/theme/default/font/iconfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/theme/default/font/iconfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/theme/default/font/iconfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/font/font.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/addm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/banner.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/btn1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/btn2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/cha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/checked.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/del.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/dm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/email.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/en.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/gou.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer1-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer2-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer3-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer4-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer5-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_footer5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_none-goods.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_none-head.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_none-order.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/icon_none-site.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/img_head.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/key.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/lala.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/login_bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/m3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/m6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/remove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-half-d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-half.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-off-d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-on-d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/old/star-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/star-half.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/star-off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/star/star-on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/such.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/tabin1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/tabin2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/tabin3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/tel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/um.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/useban.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/wechat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/wx.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/yes.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹 (2)/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/0815补切图.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/btn/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/icons/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/icons/._1.19.2勾@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/icons/._1.19.2勾@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/__MACOSX/补切图/icons/1.19.1@1x/._.DS_Store" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1切换模板-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1切换模板-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1排版格式-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1排版格式-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1时间倒序-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1时间倒序-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1模块照片-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1模块照片-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1自动一页纸-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1自动一页纸-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1行距-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@1x/1.19.1页边距-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1切换模板-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1切换模板-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1排版格式-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1排版格式-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1时间倒序-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1时间倒序-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1模块照片-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1模块照片-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1自动一页纸-on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1自动一页纸@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1行距-off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/btn/1.19.1@2x/1.19.1页边距-0ff@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1切换模板-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1切换模板-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1排版格式-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1排版格式-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1时间倒序-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1时间倒序-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1模块照片-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1模块照片-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1自动一页纸-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1自动一页纸-on@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1行距-off@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@1x/1.19.1页边距-0ff@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/1_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/2_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/3_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/4_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.1@2x/5_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.2勾@1x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/images/新建文件夹/补切图/icons/1.19.2勾@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/theme/default/font/iconfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/theme/default/font/iconfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/theme/default/font/iconfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_actionSheet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_article.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_button.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_calendar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_cell.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_city.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_datetime.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_dialog.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_msg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_noti.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_panel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_photo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_picker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_progress.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_ptr.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_search_bar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_select.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_swiper.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_tab.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_toast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/icon_nav_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/pic_160.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/pic_article.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/present.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/swiper-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/swiper-2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/swiper-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/swiper-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/images/vcode.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Common/Lib/Sms/Rest.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Common/Lib/Sms/Sms.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/Controller/ResumeController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/Controller/UserController.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Index/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Index/wbIndex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/alert.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/disabled.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Public/share.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/Home/View/Resume/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-01简历-未登录.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-02微信登录.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-03浏览器注册.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-04录入资料.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-110项目经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-111研究经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-112荣誉奖项.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-113专业技能.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-114填写贴士.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-115查看案例.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-116常用动词.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-117预览编辑和-118检查.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-1191预览和-1192格式展开和-1201导出和-1202修改简历名称.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-11简历-已登录.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-121发送至邮箱.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-122简历-有简历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-12常用信息.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-13基本信息.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-14个人总结.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-15教育经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-16工作以外经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-17技能-证书.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-18社团和组织经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/-19工作经历.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/.project" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/laydate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/theme/default/font/iconfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html/js/laydate/theme/default/laydate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/css/flex.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/functions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/html5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/jquery.lazyload.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/jquery.raty.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/jquery.toTop.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/js.cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/jweixin-1.0.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/laydate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/theme/default/font/iconfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/laydate/theme/default/laydate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/js/qrcode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/css/jquery-weui.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/css/jquery-weui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/action-sheet.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/article.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/badge.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/calendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/cell.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/city-picker.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/cols.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/contacts.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/css/demos.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/datetime-picker.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/flex.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/gallery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/gesture.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/grid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/icons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/infinite-with-navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/infinite.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/loadmore.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/msg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/noti.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/panel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/photo-browser.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/picker.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/popup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/preview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/progress.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/ptr-with-infinite.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/ptr.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/pull-to-refresh-with-navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/searchbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/select-test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/select.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/slider.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/swiper.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/tabbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/toast.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/toptip.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/demos/uploader.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/city-picker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/city-picker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/city_data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/jquery-weui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/jquery-weui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/swiper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/js/swiper.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/lib/fastclick.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/lib/jquery-2.1.4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/lib/weui.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/lib/weui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/Home/weui/lib/zepto.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/JSMS.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/version.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/Home/Controller/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/Home/View/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/Home/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.0.0首页.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.1.0付费提示.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.1.1支付方式.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.2.0详情（视频）.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.2.1详情（文章）.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/1.2.2付费提醒.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/2.0.0积分商城.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/3.0.0购物车.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/3.1.0确认订单.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4-0充值金额(5-18新增).html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.0.0我的.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.1.0个人信息.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.2.0云币.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.2.1明细.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.2.2申请提现.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.3.0积分.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.3.1签到成功.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.4.0下家.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.5.0我的订单.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.5.1我的订单（待发货）.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.6.0地址管理.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.6.1新增地址.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.7.0我的收藏.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.8.0消息反馈.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.9.0推广名片 (新页面).html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/4.9.0推广名片.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/css/proxy.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/add-line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/alipay.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/banner.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/buy1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/buy2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/card.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/cent5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/charicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/checked1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/choose.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/exa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/footer_ico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/handsome.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/heart-on.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/heart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/icon-add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/in1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/in2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/in3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/index-bot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/monry-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/msg-code.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/popbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/procode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/prom.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shadow2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shop1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shop2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shop3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/shop4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/tty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/uncheck1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/vfs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/yb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/申请提现_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Html/images/申请提现_05.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/images/checked.png" afterPath="$PROJECT_DIR$/Html/images/checked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/images/del.png" afterPath="$PROJECT_DIR$/Html/images/del.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/images/edit.png" afterPath="$PROJECT_DIR$/Html/images/edit.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/images/wechat.png" afterPath="$PROJECT_DIR$/Html/images/wechat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Common/function.php" afterPath="$PROJECT_DIR$/Application/Common/Common/function.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Conf/config.php" afterPath="$PROJECT_DIR$/Application/Common/Conf/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/UserModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/UserModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/css/flex.css" afterPath="$PROJECT_DIR$/Html/css/flex.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/css/reset.css" afterPath="$PROJECT_DIR$/Html/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/css/style.css" afterPath="$PROJECT_DIR$/Html/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/demo.html" afterPath="$PROJECT_DIR$/Html/demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/js/functions.js" afterPath="$PROJECT_DIR$/Html/js/functions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/js/html5.js" afterPath="$PROJECT_DIR$/Html/js/html5.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/js/jquery.lazyload.min.js" afterPath="$PROJECT_DIR$/Html/js/jquery.lazyload.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html/js/jquery.raty.min.js" afterPath="$PROJECT_DIR$/Html/js/jquery.raty.min.js" />
+    </list>
+    <ignored path="lgqgdjt.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="lgqgdjt" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding>
+                <element signature="e#34#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResumeController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ResumeController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="758">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding>
+                <element signature="e#34#72#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Home/View/Resume/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/think.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/SystemModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/BaseController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Public/base.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/ResumeType/ResumeTypeList.html" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/ResumeTypeModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/ResumeType/resumeTypeList.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/addModule.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/editModule.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/moduleList.html" />
+        <option value="$PROJECT_DIR$/Public/template/model.template" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/ModuleModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/ModuleFieldModel.class.php" />
+        <option value="$PROJECT_DIR$/Runtime/Cache/Admin/b1103c940d0e5c8f43e884c106bdffbf.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/editModuleField.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/addModuleField.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Module/getModuleList.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/ModuleController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/ResumeType/addResumeType.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/ResumeType/editResumeType.html" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/ResumeTypeModuleModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/ResumeTypeController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetter/addCoverLetter.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetter/CoverLetterList.html" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/CoverLetterModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/CoverLetterController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetter/editCoverLetter.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetterType/addCoverLetterType.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetterType/CoverLetterTypeList.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/CoverLetterTypeController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/CoverLetterType/editCoverLetterType.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/EmailTypeController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/EmailType/addEmailType.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/EmailType/EmailTypeList.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/EmailType/editEmailType.html" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Wx/View/Goods/iitem.html" />
+        <option value="$PROJECT_DIR$/Application/Wx/Controller/AuthController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Public/base.html" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Index/index.html" />
+        <option value="$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/JSMS.class.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Lib/Sms.class.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Common/function.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Model/UserModel.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Index/wbIndex.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/ResumeController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Home/View/Resume/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Common">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Common">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Model">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Admin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="View">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Admin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="View">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Module">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="gxwy">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Application">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Admin">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Runtime" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resume" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Home" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Goods" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gxwy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="F:/www/kyk" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\my_program\node\node.exe" />
+    <property name="SearchEverywhereHistoryKey" value="goods&#9;null&#9;null&#10;userMod&#9;FILE&#9;file://C:/project/gxwy/Application/Common/Model/UserModel.class.php&#10;resumetype&#9;FILE&#9;file://C:/project/gxwy/Application/Admin/View/ResumeType/resumeTypeList.html&#10;addResum&#9;FILE&#9;file://C:/project/gxwy/Application/Admin/View/ResumeType/addResumeType.html&#10;resumeTypeControll&#9;FILE&#9;file://C:/project/gxwy/Application/Admin/Controller/ResumeTypeController.class.php&#10;add&#9;FILE&#9;file://C:/project/gxwy/Application/Admin/View/Module/addModule.html&#10;goodsCateMod&#9;null&#9;null&#10;goodsCat&#9;null&#9;null&#10;system&#9;null&#9;null&#10;BasicConfig&#9;null&#9;null&#10;Admin/index/inde&#9;FILE&#9;file://C:/project/gxwy/Application/Admin/View/Index/index.html" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\project\gxwy\Application\Common\Lib\Sms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\gxwy\Application\Home\View\Resume" />
+      <recent name="C:\project\gxwy\Application\Home\Controller" />
+      <recent name="C:\project\gxwy\Application\Common\lib" />
+      <recent name="C:\project\gxwy\ThinkPHP\Library\Vendor\Sms" />
+      <recent name="C:\project\gxwy\ThinkPHP\Library\Vendor" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21423ffd-3aab-4a7e-bfc6-e2a919bbb3a8" name="Default" comment="" />
+      <created>1533864648276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533864648276</updated>
+      <workItem from="1533864649926" duration="983000" />
+      <workItem from="1534298080562" duration="78661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="79644000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2284041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2284041" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ModuleController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding>
+            <element signature="e#36#70#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/BaseController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/ResumeTypeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Module/addModuleField.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Model/CoverLetterModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Model/CoverLetterTypeModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/CoverLetterType/addCoverLetterType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/CoverLetterType/CoverLetterTypeList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#block#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CoverLetterTypeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="84" column="42" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="42" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/CoverLetterType/editCoverLetterType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/EmailType/addEmailType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="99" selection-start-line="9" selection-start-column="99" selection-end-line="9" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/EmailType/EmailTypeList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#block#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/EmailType/editEmailType.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1530526936000" expanded="true" signature="7068:7117" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/EmailTypeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#36#65#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Home/css/flex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Cart/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Mode/Lite/View.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="137" column="20" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Goods/iitem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1473">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/Controller/BaseController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Public/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Goods/integral.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-417">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
+          <folding>
+            <marker date="1530526936000" expanded="true" signature="3222:3271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Public/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="94" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/View/Goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1530526936000" expanded="true" signature="3189:3238" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/version.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vendor/Yuntongxun/CCPRestSDK.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="353" column="53" selection-start-line="353" selection-start-column="53" selection-end-line="353" selection-end-column="53" />
+          <folding>
+            <marker date="1526636160000" expanded="true" signature="3763:3906" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="5420:5571" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="5766:5917" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="7530:7655" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="9280:9436" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="11436:11653" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="13937:14360" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="16341:16720" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="18605:18935" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="20543:20704" ph="..." />
+            <marker date="1526636160000" expanded="true" signature="22265:22436" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/Rest.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/Sms.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Lib/Sms/Rest.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-621">
+          <caret line="317" column="13" selection-start-line="317" selection-start-column="13" selection-end-line="317" selection-end-column="13" />
+          <folding>
+            <marker date="1531806249529" expanded="true" signature="3789:3932" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="5446:5597" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="5792:5943" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="7556:7681" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="9306:9462" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="11462:11679" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="13963:14386" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="16367:16746" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="18631:18961" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="20569:20730" ph="..." />
+            <marker date="1531806249529" expanded="true" signature="22291:22462" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="1150" column="5" selection-start-line="1150" selection-start-column="5" selection-end-line="1150" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Lib/Sms/Sms.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="334" column="4" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Vendor/Sms/JSMS.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2403">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThinkPHP/Mode/Lite/Model.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="907" column="20" selection-start-line="907" selection-start-column="20" selection-end-line="907" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Wx/Controller/AuthController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Model/UserModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="63" column="40" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#block#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#section#0;n#block#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Index/wbIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Public/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Module/addModule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Runtime/Cache/Home/fda40d6311b127439d0bce0392df86db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="343" column="42" selection-start-line="343" selection-start-column="42" selection-end-line="343" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ResumeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="67" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/View/Resume/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

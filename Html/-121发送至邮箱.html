@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-121发送至邮箱</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<section class="wrap">
+	
+	<header class="head_fixed">
+		<div class="relative common_header bgf">
+			<a href="javascript:;" class="head_back"></a>
+			<h1 class="fs14 tc">发送至邮箱</h1>
+		</div>
+	</header>
+	<section class="main min100vh plr10"style="padding-bottom:130px;">
+		<p class="fs14 col0 fd mt10  pl5">编辑调整</p>
+		<div class="m-list-flex edit-adjust mt10">
+			 <div class="color"><div class="color_now" style="background-color: #E1EDD2;"></div></div>
+			 <a class=" choose_resumes">选择简历</a>
+			 <a class=" choose_others">选择其他</a>
+			 <a class=" upfile">上传文件</a>
+			 <a class=" headicon m-cell-bd">头像</a>
+		</div>
+		<p class="fs14 col0 fd mt10  pl5">收件信息</p>
+		<ul class="send_header mt10">
+			<li class="m-list-flex fs12 col6">
+				<p>发件人：</p>
+				<div class="m-cell-bd">
+					<input type="text" value="David<123456789@qq.com>" class="form-unify"/>
+				</div>
+			</li>
+			<li class="m-list-flex fs12 col6">
+				<p>收件人：</p>
+				<div class="m-cell-bd">
+					<input type="text" value="" class="form-unify"/>
+				</div>
+			</li>
+			
+			<li class="m-list-flex fs12 col6">
+				<p>邮件标题：</p>
+				<div class="m-cell-bd">
+					<input type="text" value="PHP_David" class="form-unify"/>
+				</div>
+			</li>
+			<li class="m-list-flex fs12 col6">
+				<p>附件：</p>
+				<div class="m-cell-bd">
+					<a href="JavaScript:;" class="mr5"><img src="images/icon5.png" alt="" class="icon5"/>PHP_David</a>
+				</div>
+				<span class="link_cha">×</span>
+			</li>
+		</ul>
+		
+		
+		<p class="fs14 col0 fd mt10  pl5">邮件信息</p>
+		
+		<div class="resume_top_half pt10 mt10">
+			<div class="pic-view brarc"><img src="images/img_head.jpg" alt="" class="imgm"/></div>
+			<p class="fs16 col0 tc mt5 fd">David.Wu</p>
+		</div>
+		<ul class="res_breif fs12 col0 clearfix"style="margin-top:70px;">
+			<li class="m-list-flex">
+				<span class="aligntop">手机号：</span>
+				<div class="m-cell-bd">18112341234</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">邮箱：</span>
+				<div class="m-cell-bd">123456789@qq.com</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">微信：</span>
+				<div class="m-cell-bd">weixinhao</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">LinkedIn：</span>
+				<div class="m-cell-bd">lingying</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">所在城市：</span>
+				<div class="m-cell-bd">上海</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">求职状态：</span>
+				<div class="m-cell-bd">在职</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">求职意向：</span>
+				<div class="m-cell-bd">PHP</div>
+			</li>
+			<li class="m-list-flex">
+				<span class="aligntop">期望薪资：</span>
+				<div class="m-cell-bd">22k</div>
+			</li>
+		</ul>
+		<div class="line5  mt10 mb15"></div>
+		
+		
+		
+		<div class=" clearfix twobtns mt20" style="margin-bottom:30px;">
+			<a href="JavaScript:;" class="btnleft tc fs16 colf">保存</a>
+			<a href="javascript:;" class="btnright tc fs16 colf">发送</a>
+		</div>
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script src="weui/js/city-picker.js"></script> <!--引用weui的js-->
+<script>
+	$(function(){
+		$(document).on('click','.link_cha',function(){
+			$(this).prev('.m-cell-bd').find('a').remove();
+		});
+	})
+</script>
+</body>
+</html>

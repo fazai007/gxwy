@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>管理系统后台登录</title>
+        <link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+        <link rel="stylesheet" href="__PUBLIC__/Admin/css/login.css" />
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/plugins/html5shiv.min.js"></script>
+        <script src="__PUBLIC__/plugins/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="layui-canvs"></div>
+        <div class="layui-layout layui-layout-login">
+            <h1>
+                <strong>李歌情感大讲堂</strong>
+                <em>Management System</em>
+            </h1>
+            <form class="layui-form" action="{:U('Admin/Login/login')}" method="post">
+                <div class="layui-user-icon larry-login">
+                    <input type="text" name="username" required lay-verify="required" autocomplete="off" placeholder="用户名" class="login_txtbx"/>
+                </div>
+                <div class="layui-pwd-icon larry-login">
+                    <input type="password" name="password" required lay-verify="required" placeholder="密码" class="login_txtbx"/>
+                </div>
+                <div class="layui-val-icon larry-login">
+                    <div class="layui-code-box">
+                        <input type="text" name="verify" required lay-verify="required" placeholder="验证码" maxlength="4" class="login_txtbx">
+                        <img src="{:U('Admin/Login/getVerify')}" alt="刷新验证码" class="verifyImg" onclick="this.src='{:U(\'Admin/Login/getVerify\')}?rnd=' + Math.random()">
+                    </div>
+                </div>
+                <div class="layui-submit larry-login">
+                    <input type="submit" class="submit_btn" lay-submit lay-filter="*" value="立即登录"/>
+                </div>
+            </form>
+            <div class="layui-login-text">
+                <p>© 2014-2017 XILUKEJI.COM 版权所有</p>
+                <p>沪ICP备14006804号-4 <a href="http://www.xilukeji.com/" target="_blank">http://www.xilukeji.com/</a></p>
+            </div>
+        </div>
+        <script>
+            var myConfig = {};
+        </script>
+        <script src="__PUBLIC__/plugins/jquery.min.js"></script>
+        <script src="__PUBLIC__/plugins/layui/lay/dest/layui.all.js"></script>
+        <script src="__PUBLIC__/plugins/jparticle.jquery.js"></script>
+        <script src="__PUBLIC__/Admin/js/function.js"></script>
+        <script src="__PUBLIC__/Admin/js/admin.js"></script>
+        <script>
+            $(function () {
+                $('.layui-canvs').width($(window).width());
+                $('.layui-canvs').height($(window).height());
+                $('.layui-canvs').jParticle({
+                    background: '#141414',
+                    color: '#E6E6E6'
+                });
+            });
+        </script>
+    </body>
+</html>

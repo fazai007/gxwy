@@ -1,0 +1,64 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/Advert/index')}">广告管理</a></li>
+            <li><a href="{:U('Admin/Advert/add')}">添加广告</a></li>
+            <li class="layui-this">编辑广告</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Advert/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">广告名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="{$advert.name}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所属广告位</label>
+                        <div class="layui-input-block">
+                            <select name="position_id" lay-verify="required">
+                                <option value="">请选择广告位</option>
+                                <volist name="advert_position_list" id="vo">
+                                <option value="{$vo.id}"<?php if($advert['position_id'] == $vo['id']): ?> selected<?php endif; ?>>{$vo.name}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">广告图片</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="image" id="image" value="{$advert.image}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-image" data-input-id="image" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">链接地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="link" value="{$advert.link}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$advert.sort}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$advert.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-image');
+    </script>
+</block>

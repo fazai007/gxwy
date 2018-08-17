@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="renderer" content="webkit">
+    <title>-02微信登录</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="__PUBLIC__/Home/weui/lib/weui.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/weui/css/jquery-weui.min.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/reset.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/style.css" />
+    <!--CSS引用-->
+    <block name="css"></block>
+    <!--页面CSS引用-->
+    <block name="style"></block>
+    <script src="__PUBLIC__/Home/weui/lib/jquery-2.1.4.js"></script>
+    <!--[if lt IE 9 ]>
+    <script src="__PUBLIC__/Home/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<section class="wrap">
+
+</section>
+<!-- wrap end -->
+
+<!--主体引用-->
+<block name="body"></block>
+
+<!-- jquery-weui插件 -->
+<script src="__PUBLIC__/Home/weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="__PUBLIC__/Home/js/functions.js"></script>
+<script>
+    $(function(){
+        var  bool=false;
+        $('.flex_bottom .agp span').on('click',function(){
+            console.log(1);
+            bool=!bool;
+            if(bool){
+                $('.checkedcs').hide();
+                $('.check_p').show();
+            }else{
+                $('.checkedcs').show();
+                $('.check_p').hide();
+            }
+
+        })
+    })
+</script>
+<!--JS引用-->
+<block name="js"></block>
+<!--页面JS引用-->
+<block name="script"></block>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">模块列表</li>
+            <li><a href="{:U('Admin/Module/addModule')}">添加模块</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>模块名称</th>
+                                <th style="width:500px">模块字段</th>
+                                <th style="width:200px">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="moduleList" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>
+                                    {$vo.module_name}
+                                </td>
+                                <td>
+                                    <foreach name="vo.module_files" item="module_field">
+                                        <!--<span class="layui-badge layui-bg-blue">{$module_field.name}</span>-->
+                                        <a href="{:U('Admin/Module/editModuleField',['id'=>$module_field['module_field_id']])}" class="layui-btn layui-btn-normal layui-btn-mini"><i class="layui-icon layui-icon-edit"></i>{$module_field.name}</a>
+                                    </foreach>
+                                </td>
+                                <td>
+                                    <a href="{:U('Admin/Module/editModule',['id'=>$vo['module_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <a href="{:U('Admin/Module/addModuleField',['id'=>$vo['module_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">新增字段</a>
+                                    <a href="{:U('Admin/Module/deleteModule',['ids'=>$vo['module_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    {$page}
+                </div>
+            </form>
+        </div>
+    </div>
+</block>

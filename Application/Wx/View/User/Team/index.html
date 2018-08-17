@@ -1,0 +1,106 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="cloud_wrap">
+                <div class="table cloudtable">
+                    <a href="javascript:;" class="table-cell fs12 col9 tc"><p class="col_own fs25">{$team_count}<i class="fs12">人</i></p>团队成员</a>
+                    <a href="javascript:;" class="table-cell fs12 col9 tc"><p class="col_own fs25">{$team_total_money}<i class="fs12">元</i></p>团队总收入</a>
+                </div>
+            </div>
+            <div class="table mtabs mt20">
+                <a href="javascript:;" data-type="1" class="nav-item table-cell fs14<?php if($type == 1): ?> active<?php endif; ?>">直属团队</a>
+                <a href="javascript:;" data-type="2" class="nav-item table-cell fs14<?php if($type == 2): ?> active<?php endif; ?>">间接团队</a>
+            </div>
+            <div class="myscroll">
+                <ul class="activity_list bt" id="data-list">
+                    
+                </ul>
+                <div class="myscroll-empty hide">
+                    <p class="empty-tip">暂无数据</p>
+                </div>
+                <div class="myscroll-upwarp myscroll-hardware">
+                    <p class="upwarp-progress myscroll-rotate"></p>
+                    <p class="upwarp-tip">加载中..</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var curType = 1;
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Team/getListData')}", {type:curType,page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                html += '<li>';
+                html += '<a href="javascript:;" class="m-list-flex">';
+                html += '<div class="pic-view">';
+                html += '<img src="' + data.avatar + '" alt="" class="imgm" />';
+                html += '</div>';
+                html += '<div class="m-cell-bd">';
+                html += '<h3 class="single-line fs14 ">' + data.nickname + '</h3>';
+                html += '<h4 class="single-line fs10 col9">' + data.join_time + ' 加入</h4>';
+                html += '</div>';
+                html += '<div>';
+                html += '<h5 class="col_own fs14">￥' + data.total_money + '</h5>';
+                html += '<h6 class="fs10 col9">销量：' + data.total_sales + '</h6>';
+                html += '</div>';
+                html += '</a>';
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        $(function(){
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            $('.nav-item').on('click', function () {
+                var $this = $(this),
+                    type = $this.data('type');
+                if (type != curType) {
+                    $this.addClass('active').siblings().removeClass('active');
+                    curType = type;
+                    resetUpScroll();
+                }
+            });
+        });
+    </script>
+</block>

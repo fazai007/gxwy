@@ -1,0 +1,27 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="cloud_wrap">
+                <div class="m-list-flex">
+                    <div class="m-cell-bd">
+                        <div class="table cloudtable">
+                            <a href="javascript:;" class="table-cell fs12 col9">佣金总额(元)<p class="col_own">{$userinfo.money}</p></a>
+                            <a href="javascript:;" class="table-cell fs12 col9">冻结金额(元)<p class="col_own">0.00</p></a>
+                        </div>
+                    </div>
+                    <a href="{:U('Wx/Money/detail')}" class="fs14 col_own seem">查看明细</a>
+                </div>
+            </div>
+            <ul class="cent_lists mt25">
+                <li>
+                    <a href="{:U('Wx/Money/withdraw')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/yb.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">申请提现</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </section>
+</block>

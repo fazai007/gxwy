@@ -1,0 +1,153 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        video{width:100%;}
+        audio{width:100%;}
+    </style>
+</block>
+<block name="body">
+    <section class="wrap wrap-bg">
+        <div class="foot_fixed">
+            <div class="table jump_bot yellow">
+                <a href="{:U('Wx/Index/index')}" class="table-cell fs16">首页</a>
+                <a href="javascript:;" class="table-cell fs16 col3">
+                    <div class="m-list-flex">
+                        <div class="dif_price">
+                            <b>会员价:￥{$goods.member_sale_price}</b>
+                            <b>非会员价:￥{$goods.sale_price}</b>
+                        </div>
+                        <i onclick="checkBuy()" class="m-cell-bd">购买</i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <section class="main">
+            <div id="video" class="relative<?php if($goods['type'] == 'video'): ?> play<?php endif; ?>">
+                <img src="__CDN__{$goods.thumb}" alt="" class="imgm" />
+            </div>
+            <div class="details_out relative">
+                <h1 class="fs16">{$goods.name}<?php if(isset($goods_type_list[$goods['type']])): ?><i class="{$goods.type}">{$goods_type_list[$goods['type']]}</i><?php endif; ?></h1>
+                <!--<div class="collect">收藏</div>-->
+            </div>
+            <div class="pl10 pr10 pb10 fs14 col_c">
+                {:html_entity_decode($goods['content'])}
+            </div>
+        </section>
+    </section>
+    <div class="bg_pop hide" id="payment-mask-bg"></div>
+    <div class="pay_pop hide" id="payment-mask-div">
+        <h3 class="fs20 col3 tc">付款提示</h3>
+        <p class="fs14 col3 mt5">尊敬的用户，该内容需要付费才能查看详情，是否付款？</p>
+        <div class="payok mt20">
+            <a href="{:U('Wx/MemberOrder/payment')}" class="fs14">立即付款</a>
+        </div>
+        <span class="close" onclick="closePaymentMask()"></span>
+    </div>
+    <div class="pay_pop hide" id="payment-mask-div2">
+        <h3 class="fs20 col3 tc">付款提示</h3>
+        <p class="fs14 col3 mt5">尊敬的用户，该内容需要付费才能查看详情，是否付款？</p>
+        <div class="payok mt20">
+            <a href="javascript:;" onclick="checkBuy()" class="fs14">立即付款</a>
+        </div>
+        <span class="close" onclick="closePaymentMask()"></span>
+    </div>
+    <div class="bg_pop hide" id="profile-mask-bg"></div>
+    <div class="contanctway hide" id="profile-mask-div">
+        <h3>联系方式</h3>
+        <div class="m-list-flex inpbox">
+            <input type="text" name="name" id="name" class="form-unify" />
+            <span>姓名</span>
+        </div>
+        <div class="m-list-flex inpbox">
+            <input type="tel" name="mobile" id="mobile" maxlength="11" class="form-unify" />
+            <span>电话号码</span>
+        </div>
+        <div class="clearfix btns">
+            <a href="javascript:;" onclick="profileSubmit()" class="fs14 br3">确认</a>
+            <a href="javascript:;" onclick="closeProfileMask()" class="fs14 br3">取消</a>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/ckplayer/ckplayer.js"></script>
+    <script src="__PUBLIC__/Common/js/utils.js"></script>
+</block>
+<block name="script">
+    <script>
+        var id = {$goods.id};
+        var type = '{$goods.type}';
+        var player;
+        var videoObject = {
+            container: '#video',
+            variable: 'player',
+            poster: '__CDN__{$goods.thumb}',
+            video: '__CDN__{$goods.file}',
+            autoplay: true
+        };
+        function checkVideo() {
+            $.showLoading();
+            $.post("{:U('Wx/Goods/checkVideo')}", {id: id}, function (data) {
+                $.hideLoading();
+                if (data.status === 1) {
+                    if (data.info == 1) {
+                        playVideo();
+                    } else if (data.info == 2) {
+                        openProfileMask();
+                    } else if (data.info == 3) {
+                        openPaymentMask();
+                    } else if (data.info == 4) {
+                        openPaymentMask2();
+                    }
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+        function profileSubmit() {
+            var name = $('#name').val();
+            if (Utils.isEmpty(name)) {
+                $.alert('请填写姓名');
+                return;
+            }
+            var mobile = $('#mobile').val();
+            if (Utils.isEmpty(mobile) || !Utils.isMobile(mobile)) {
+                $.alert('请填写正确的手机号');
+                return;
+            }
+            $.showLoading();
+            $.post("{:U('Wx/User/profileSave')}", {name: name, mobile: mobile}, function (data) {
+                $.hideLoading();
+                if (data.status === 1) {
+                    $.alert(data.info, function () {
+                        closeProfileMask();
+                        playVideo();
+                    });
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+        function playVideo() {
+            $('#video').removeClass('play');
+            player = new ckplayer(videoObject);
+        }
+        function checkBuy() {
+            $.showLoading();
+            $.post("{:U('Wx/Goods/checkBuy')}", {id: id}, function (data) {
+                $.hideLoading();
+                if (data.status === 1) {
+                    location.href = data.url;
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+        $(function () {
+            $('#video').on('click', function () {
+                if (type == 'video') {
+                    checkVideo();
+                }
+            });
+        });
+    </script>
+</block>

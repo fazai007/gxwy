@@ -1,0 +1,139 @@
+{extends file="../acp.html"}
+
+{block name="title"}{$head_title}{/block}
+{block name="css"}
+
+{/block}
+{block name="content"}
+<form id='base_config' action='' method='POST'>
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span> 商家名称：</label>
+    <div class="form-controls">
+        <input type="text" name='merchant_name' id='merchant_name'  placeholder="">
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>联系人：</label>
+    <div class="form-controls">
+        <input type="text" name='contact' id='contact'  placeholder="">
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>手机：</label>
+    <div class="form-controls">
+        <input type="text" name='mobile' id='mobile'  placeholder="">
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+<div class="formitems inline">  
+    <label class="fi-name"><span class="colorRed">*</span>地址：</label>  
+    <div class="form-controls">  
+        <select class="small" id="province_id" name="province_id">  
+            <option value="0">--选择省份--</option>  
+            {foreach from=$province_list item=province_info}
+            <option value="{$province_info.province_id}">{$province_info.province_name}</option>  
+            {/foreach}
+        </select> 
+        <select class="small" id="city_id" name="city_id">  
+            <option value="0">--选择城市--</option>  
+            {foreach from=$city_list item=city_info}
+            <option value="{$city_info.city_id}" {if isset($street_info.city_id) && $street_info.city_id == $city_info.city_id}selected{/if}>{$city_info.city_name}</option>  
+            {/foreach}
+        </select> 
+        <span id="div_area">
+            <select class="small" id="area_id" name="area_id">  
+                <option value="0">--选择地区--</option>  
+                {foreach from=$area_list item=area_info}
+                <option value="{$area_info.area_id}" {if isset($street_info.area_id) && $street_info.area_id == $area_info.area_id}selected{/if}>{$area_info.area_name}</option>  
+                {/foreach}
+            </select> 
+        </span>
+        <span class="fi-help-text"></span>  
+    </div>  
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>详细地址：</label>
+    <div class="form-controls">
+        <input type="text" name='address' id='address'  placeholder="" class="xxlarge">
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>类型：</label>
+    <div class="form-controls">
+        <select name="merchant_type" id="merchant_type">
+            <option value="0">-请选择-</option>
+            <option value="2">服务站</option>
+            <option value="3">供应商</option>
+        </select>
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>主营品类：</label>
+    <div class="form-controls">
+        <!-- <textarea name="remark" id="remark" maxlength="200"></textarea> -->
+        <select name="merchant_class[]" id="merchant_class" multiple="true">
+            {foreach from=$m_class_list item=m_class}
+            <option value="{$m_class.class_id}">{$m_class.class_name}</option>
+            {/foreach}
+        </select>
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>查看总部库存比例：</label>
+    <div class="form-controls">
+        <input type="text" name='check_base_rate' id='check_base_rate'  placeholder="" >
+        <span class="fi-help-text"></span>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"><span class="colorRed">*</span>备注：</label>
+    <div class="form-controls">
+        <textarea name="remark" id="remark" maxlength="200"></textarea>
+        <span class="fi-help-text">一般在200字以内</span>
+    </div>
+</div>
+
+<div class="formitems inline other_stock">
+    <label class="fi-name"></label>
+    <div class="form-controls">
+        <label><input type="checkbox" name="check_other_stock" id="check_other_stock"  value="1">能否查看其他服务站库存</label>
+    </div>
+</div>
+
+<div class="formitems inline check_seriver">
+    <label class="fi-name"></label>
+    <div class="form-controls">
+        <label><input type="checkbox" name="check_seriver_stock" id="check_seriver_stock" value="1">允许查看服务站库存</label>
+    </div>
+</div>
+
+<div class="formitems inline">
+    <label class="fi-name"></label>
+    <div class="form-controls">
+        <input type='hidden' name='act' value='{$act}' />
+        <button type="submit" class="btn btn-blue"><i class="gicon-check white"></i>确定</button>
+        <button type="reset" class="btn"><i class="gicon-repeat"></i>重置</button>
+    </div>
+</div>
+</form>
+{/block}
+
+{block name="js"}
+<script src="/Public/Js/mcp/Mcp__CONTROL__/add___crontrol__.js?version={$version}"></script>
+{literal} 
+<script>
+
+</script>
+{/literal} 
+{/block} 

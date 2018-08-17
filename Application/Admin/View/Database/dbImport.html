@@ -1,0 +1,75 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/Database/dbExport')}">备份数据库</a></li>
+            <li class="layui-this">还原数据库</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>备份名称</th>
+                            <th>卷数</th>
+                            <th>压缩</th>
+                            <th>数据大小</th>
+                            <th>备份时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="list" id="data">
+                        <tr>
+                            <td>{$data.time|date='Ymd-His',###}</td>
+                            <td>{$data.part}</td>
+                            <td>{$data.compress}</td>
+                            <td>{$data.size|format_bytes}</td>
+                            <td>{$key}</td>
+                            <td>-</td>
+                            <td>
+                                <a href="{:U('Admin/Database/import',['time'=>$data['time']])}" class="layui-btn layui-btn-normal layui-btn-mini db-import">还原</a>
+                                <a href="{:U('Admin/Database/delete',['time'=>$data['time']])}" class="layui-btn layui-btn-normal layui-btn-mini ajax-get">删除</a>
+                            </td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $('.db-import').on('click', function(){
+                var self = this,
+                    status = '.';
+                $.get(self.href, success, 'json');
+                window.onbeforeunload = function(){ return '正在还原数据库，请不要关闭'; };
+                return false;
+                function success(data){
+                    if(data.status === 1){
+                        if(data.gz){
+                            data.info += status;
+                            if(status.length === 5){
+                                status = '.';
+                            } else {
+                                status += '.';
+                            }
+                        }
+                        $(self).parent().prev().text(data.info);
+                        if(data.part){
+                            $.get(self.href, {'part' : data.part, 'start' : data.start}, success, 'json');
+                        }  else {
+                            window.onbeforeunload = function(){ return null; };
+                        }
+                    } else {
+                        layer.msg(data.info);
+                    }
+                }
+            });
+        });
+    </script>
+</block>

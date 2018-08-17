@@ -1,0 +1,74 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/TradeConfig/index')}">交易设置</a></li>
+            <li class="layui-this">支付配置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th>支付方式</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="payment_list" id="vo">
+                            <tr>
+                                <td>
+                                    <div class="layui-input-inline" style="padding:10px">
+                                        <img src="__PUBLIC__/{$vo.logo}" alt="" >
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <p class="ptb2">{$vo.name}</p>
+                                        <p class="ptb2">{$vo.description}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <?php if($vo['is_use']): ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/TradeConfig/isUseToggle',['type'=>$key,'is_use'=>0])}">
+                                        <img src="__PUBLIC__/Admin/images/checked.png" alt="" width="18">
+                                    </a>
+                                    <?php else: ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/TradeConfig/isUseToggle',['type'=>$key,'is_use'=>1])}">
+                                        <img src="__PUBLIC__/Admin/images/un_checked.png" alt="" width="18">
+                                    </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" data-url="{:U('Admin/TradeConfig/editPaymentConfig',['type'=>$key])}" data-title="{$vo.name}" class="layui-btn layui-btn-mini layui-btn-normal config">配置</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            //配置
+            $('.config').on('click', function(){
+                var $this = $(this),
+                    _url = $this.data('url'),
+                    _title = $this.data('title');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: _title,
+                     content: _url,
+                     area: ['90%', '90%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>

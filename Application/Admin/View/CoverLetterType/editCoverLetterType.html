@@ -1,0 +1,63 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/CoverLetterType/CoverLetterTypeList')}">求职信列表</a></li>
+            <li class="layui-this">添加模板</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/CoverLetterType/editCoverLetterType')}" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">模板名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="cover_letter_name" required lay-verify="required" placeholder="请输入模板名称" class="layui-input" value="{$coverLetterTypeInfo.type_name}">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">中英文</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="language" value="0" title="中文" <if condition="$coverLetterTypeInfo.language == 0">checked</if>><div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i><div>中文</div></div>
+                            <input type="radio" name="language" value="1" title="英文" <if condition="$coverLetterTypeInfo.language == 1">checked</if>><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>英文</div></div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">模板值</label>
+                        <div class="layui-input-block">
+                            <textarea name="content" id="content" class="layui-textarea">{$coverLetterTypeInfo.content}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="cover_letter_type_id" value="{$coverLetterTypeInfo.cover_letter_type_id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/kindeditor/kindeditor.config.js"></script>
+    <script src="__PUBLIC__/plugins/kindeditor/kindeditor-all-min.js"></script>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-thumb');
+        $(function () {
+            var _kindEditor;
+            KindEditor.ready(function (K) {
+                _kindEditor = K.create('#content', KindEditorOptions);
+            });
+        });
+    </script>
+</block>

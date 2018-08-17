@@ -1,0 +1,76 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/Menu/index')}">后台菜单</a></li>
+            <li class="layui-this">添加菜单</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Menu/add')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">菜单名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required lay-verify="required" placeholder="请输入菜单名称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上级菜单</label>
+                        <div class="layui-input-block">
+                            <select name="pid" lay-verify="required">
+                                <option value="0">顶级菜单</option>
+                                <?php
+                                foreach($admin_menu_level_list as $v){
+                                    echo '<option value="' . $v['id'] . '"';
+                                    if($pid == $v['id']){
+                                        echo 'selected';
+                                    }
+                                    echo '>';
+                                    if($v['level'] != 1){
+                                        echo '|';
+                                        for($i=1; $i < $v['level']; $i++){
+                                            echo ' ----';
+                                        }
+                                    }
+                                    echo $v['title'] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">控制器方法</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required lay-verify="required" placeholder="请输入控制器方法 如：Admin/Index/index" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="icon" placeholder="（选填）如：fa fa-home" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否显示</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="是" checked>
+                            <input type="radio" name="status" value="0" title="否">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,107 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/GoodsCate/index')}">商品分类</a></li>
+            <li><a href="{:U('Admin/GoodsCate/add')}">添加分类</a></li>
+            <li class="layui-this">编辑分类</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/GoodsCate/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="{$goods_cate.name}" required lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类简称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="short_name" value="{$goods_cate.short_name}" required lay-verify="required" placeholder="请输入分类简称" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上级分类</label>
+                        <div class="layui-input-block">
+                            <select name="pid" lay-verify="required">
+                                <option value="0">顶级分类</option>
+                                <?php
+                                foreach($goods_cate_level_list as $v){
+                                    if($v['level'] < 3){
+                                        echo '<option value="' . $v['id'] . '"';
+                                        if($goods_cate['id'] == $v['id']){
+                                            echo 'disabled';
+                                        }
+                                        if($goods_cate['pid'] == $v['id']){
+                                            echo 'selected';
+                                        }
+                                        echo '>';
+                                        if($v['level'] != 1){
+                                            echo '|';
+                                            for($i=1; $i < $v['level']; $i++){
+                                                echo ' ----';
+                                            }
+                                        }
+                                        echo $v['name'] . '</option>';
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <!--
+                    商品类型
+                    -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否显示</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="是"<?php if($goods_cate['status'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="status" value="0" title="否"<?php if($goods_cate['status'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$goods_cate.sort}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="icon" id="icon" value="{$goods_cate.icon}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-icon" data-input-id="icon" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keywords" value="{$goods_cate.keywords}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="description" class="layui-textarea">{$goods_cate.description}</textarea>
+                        </div>
+                    </div>
+                    <!--
+                    模板
+                    -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$goods_cate.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-icon');
+    </script>
+</block>

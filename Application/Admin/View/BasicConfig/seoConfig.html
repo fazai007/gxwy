@@ -1,0 +1,77 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li class="layui-this">SEO设置</li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/seoConfig')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">标题附加字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" value="{$seo_config.title}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">网页标题通常是搜索引擎关注的重点，本附加字设置出现在标题中商城名称后，如有多个附加字，建议用<i class="important-note">英文“,”</i>分隔</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keywords" value="{$seo_config.keywords}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">Keywords项出现在页面头部的标签中，用于记录本页面的关键字，多个关键字请用<i class="important-note">英文“,”</i>分隔</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键词描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="description" class="layui-textarea">{$seo_config.description}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">Description出现在页面头部的Meta标签中，用于记录本页面的摘要与描述，建议不超过80个字</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">其他页头信息</label>
+                        <div class="layui-input-block">
+                            <textarea name="other" class="layui-textarea">{$seo_config.other}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">如需在中添加其他的HTML代码，可以使用本设置，否则请留空</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

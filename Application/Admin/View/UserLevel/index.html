@@ -1,0 +1,63 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">用户等级</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>等级名称</th>
+                            <th>直推佣金比例</th>
+                            <th>团队佣金比例</th>
+                            <th>可得佣金层数</th>
+                            <th>升级条件</th>
+                            <th>用户数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <volist name="user_level_list" id="vo">
+                        <tr>
+                            <td>{$vo.name}</td>
+                            <td>{$vo.direct_commission_percent} %</td>
+                            <td>{$vo.team_commission_percent} %</td>
+                            <td>{$vo.get_commission_number}</td>
+                            <td>
+                                <p class="ptb2">直推人数：{$vo.level_up_direct_user_number}</p>
+                                <p class="ptb2">团队人数：{$vo.level_up_team_user_number}</p>
+                            </td>
+                            <td>{$vo.user_count}</td>
+                            <td>
+                                <a href="javascript:;" data-url="{:U('Admin/UserLevel/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini edit">编辑</a>
+                            </td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+                {$page}
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function () {
+            //编辑
+            $('.edit').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '编辑用户等级',
+                     content: _url,
+                     area: ['50%', '65%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>

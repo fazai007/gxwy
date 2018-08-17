@@ -1,0 +1,131 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div style="margin-bottom:10px">
+                <a href="javascript:;" data-url="{:U('Admin/MemberOrder/sellerMemo',['id'=>$orderinfo['id']])}" class="layui-btn layui-btn-mini seller-memo">订单备注</a>
+            </div>
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote">订单信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="250">
+                        <col width="300">
+                        <col width="250">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>订单号</td>
+                            <td>{$orderinfo.order_no}</td>
+                            <td>用户【ID】</td>
+                            <td>{$orderinfo.user_nickname}【{$orderinfo.user_id}】</td>
+                        </tr>
+                        <tr>
+                            <td>推荐人【ID】</td>
+                            <td>
+                                <?php if($orderinfo['recommender_id'] == 0): ?>
+                                无上级
+                                <?php else: ?>
+                                {$orderinfo.recommender_nickname}【{$orderinfo.recommender_id}】
+                                <?php endif; ?>
+                            </td>
+                            <td>订单总金额</td>
+                            <td>{$orderinfo.total_amount}</td>
+                        </tr>
+                        <tr>
+                            <td>实际需支付</td>
+                            <td>{$orderinfo.need_pay_amount}</td>
+                            <td>支付方式</td>
+                            <td>{$payment_list[$orderinfo['payment_type']]['name']}</td>
+                        </tr>
+                        <tr>
+                            <td>姓名</td>
+                            <td>{$orderinfo.name}</td>
+                            <td>手机号</td>
+                            <td>{$orderinfo.mobile}</td>
+                        </tr>
+                        <tr>
+                            <td>下单时间</td>
+                            <td>{$orderinfo.create_time}</td>
+                            <td>订单状态</td>
+                            <td><?php echo $orderinfo['payment_status'] == 1 ? '已付款' : '未付款'; ?></td>
+                        </tr>
+                        <?php if($orderinfo['seller_memo']): ?>
+                        <tr>
+                            <td>卖家备注</td>
+                            <td colspan="3">{$orderinfo.seller_memo}</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <?php if($commission_log_list): ?>
+                <blockquote class="layui-elem-quote">订单佣金</blockquote>
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>用户【ID】</th>
+                            <th>金额</th>
+                            <th>描述</th>
+                            <th>时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="commission_log_list" id="vo">
+                        <tr>
+                            <td>{$vo.nickname}【{$vo.user_id}】</td>
+                            <td><i class="important-note">{$vo.money}</i></td>
+                            <td>{$vo.description}</td>
+                            <td>{$vo.create_time}</td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+                <?php endif; ?>
+                <?php if($order_log_list): ?>
+                <blockquote class="layui-elem-quote">订单日志</blockquote>
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>记录人</th>
+                            <th>记录内容</th>
+                            <th>记录时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <volist name="order_log_list" id="vo">
+                        <tr>
+                            <td>{$vo.operator_name}</td>
+                            <td>{$vo.content}</td>
+                            <td>{$vo.create_time}</td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            //订单备注
+            $('.seller-memo').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '订单备注',
+                     content: _url,
+                     area: ['50%', '50%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>

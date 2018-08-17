@@ -1,0 +1,141 @@
+.wrap-bg{
+    min-height:100vh;
+    background-image:url(../images/bg.jpg);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-position:center center
+}
+.wap-404{
+    padding-top: 80px;
+    text-align: center
+}
+.wap-404 h1{
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #333
+}
+.img-ctrl{
+    margin: 0 auto;
+    width: 186px;
+    height: 93px;
+    background: url("../images/404@2x.png") center center no-repeat;
+    background-size: 186px 93px
+}
+.gt320{
+    display: block
+}
+.lt320{
+    display: none
+}
+@media screen and (max-width: 320px){
+    .gt320{
+        display: none
+    }
+    .lt320{
+        display: block
+    }
+}
+.hide{
+    display: none
+}
+.tip_fixed {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101
+}
+.forward_fixed .item-bg{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8)
+}
+.forward_fixed .item-con{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0
+}
+.pay_pop-bg{
+    background-image:url(../images/popbg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+}
+.my-btn{
+    border: none;
+    cursor: pointer
+}
+.col_c{
+    color:#ccc;
+}
+.myscroll-hardware {
+    -webkit-transform: translateZ(0);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000
+}
+.myscroll-upwarp {
+    min-height: 30px;
+    padding: 15px 0;
+    text-align: center;
+    visibility: hidden
+}
+.myscroll-upwarp .upwarp-tip,.myscroll-upwarp .upwarp-nodata {
+    display: inline-block;
+    font-size: 12px;
+    color: gray;
+    vertical-align: middle
+}
+.myscroll-upwarp .upwarp-progress {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    margin-right: 8px;
+    border-bottom-color: transparent;
+    vertical-align: middle
+}
+.myscroll-rotate {
+    -webkit-animation: myscrollRotate .6s linear infinite;
+    animation: myscrollRotate .6s linear infinite
+}
+@-webkit-keyframes myscrollRotate {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+@keyframes myscrollRotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.myscroll-empty {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center
+}
+.myscroll-empty .empty-icon {
+    width: 45%
+}
+.myscroll-empty .empty-tip {
+    margin-top: 6px;
+    font-size: 14px;
+    color: gray
+}
+.index_guide li:last-child{
+    margin-bottom: 0;
+}

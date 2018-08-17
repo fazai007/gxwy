@@ -1,0 +1,138 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="earnmoney m-list-flex">
+                <span><i><img src="__PUBLIC__/Wx/images/charicon.png" alt="" class="imgm" /></i>金额</span>
+                <div class="m-cell-bd fs15 colf tr"><b>{$SYSTEM.reg_and_visit.member_price}</b>元</div>
+            </div>
+            <form id="form" method="post" action="{:U('Wx/MemberOrder/create')}" onsubmit="return checkForm()">
+                <ul class="member mt15">
+                    <li>
+                        <div class="m-list-flex">
+                            <h2>姓名</h2>
+                            <input type="text" name="name" id="name" class="m-cell-bd form-unify" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-list-flex">
+                            <h2>手机号</h2>
+                            <input type="tel" name="mobile" id="mobile" maxlength="11" class="m-cell-bd form-unify" />
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="fs12 col9 paytit">支付方式</h3>
+                <ul class="payway-list">
+                    <volist name="payment_list" id="vo">
+                    <li data-value="{$key}" class="m-list-flex payment-item">
+                        <i><img src="__PUBLIC__/Wx/images/{$key}.png" alt="" class="imgm" /></i>
+                        <h4 class="fs14 col_own m-cell-bd">{$vo.name}</h4>
+                        <span></span>
+                    </li>
+                    </volist>
+                </ul>
+                <div class="btn_wrap">
+                    <button type="submit" class="btnbar fs14 col3 my-btn">确认支付</button>
+                </div>
+                <input type="hidden" name="payment_type" id="payment-type" />
+            </form>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/jquery.form.js"></script>
+    <script src="__PUBLIC__/Common/js/utils.js"></script>
+</block>
+<block name="script">
+    <script>
+        /**
+         * 表单验证
+         */
+        function checkForm() {
+            var name = $('#name').val();
+            if (Utils.isEmpty(name)) {
+                $.alert('请填写姓名');
+                return false;
+            }
+            var mobile = $('#mobile').val();
+            if (Utils.isEmpty(mobile) || !Utils.isMobile(mobile)) {
+                $.alert('请填写正确的手机号');
+                return false;
+            }
+            var paymentType = $('#payment-type').val();
+            if (!paymentType) {
+                $.alert('请选择支付方式');
+                return false;
+            }
+            return true;
+        }
+        /**
+         * 打开微信支付
+         */
+        function openWxPay(param, url) {
+            WeixinJSBridge.invoke('getBrandWCPayRequest', {
+                'appId': param.appId,
+                'timeStamp': param.timeStamp,
+                'nonceStr': param.nonceStr,
+                'package': param.package,
+                'signType': param.signType,
+                'paySign': param.paySign
+            }, function (res) {
+                WeixinJSBridge.log(res.err_msg);
+                if (res.err_msg == 'get_brand_wcpay_request:ok') {
+                    $.alert('支付成功', function () {
+                        location.replace(url);
+                    });
+                } else if (res.err_msg == 'get_brand_wcpay_request:cancel') {
+                    $.alert('支付取消', function () {
+                        location.replace(url);
+                    });
+                } else if (res.err_msg == 'get_brand_wcpay_request:fail') {
+                    $.alert('支付失败', function () {
+                        location.replace(url);
+                    });
+                } else {
+                    $.alert(res.errMsg, function () {
+                        location.replace(url);
+                    });
+                }
+            });
+        }
+        $(function () {
+            //选择支付方式
+            $('.payment-item').on('click', function(){
+                var $this = $(this),
+                    paymentType = $this.data('value');
+                $('.payment-item').find('span').removeClass('show');
+                $this.find('span').addClass('show');
+                $('#payment-type').val(paymentType);
+            });
+            //表单提交
+            var options = {
+                beforeSubmit: function () {
+                    $.showLoading();
+                },
+                success: function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        if (data.info.payment_status) {
+                            if (data.info.payment_type == 'alipay') {
+                                //todo_list
+                            } else if (data.info.payment_type == 'wxpay') {
+                                openWxPay(data.info.payment_info, data.url);
+                            }
+                        } else {
+                            $.alert('支付失败', function () {
+                                location.replace(data.url);
+                            });
+                        }
+                    } else {
+                        $.alert(data.info);
+                    }
+                },
+                clearForm: false
+            };
+            $('#form').ajaxForm(options);
+        });
+    </script>
+</block>

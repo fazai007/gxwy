@@ -1,0 +1,25 @@
+<?php
+
+namespace Admin\Model;
+
+class GoodsTagModel extends BaseModel {
+
+    /**
+     * 数据库表名
+     */
+    protected $tableName = 'goods_tag';
+
+    /**
+     * 自动验证规则
+     */
+    protected $_validate = [
+        ['name', 'require', '请输入标签名称', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH],
+        ['sort', '/^[1-9]\d*|0$/', '排序必须是整数，且不能为负数', self::VALUE_VALIDATE, 'regex', self::MODEL_BOTH]
+    ];
+
+    /**
+     * 自动完成规则
+     */
+    protected $_auto = [];
+    
+}

@@ -1,0 +1,108 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">用户统计</li>
+        </ul>
+        <div class="layui-tab-content">
+            <form class="layui-form layui-form-pane" action="{:U('Admin/DataStatistics/user')}" method="get">
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <select name="type">
+                                <option value="day"<?php if($type == 'day'): ?> selected<?php endif; ?>>按照天统计</option>
+                                <option value="month"<?php if($type == 'month'): ?> selected<?php endif; ?>>按照月统计</option>
+                                <option value="year"<?php if($type == 'year'): ?> selected<?php endif; ?>>按照年统计</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="start_date" id="start_date" value="{$start_date}" class="layui-input layer-date" placeholder="请选择开始日期">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="end_date" id="end_date" value="{$end_date}" class="layui-input layer-date" placeholder="请选择结束日期">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn">搜索</button>
+                        <a href="{:U('Admin/DataStatistics/user')}" class="layui-btn layui-btn-normal">重置</a>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div class="layui-tab-item layui-show">
+                <div id="echarts-bar-chart" style="width:100%;height:300px"></div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/echarts/echarts-all.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            var start = {
+                elem: '#start_date',
+                min: '1900-01-01',
+                max: '{$today_date}',
+                istoday: false,
+                choose: function (datas) {
+                    end.min = datas;
+                    end.start = datas;
+                }
+            };
+            var end = {
+                elem: '#end_date',
+                min: '1900-01-01',
+                max: '{$today_date}',
+                istoday: false,
+                choose: function (datas) {
+                    start.max = datas;
+                }
+            };
+            document.getElementById('start_date').onclick = function(){
+                start.elem = this;
+                laydate(start);
+            };
+            document.getElementById('end_date').onclick = function(){
+                end.elem = this;
+                laydate(end);
+            };
+            var t = echarts.init(document.getElementById("echarts-bar-chart")),
+            n = {
+                title: {text: "用户统计柱状图"},
+                tooltip: {trigger: "axis"},
+                legend: {data: ["用户数"]},
+                grid: {x: 30, x2: 40, y2: 24},
+                calculable: !0,
+                xAxis: [
+                    {
+                        type: "category",
+                        data: {$xaxis_data}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: "value"
+                    }
+                ],
+                series: [
+                        {
+                            name: "用户数",
+                            type: "bar",
+                            data: {$user_data},
+                            markPoint: {
+                                data: [
+                                    {type: "max", name: "最大值"},
+                                    {type: "min", name: "最小值"}
+                                ]
+                            }
+                        }
+                    ]
+                };
+            t.setOption(n), window.onresize = t.resize;
+        });
+    </script>
+</block>

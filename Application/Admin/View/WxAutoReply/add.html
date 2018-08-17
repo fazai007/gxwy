@@ -1,0 +1,41 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/WxAutoReply/index')}">自动回复</a></li>
+            <li class="layui-this">添加关键字</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/WxAutoReply/add')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keyword" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">匹配类型</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="match_type" value="1" title="已全匹配" checked>
+                            <input type="radio" name="match_type" value="0" title="未全匹配">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">回复全部</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="reply_all" value="1" title="是" checked>
+                            <input type="radio" name="reply_all" value="0" title="否">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

@@ -1,0 +1,174 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote">用户信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="150">
+                        <col width="300">
+                        <col width="150">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td>{$userinfo.id}</td>
+                            <td>openid</td>
+                            <td>{$userinfo.openid}</td>
+                        </tr>
+                        <tr>
+                            <td>昵称</td>
+                            <td>{$userinfo.nickname}</td>
+                            <td>性别</td>
+                            <td>{$sex_list[$userinfo['sex']]}</td>
+                        </tr>
+                        <tr>
+                            <td>国家/省份/城市/地区</td>
+                            <td>{$userinfo.country|default='--'} / {$userinfo.province|default='--'} / {$userinfo.city|default='--'}/ {$userinfo.area|default='--'}</td>
+                            <td>头像</td>
+                            <td>
+                                <img src="{:get_user_avatar($userinfo['avatar'])}" alt="" width="50" height="50">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>unionid</td>
+                            <td>{$userinfo.unionid}</td>
+                            <td>关注状态</td>
+                            <td><?php echo $userinfo['subscribe'] == 1 ? '已关注' : '未关注'; ?></td>
+                        </tr>
+                        <tr>
+                            <td>关注时间</td>
+                            <td>{$userinfo.subscribe_time}</td>
+                            <td>用户等级</td>
+                            <td>
+                                {$userinfo.level_name|default='普通用户'}
+                                <a href="javascript:;" data-url="{:U('Admin/User/editLevel',['id'=>$userinfo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini edit-level">修改</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>推荐人ID</td>
+                            <td>
+                                <?php echo $userinfo['recommender_id'] != 0 ? : '无上级'; ?>
+                                <a href="javascript:;" data-url="{:U('Admin/User/editRecommender',['id'=>$userinfo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini edit-recommender">修改</a>
+                            </td>
+                            <td>姓名</td>
+                            <td>{$userinfo.name|default='--'}</td>
+                        </tr>
+                        <tr>
+                            <td>手机号码</td>
+                            <td>{$userinfo.mobile|default='--'}</td>
+                            <td>状态</td>
+                            <td><?php echo $userinfo['status'] == 1 ? '启用' : '禁用'; ?></td>
+                        </tr>
+                        <tr>
+                            <td>注册时间</td>
+                            <td>{$userinfo.reg_time}</td>
+                            <td>注册IP</td>
+                            <td>{$userinfo.reg_ip}</td>
+                        </tr>
+                        <tr>
+                            <td>最后登录时间</td>
+                            <td>{$userinfo.last_login_time}</td>
+                            <td>最后登录IP</td>
+                            <td>{$userinfo.last_login_ip}</td>
+                        </tr>
+                        <tr>
+                            <td>积分</td>
+                            <td>{$userinfo.integral}</td>
+                            <td>云币</td>
+                            <td>￥{$userinfo.money}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <blockquote class="layui-elem-quote">日志信息</blockquote>
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>记录人</th>
+                            <th>记录内容</th>
+                            <th>记录时间</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-log-list">
+                        <volist name="user_log_list['data']" id="vo">
+                        <tr>
+                            <td>{$vo.operator_name}</td>
+                            <td>{$vo.content}</td>
+                            <td>{$vo.create_time}</td>
+                        </tr>
+                        </volist>
+                    </tbody>
+                </table>
+                <div class="jPages">
+
+                </div>
+                <div class="jPages-tips">
+                    <p>
+                        总数据<span class="count">{$user_log_list.total_rows}</span>条，每页显示<span class="count">{$user_log_list.list_rows}</span>条，总页数为<span class="count">{$user_log_list.total_page}</span>页
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+    <script src="__PUBLIC__/plugins/jPages/js/jPages.min.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function () {
+            $('.jPages').jPages({
+                containerID: 'user-log-list',
+                first: '首页',
+                previous: '上一页',
+                next: '下一页',
+                last: '末页',
+                links: 'numeric',
+                startPage: 1,
+                perPage: {$user_log_list.list_rows},
+                midRange: 5,
+                startRange: 1,
+                endRange: 1,
+                keyBrowse: false,
+                scrollBrowse: false,
+                pause: 0,
+                clickStop: false,
+                delay: 50,
+                direction: 'forward',
+                animation: '',
+                fallback: 400,
+                minHeight: true,
+                callback: undefined
+            });
+            //修改等级
+            $('.edit-level').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '修改等级',
+                     content: _url,
+                     area: ['45%', '45%']
+                   });
+                }
+                return false;
+            });
+            //修改推荐人
+            $('.edit-recommender').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '修改推荐人',
+                     content: _url,
+                     area: ['50%', '50%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>

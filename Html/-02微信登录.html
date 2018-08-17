@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-02微信登录</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<section class="wrap">
+
+	<section class="main min100vh"style="background-repeat: no-repeat;background-size: 100% auto;background-position: bottom center;background-image: url(images/login_bg.png);">
+		<div class="wrap-flex">
+			<div class="bd">
+				<img src="images/lala.png" alt="" class="logoimg imgm"/>
+				<p class="slogan font">高薪无忧</p>
+			</div>
+			<div class="flex_bottom tc">
+				<a href="" class="block"  style="margin-bottom:78px;"><img src="images/btn1.png" alt="" class="btn imgm"/></a>
+				<p class="fs13 agp">
+					<i class="check_p brarc"style="display:none"></i>
+					<img src="images/checked.png" alt="" class="checkedcs " />
+					<span>已阅读并同意</span> <a href="javascript:;" class="fs13">高薪无忧服务协议</a>
+				</p>
+			</div>
+		</div>	
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script>
+	$(function(){
+				var  bool=false;
+				$('.flex_bottom .agp span').on('click',function(){
+					console.log(1);
+					 bool=!bool;
+					if(bool){
+						$('.checkedcs').hide();
+						$('.check_p').show();
+					}else{
+						$('.checkedcs').show();
+						$('.check_p').hide();
+					}
+					
+				})
+	})
+	
+	
+</script>
+</body>
+</html>

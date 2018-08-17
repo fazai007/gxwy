@@ -1,0 +1,99 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/ResumeType/resumeTypeList')}">商品分类</a></li>
+            <li><a href="{:U('Admin/ResumeType/addResumeType')}">添加分类</a></li>
+            <li class="layui-this">编辑分类</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/ResumeType/editResumeType')}" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="type_name" value="{$resumeTypeInfo.type_name}" required lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="describe" class="layui-textarea">{$resumeTypeInfo.describe}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">模块</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table">
+                                <colgroup><col width="150"><!--<col width="500">--><col></colgroup>
+                                <thead>
+                                <tr><th>模块名</th><!--<th>模块字段</th>--><th>操作</th></tr>
+                                </thead>
+                                <tbody id="module_list">
+                                    <tr id="module_tr">
+                                        <td>
+                                            <select name="moduleId[]">
+                                                <option value="0">--请选择--</option>
+                                                <foreach name="moduleList" item="module">
+                                                    <option value="{$module.module_id}">{$module.module_name}</option>
+                                                </foreach>
+                                            </select>
+                                        </td>
+                                        <!--<td>2016-11-29</td>-->
+                                        <!--<td><a href="{}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a></td>-->
+                                        <td><button type="button" class="layui-btn layui-btn-danger layui-btn-sm" onclick="delModule(this)">删除</button></td>
+                                    </tr>
+                                    <foreach name="resumeTypeModuleList" item="resumeTypeModule">
+                                        <tr>
+                                            <td>
+                                                <select name="moduleId[]">
+                                                    <option value="0">--请选择--</option>
+                                                    <foreach name="moduleList" item="module">
+                                                        <option value="{$module.module_id}" <if condition="$resumeTypeModule.module_id == $module['module_id']">selected</if>>{$module.module_name}</option>
+                                                    </foreach>
+                                                </select>
+                                            </td>
+                                            <!--<td>2016-11-29</td>-->
+                                            <!--<td><a href="{}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a></td>-->
+                                            <td><button type="button" class="layui-btn layui-btn-danger layui-btn-sm" onclick="delModule(this)">删除</button></td>
+                                        </tr>
+                                    </foreach>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="resume_type_id" value="{$resumeTypeInfo.resume_type_id}">
+                            <button type="button" class="layui-btn" onclick="addModule()">添加模块</button>
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-icon');
+        $('#module_tr').hide();
+        var moduleTr = '<tr>' + $('#module_tr').html() + '<tr>';
+
+        function addModule() {
+            //console.log(moduleTr);
+            $('#module_list').append(moduleTr);
+            form.render();
+        }
+
+        function delModule(e) {
+            $(e).parent().parent().remove();
+        }
+    </script>
+</block>

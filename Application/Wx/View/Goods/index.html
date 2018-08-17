@@ -1,0 +1,110 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap-bg">
+        <include file="./Application/Wx/View/Public/nav.html" />
+        <section class="main">
+            <div class="fixed-top-banner">
+                <div class="swiper-containner banner-row">
+                    <ul class="swiper-wrapper">
+                        <volist name="goods_cate_list" id="vo">
+                        <li class="swiper-slide<?php if($vo['id'] == $cate_id): ?> active<?php endif; ?>">
+                            <a href="javascript:;" data-id="{$vo.id}" class="cate-nav-item"><span>{$vo.name}</span></a>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="myscroll">
+                <ul id="data-list" class="index_guide">
+
+                </ul>
+                <div class="myscroll-empty hide">
+                    <p class="empty-tip">暂无数据</p>
+                </div>
+                <div class="myscroll-upwarp myscroll-hardware">
+                    <p class="upwarp-progress myscroll-rotate"></p>
+                    <p class="upwarp-tip">加载中..</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/weui/js/swiper.min.js"></script>
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var curCateId = {$cate_id};
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Goods/getListData')}", {cate_id:curCateId,page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                html += '<li>';
+                html += '<a href="' + data.href + '" style="background-image:url(' + cdnUrl(data.thumb) + ');">';
+                html += '<div class="bot">';
+                html += '<div class="clearfix mb5"><span class="' + data.type + '">' + data.type_name + '</span></div>';
+                html += '<h2 class="single-line fs16">' + data.name + '</h2>';
+                html += '</div>';
+                html += '</a>';
+//                html += '<i class="heart on"></i>';
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        $(function(){
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            new Swiper('.banner-row', {
+                slidesPerView: 4,
+                spaceBetween: 0,
+                freeMode: true
+            });
+            $('.cate-nav-item').on('click', function () {
+                var $this = $(this),
+                    cateId = $this.data('id');
+                if (cateId != curCateId) {
+                    $this.parent().addClass('active').siblings().removeClass('active');
+                    curCateId = cateId;
+                    resetUpScroll();
+                }
+            });
+        });
+    </script>
+</block>

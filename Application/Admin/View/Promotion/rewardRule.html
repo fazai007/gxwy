@@ -1,0 +1,63 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">奖励规则</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Promotion/rewardRule')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">签到送积分</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="sign_open" value="1" title="开启"<?php if(isset($reward_rule['sign_open']) && $reward_rule['sign_open'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="sign_open" value="0" title="关闭"<?php if(isset($reward_rule['sign_open']) && $reward_rule['sign_open'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="sign_integral" value="{$reward_rule.sign_integral}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> 用户签到后获得的积分数</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分享送积分</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="share_open" value="1" title="开启"<?php if(isset($reward_rule['share_open']) && $reward_rule['share_open'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="share_open" value="0" title="关闭"<?php if(isset($reward_rule['share_open']) && $reward_rule['share_open'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="share_integral" value="{$reward_rule.share_integral}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> 用户分享后获得的积分数</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">邀请送积分</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="invite_open" value="1" title="开启"<?php if(isset($reward_rule['invite_open']) && $reward_rule['invite_open'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="invite_open" value="0" title="关闭"<?php if(isset($reward_rule['invite_open']) && $reward_rule['invite_open'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="invite_integral" value="{$reward_rule.invite_integral}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> 用户发展一名粉丝后获得的积分数</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">消费送积分</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="consume_open" value="1" title="开启"<?php if(isset($reward_rule['consume_open']) && $reward_rule['consume_open'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="consume_open" value="0" title="关闭"<?php if(isset($reward_rule['consume_open']) && $reward_rule['consume_open'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="consume_integral" value="{$reward_rule.consume_integral}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"> 每消费1元可获得的积分数</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

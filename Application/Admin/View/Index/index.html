@@ -1,0 +1,125 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">后台首页</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-collapse">
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">信息统计</h2>
+                        <div class="layui-colla-content layui-show">
+                            <table class="layui-table">
+                                <thead>
+                                    <tr>
+                                        <th>统计</th>
+                                        <th>普通用户</th>
+                                        <volist name="user_level_list" id="vo">
+                                        <th>{$vo.name}</th>
+                                        </volist>
+                                        <th>总计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>总数</td>
+                                        <td>{$level0_user_count.total}</td>
+                                        <volist name="user_level_list" id="vo">
+                                        <td>{$vo.total}</td>
+                                        </volist>
+                                        <td>{$total_user_count.total}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>今日</td>
+                                        <td>{$level0_user_count.today}</td>
+                                        <volist name="user_level_list" id="vo">
+                                        <td>{$vo.today}</td>
+                                        </volist>
+                                        <td>{$total_user_count.today}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>昨日</td>
+                                        <td>{$level0_user_count.yesterday}</td>
+                                        <volist name="user_level_list" id="vo">
+                                        <td>{$vo.yesterday}</td>
+                                        </volist>
+                                        <td>{$total_user_count.yesterday}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>本周</td>
+                                        <td>{$level0_user_count.this_week}</td>
+                                        <volist name="user_level_list" id="vo">
+                                        <td>{$vo.this_week}</td>
+                                        </volist>
+                                        <td>{$total_user_count.this_week}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>本月</td>
+                                        <td>{$level0_user_count.this_month}</td>
+                                        <volist name="user_level_list" id="vo">
+                                        <td>{$vo.this_month}</td>
+                                        </volist>
+                                        <td>{$total_user_count.this_month}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="layui-colla-item">
+                        <h2 class="layui-colla-title">系统概览</h2>
+                        <div class="layui-colla-content layui-show">
+                            <table class="layui-table">
+                                <tr>
+                                    <td style="width:400px">网站域名</td>
+                                    <td>{$config.url}</td>
+                                </tr>
+                                <tr>
+                                    <td>网站目录</td>
+                                    <td>{$config.document_root}</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器操作系统</td>
+                                    <td>{$config.server_os}</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器端口</td>
+                                    <td>{$config.server_port}</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器环境</td>
+                                    <td>{$config.server_soft}</td>
+                                </tr>
+                                <tr>
+                                    <td>PHP版本</td>
+                                    <td>{$config.php_version}</td>
+                                </tr>
+                                <tr>
+                                    <td>MySQL版本</td>
+                                    <td>{$config.mysql_version}</td>
+                                </tr>
+                                <tr>
+                                    <td>最大上传限制</td>
+                                    <td>{$config.max_upload_size}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        /**
+         * 获取xxx数量
+         */
+        function getTask() {
+            
+        }
+        $(function () {
+            //getTask();
+        });
+    </script>
+</block>

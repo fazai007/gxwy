@@ -1,0 +1,67 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <form id="form" method="post" action="{:U('Wx/User/messageSave')}" onsubmit="return checkForm()">
+                <h2 class="online-msg fs14">在线留言</h2>
+                <div class="textareain">
+                    <ul class="member mb10">
+                        <li>
+                            <div class="m-list-flex">
+                                <h2>手机号码</h2>
+                                <input type="tel" name="mobile" id="mobile" maxlength="11" class="m-cell-bd form-unify" />
+                            </div>
+                        </li>
+                    </ul>
+                    <textarea name="content" id="content" placeholder="请输入留言内容" class="form-unify"></textarea>
+                    <button type="submit" class="consub fs14 col3 br5 my-btn" style="width:100%">确认提交</button>
+                </div>
+            </form>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/jquery.form.js"></script>
+    <script src="__PUBLIC__/Common/js/utils.js"></script>
+</block>
+<block name="script">
+    <script>
+        /**
+         * 表单验证
+         */
+        function checkForm() {
+            var mobile = $('#mobile').val();
+            if (Utils.isEmpty(mobile) || !Utils.isMobile(mobile)) {
+                $.alert('请填写正确的手机号码');
+                return false;
+            }
+            var content = $('#content').val();
+            if (Utils.isEmpty(content)) {
+                $.alert('请填写留言内容');
+                return false;
+            }
+            return true;
+        }
+        $(function () {
+            //表单提交
+            var options = {
+                beforeSubmit: function () {
+                    $.showLoading();
+                },
+                success: function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        $.toast(data.info);
+                        setTimeout(function () {
+                            location.href = data.url;
+                        }, 2000);
+                    } else {
+                        $.alert(data.info);
+                    }
+                },
+                clearForm: false
+            };
+            $('#form').ajaxForm(options);
+        });
+    </script>
+</block>

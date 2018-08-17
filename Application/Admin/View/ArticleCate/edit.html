@@ -1,0 +1,62 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/ArticleCate/index')}">文章分类</a></li>
+            <li><a href="{:U('Admin/ArticleCate/add')}">添加分类</a></li>
+            <li class="layui-this">编辑分类</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/ArticleCate/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">分类名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="{$article_cate.name}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上级分类</label>
+                        <div class="layui-input-block">
+                            <select name="pid" lay-verify="required">
+                                <option value="0">顶级分类</option>
+                                <?php
+                                foreach($article_cate_level_list as $v){
+                                    echo '<option value="' . $v['id'] . '"';
+                                    if($article_cate['id'] == $v['id']){
+                                        echo 'disabled';
+                                    }
+                                    if($article_cate['pid'] == $v['id']){
+                                        echo 'selected';
+                                    }
+                                    echo '>';
+                                    if($v['level'] != 1){
+                                        echo '|';
+                                        for($i=1; $i < $v['level']; $i++){
+                                            echo ' ----';
+                                        }
+                                    }
+                                    echo $v['name'] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$article_cate.sort}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$article_cate.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

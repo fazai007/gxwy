@@ -1,0 +1,21 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap">
+        <section class="main" style="padding-bottom:45px">
+            <img src="__PUBLIC__/Wx/images/topimg.jpg" alt=""  class="imgm" />
+            <div class="countbox">
+                <img src="__PUBLIC__/Wx/images/stu.jpg" alt="" class="stutotal imgm" />
+                <div class="countstu clearfix">
+                    <volist name="yunke_count_arr" id="vo">
+                    <div class="stucalc"><div class="ptin"><span>{$vo}</span></div></div>
+                    </volist>
+                </div>
+            </div>
+            <img src="__PUBLIC__/Wx/images/bottomimg.jpg" alt=""  class="imgm" />
+            <div class="thisbotfixed m-list-flex">
+                <div class="left m-cell-bd"><b>￥{$SYSTEM.reg_and_visit.member_price}</b><span class="fs13"> 成为会员</span></div>
+                <a href="{:U('Wx/User/kaitong')}" class="br5">立即升级</a>
+            </div>
+        </section>
+    </section>
+</block>

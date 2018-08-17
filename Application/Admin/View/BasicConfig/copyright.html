@@ -1,0 +1,57 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li class="layui-this">版权</li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/copyright')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">版权logo</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="logo" id="logo" value="{$copyright.logo}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-logo" data-input-id="logo" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">公司名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="company_name" value="{$copyright.company_name}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">版权链接</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="link" value="{$copyright.link}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">版权信息</label>
+                        <div class="layui-input-block">
+                            <textarea name="description" class="layui-textarea">{$copyright.description}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-logo');
+    </script>
+</block>

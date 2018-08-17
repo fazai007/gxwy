@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-121发送至邮箱</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+	<style>
+		.questions_list{margin-top:20px;}
+		.ans_bot_wrap{display:block;}
+		.questions_list{padding:0 10px}
+		.questions_list li{box-shadow: none;-webkit-box-shadow: none;border-radius:0;-webkit-border-radius:0;padding:0;}
+	</style>
+</head>
+<body class="bgf">
+<section class="wrap">
+	<header class="head_fixed">
+		<div class="relative common_header bgf">
+			<a href="javascript:;" class="head_back"></a>
+			<h1 class="fs14 tc">预览编辑</h1>
+		</div>
+	</header>
+
+	<section class="main min100vh ">
+		<div class="bg_pop"style="display:none"></div>
+		<div class="relative bgf plr10 pb20"style="z-index:99">
+				<p class="fs15 col0 adjustg fd pt20 mb10 pl5">格式调整</p>
+				<div class="clearfix line_top">
+					<a href="javascript:;" class="a1">自动一页纸</a>
+					<a href="javascript:;" class="a2">模块/照片</a>
+					<a href="javascript:;" class="a3">切换模板</a>
+					<a href="javascript:;" class="a4">排版格式</a>
+				</div>
+				<div class="m-list-flex">
+					 <div class="color"><div class="color_now" style="background-color: #000000;"></div></div>
+					 <div class="fonts">
+					 	<select name="" id="" class="form-unify select-style">
+					 		<option value="微软雅黑">微软雅黑</option>
+					 		<option value="宋体">宋体</option>
+					 	</select>
+					 </div>
+					 
+					 <div class="fonts-size ">
+					 	<select name="" id="" class="form-unify select-style">
+					 		<option value="12pt">12pt</option>
+					 		<option value="13pt">13pt</option>
+					 	</select>
+					 </div>
+					 <div class="line_height"></div>
+					 <div class="page_pad"></div>
+					 <div class="m-cell-bd time_rank">时间倒序</div>
+				</div>
+				<ul class="pull_template pt5"style="display:none;">
+					<li><a href="javascript:;">零经验实习模板</a></li>
+					<li><a href="javascript:;">学生求职模板</a></li>
+					<li><a href="javascript:;">经典工作模板</a></li>
+					<li><a href="javascript:;">投行咨询模板</a></li>
+					<li><a href="javascript:;">产品经理模板</a></li>
+					<li><a href="javascript:;">程序员模板</a></li>
+					<li><a href="javascript:;">申请研究生模板</a></li>
+					<li><a href="javascript:;">本科留学模板</a></li>
+				</ul>
+		</div>
+		<div class="resume_wrap mt20 plr15 br5">
+			
+			
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="wrapbtn_four clearfix">
+			<a href="javascript:;" class="smallbtn br5">检查</a>
+			<a href="javascript:;" class="smallbtn br5">翻译</a>
+			<a href="javascript:;" class="smallbtn2 br5">预览</a>
+			<a href="javascript:;" class="midbtn br5">导出</a>
+		</div>
+		
+		
+		<!--底部分享弹窗-->
+		<div class="bg_pop2"style="display:none;"></div>
+		<div class="pop_share"style="display:none;">
+			<div class="m-list-flex topml plr15">
+				<p class="fs16 col0 fd single-line m-cell-bd">David.Wu</p>
+				<div class="close_r"></div>
+			</div>
+			<div class="table towhere">
+				<a href="javascript:;" class="table-cell tc fs12 col0">
+					<img src="images/wechat.png" alt="" class="destination"/>
+					<p>分享至微信</p>
+				</a>
+				<a href="javascript:;" class="table-cell tc fs12 col0">
+					<img src="images/email.png" alt="" class="destination"/>
+					<p>发送至邮箱</p>
+				</a>
+			</div>
+			<div class="list_share_to mt20">
+				<a href="javascript:;" class="fs13">修改简历名称</a>
+				<a href="javascript:;" class="fs13">调整字体大小</a>
+				<a href="javascript:;" class="fs13">复制</a>
+				<a href="javascript:;" class="fs13">删除</a>
+				<a href="javascript:;" class="fs13">取消</a>
+			</div>
+		</div>
+		
+		<!--底部修改简历名称弹窗-->
+		<div class="modify_name br10 bgf"style="display:none;">
+			<div class="cha_close"></div>
+			<div class="top_part">
+				<p class="name_resume fs14 col0 plr10 tc">简简历名称简历名称简历名称历名称</p>
+				<input type="text"  class="form-unify fs13 col0 modify_input br5 mt15" value="PHP_David" />
+				<div class="br5 clickname mt10">
+					<p class="fs12 col9">点击选择模块内容，生成专业简历文件名</p>
+					<div class="clearfix modle">
+						<a href="javasscript:;">姓名</a>
+						<a href="javasscript:;">求职意向</a>
+						<a href="javasscript:;">毕业院校</a>
+						<a href="javasscript:;">专业</a>
+						<a href="javasscript:;">学历</a>
+						<a href="javasscript:;">求职状态</a>
+						<a href="javasscript:;">电话号码</a>
+					</div>
+				</div>
+				<div class="longbtn colf tc mt15 fs15"style="line-height: 40px;">保存</div>
+			</div>
+			
+			
+			<ul class="questions_list">
+				<li>
+					<div class="m-list-flex ques_top fs15 col7b">
+						<span class="aligntop ">Q.</span>
+						<div class="m-cell-bd">简历名称简历名称怎么写最好怎么写最好？</div>
+					</div>
+					<div class="ans_bot_wrap">
+						<div class="ans_bot m-list-flex fs13 col6 mt10">
+							<span class="aligntop"> A.</span>
+							<div class="m-cell-bd">简历名称很重要，写清楚所申请的公司岗位和姓名是必须项，示例：应聘西陆科技PHP_张三。如果之前有特别好的项目经历或公司背景可以加在后缀，如：应聘西陆科技PHP_张三_清华大学</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="m-list-flex ques_top fs15 col7b">
+						<span class="aligntop ">Q.</span>
+						<div class="m-cell-bd">没有英文名要新取一个吗</div>
+					</div>
+					<div class="ans_bot_wrap">
+						<div class="ans_bot m-list-flex fs13 col6 mt10">
+							<span class="aligntop"> A.</span>
+							<div class="m-cell-bd">简历名称很重要，写清楚所申请的公司岗位和姓名是必须项，示例：应聘西陆科技PHP_张三。如果之前有特别好的项目经历或公司背景可以加在后缀，如：应聘西陆科技PHP_张三_清华大学</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		
+		
+		
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script>
+	$(function(){
+		$(document).on('click','.line_top .a1,.line_top .a2,.line_top .a4,.time_rank',function(){
+			$(this).toggleClass('active')
+		});
+		$(document).on('click','.line_top .a3,.time_rank',function(){
+			$(this).addClass('active')
+		});
+		
+		
+//		下拉
+		$(document).on('click','.line_top .a3',function(){
+			$('.pull_template').slideDown();
+			$('.bg_pop').show();
+		});
+		$(document).on('click','.pull_template a',function(){
+			$('.pull_template a').removeClass('active');
+			$(this).addClass('active');
+			$('.pull_template').slideUp();
+			$('.bg_pop').hide();
+		});
+		
+		
+		
+//		弹窗分享发送
+		$(document).on('click','.midbtn',function(){
+			$('.pop_share').slideDown();
+			$('.bg_pop2').show();
+		});
+		$(document).on('click','.close_r,.list_share_to a:last-child',function(){
+			$('.pop_share').slideUp();
+			$('.bg_pop2').hide();
+		});
+		
+		
+		
+//		修改简历名字
+		$(document).on('click','.list_share_to  a:first-child',function(){
+			$('.pop_share').slideUp();
+			$('.modify_name').show();
+			$('.bg_pop2').show();
+		});
+		$(document).on('click','.modify_name .cha_close',function(){
+			$('.modify_name').hide();
+			$('.bg_pop2').hide();
+		});
+		$(document).on('click','.modle a',function(){
+			$(this).toggleClass('active')
+		});
+		
+		
+//		$('.ques_top').on('click',function(){
+//				
+//			if(!$(this).find('.triang').hasClass('active')){
+//				$(this).find('.triang').addClass('active');
+//				$(this).next('.ans_bot_wrap').slideDown();
+//			}else{
+//				$(this).find('.triang').removeClass('active');
+//				$(this).next('.ans_bot_wrap').slideUp();
+//			}
+//		})
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief" style="min-height:200px">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/User/editLevel')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">等级</label>
+                        <div class="layui-input-block">
+                            <select name="level_id" required lay-verify="required">
+                                <option value="0"<?php if($userinfo['level_id'] == 0): ?> selected<?php endif; ?>>普通用户</option>
+                                <volist name="user_level_list" id="vo">
+                                <option value="{$vo.id}"<?php if($userinfo['level_id'] == $vo['id']): ?> selected<?php endif; ?>>{$vo.name}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="id" value="{$userinfo.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">确认修改</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

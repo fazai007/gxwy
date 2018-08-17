@@ -1,0 +1,101 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">自定义菜单</li>
+            <li><a href="{:U('Admin/WxMenu/add')}">添加自定义菜单</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:U('Admin/WxMenu/batchUpdate',['_action'=>'statusToggle','status'=>1])}">批量显示</button>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:U('Admin/WxMenu/batchUpdate',['_action'=>'statusToggle','status'=>0])}">批量隐藏</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:U('Admin/WxMenu/delete')}">批量删除</button>
+                <button type="button" class="layui-btn layui-btn-normal layui-btn-small" id="createWxMenu">生成菜单</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>菜单名称</th>
+                                <th>关键字</th>
+                                <th>链接地址</th>
+                                <th>是否显示</th>
+                                <th style="width:30px">排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="wx_menu_level_list" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>
+                                    <?php
+                                    if($vo['level'] != 1){
+                                        echo '|';
+                                        for($i=1;$i<$vo['level'];$i++){
+                                            echo ' ----';
+                                        }
+                                    }
+                                    ?>
+                                    {$vo.name}
+                                </td>
+                                <td>{$vo.keyword}</td>
+                                <td>{$vo.link}</td>
+                                <td>
+                                    <?php if($vo['status']): ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/WxMenu/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>0])}">
+                                        <img src="__PUBLIC__/Admin/images/checked.png" alt="" width="18">
+                                    </a>
+                                    <?php else: ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/WxMenu/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>1])}">
+                                        <img src="__PUBLIC__/Admin/images/un_checked.png" alt="" width="18">
+                                    </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>{$vo.sort}</td>
+                                <td>
+                                    <?php if($vo['level'] == 1): ?>
+                                    <p class="ptb2">
+                                        <a href="{:U('Admin/WxMenu/add',['pid'=>$vo['id']])}" class="layui-btn layui-btn-mini">添加子菜单</a>
+                                    </p>
+                                    <?php endif; ?>
+                                    <p class="ptb2">
+                                        <a href="{:U('Admin/WxMenu/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                        <a href="{:U('Admin/WxMenu/delete',['ids'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $('#createWxMenu').on('click', function(){
+            layer.open({
+                shade: false,
+                content: '确定生成自定义菜单吗？',
+                btn: ['确定', '取消'],
+                yes: function (index) {
+                    $.ajax({
+                        url: "{:U('Admin/WxMenu/create')}",
+                        data: {},
+                        success: function (data) {
+                            layer.msg(data.info);
+                        }
+                    });
+                    layer.close(index);
+                }
+            });
+            return false;
+        });
+    </script>
+</block>

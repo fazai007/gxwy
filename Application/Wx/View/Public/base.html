@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="telephone=no" name="format-detection" />
+        <meta name="renderer" content="webkit">
+        <title>{$seo['title']}</title>
+        <meta name="keywords" content="{$seo['keywords']}"/>
+        <meta name="description" content="{$seo['description']}"/>
+        <link rel="stylesheet" href="__PUBLIC__/plugins/weui/lib/weui.min.css">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/weui/css/jquery-weui.min.css" />
+        <link rel="stylesheet" href="__PUBLIC__/Wx/css/reset.css?v=<?php echo NOW_TIME; ?>" />
+        <link rel="stylesheet" href="__PUBLIC__/Wx/css/style.css?v=<?php echo NOW_TIME; ?>" />
+        <link rel="stylesheet" href="__PUBLIC__/Wx/css/mystyle.css?v=<?php echo NOW_TIME; ?>" />
+        <!--CSS引用-->
+        <block name="css"></block>
+        <!--页面CSS引用-->
+        <block name="style"></block>
+        <!--[if lt IE 9 ]>
+        <script src="__PUBLIC__/plugins/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--主体引用-->
+        <block name="body"></block>
+        <script>
+            var myConfig = {$my_config|json_encode};
+        </script>
+        <script src="__PUBLIC__/plugins/weui/lib/jquery-2.1.4.js"></script>
+        <script src="__PUBLIC__/plugins/weui/js/jquery-weui.min.js"></script>
+        <script src="__PUBLIC__/Wx/js/common.js"></script>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+        <script>
+            wx.config({
+                debug: false,
+                appId: '{$js_sign_package["appId"]}',
+                timestamp: {$js_sign_package["timestamp"]},
+                nonceStr: '{$js_sign_package["nonceStr"]}',
+                signature: '{$js_sign_package["signature"]}',
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo',
+                    'chooseImage',
+                    'previewImage',
+                    'uploadImage'
+                ]
+            });
+            wx.ready(function() {
+                //分享到朋友圈
+                wx.onMenuShareTimeline({
+                    title: '{$wx_share["title"]}',
+                    link: '{$wx_share["link"]}',
+                    imgUrl: '{$wx_share["imgUrl"]}',
+                    success: function () {},
+                    cancel: function () {}
+                });
+                //分享给朋友
+                wx.onMenuShareAppMessage({
+                    title: '{$wx_share["title"]}',
+                    desc: '{$wx_share["desc"]}',
+                    link: '{$wx_share["link"]}',
+                    imgUrl: '{$wx_share["imgUrl"]}',
+                    type: '{$wx_share["type"]}',
+                    dataUrl: "",
+                    success: function () {},
+                    cancel: function () {}
+                });
+                //分享到QQ
+                wx.onMenuShareQQ({
+                    title: '{$wx_share["title"]}',
+                    desc: '{$wx_share["desc"]}',
+                    link: '{$wx_share["link"]}',
+                    imgUrl: '{$wx_share["imgUrl"]}',
+                    success: function () {},
+                    cancel: function () {}
+                });
+                //分享到腾讯微博
+                wx.onMenuShareWeibo({
+                    title: '{$wx_share["title"]}',
+                    desc: '{$wx_share["desc"]}',
+                    link: '{$wx_share["link"]}',
+                    imgUrl: '{$wx_share["imgUrl"]}',
+                    success: function () {},
+                    cancel: function () {}
+                });
+            });
+        </script>
+        <!--JS引用-->
+        <block name="js"></block>
+        <!--页面JS引用-->
+        <block name="script"></block>
+    </body>
+</html>

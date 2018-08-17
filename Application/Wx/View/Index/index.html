@@ -1,0 +1,196 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <include file="./Application/Wx/View/Public/nav.html" />
+        <section class="main">
+            <?php if($banner && $banner['status']): ?>
+            <div class="swiper-container banner">
+                <div class="swiper-wrapper">
+                    <volist name="banner['advert_list']" id="vo">
+                        <div class="swiper-slide">
+                            <a href="{$vo.link|default='javascript:;'}">
+                                <img src="__CDN__{$vo.image}" alt="{$vo.name}" class="imgm" />
+                            </a>
+                        </div>
+                    </volist>
+                    <div class="swiper-lazy-preloader"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <?php endif; ?>
+            <?php if($userinfo['level_id'] == 0): ?>
+            <div class="index-card-wrap">
+                <a href="{:U('Wx/User/kaitong')}"><img src="__PUBLIC__/Wx/images/card2.png" width="100%" /></a>
+            </div>
+            <!--
+            <div class="index-card-wrap">
+                <div class="index-card">
+                    <h3 class="fs20 col0 multi-line">{$SYSTEM.web_config.web_name}</h3>
+                    <div class="card-bot-wrap">
+                        <div class="table card-bot">
+                            <div class="table-cell">
+                                <h5 class="fs12 col0">VIP Number.00000</h5>
+                                <h6 class="fs15 col0 mt5">会员权益查看</h6>
+                            </div>
+                            <div class="table-cell">
+                                <a href="{:U('Wx/User/kaitong')}" class="fs14">开通</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <?php endif; ?>
+            <div class="nav_index">
+                <div class="index_navbar table">
+                    <a href="javascript:;" data-type="1" class="nav-item table-cell<?php if($type == 1): ?> active<?php endif; ?>"><span>免费视频</span></a>
+                    <a href="javascript:;" data-type="2" class="nav-item table-cell<?php if($type == 2): ?> active<?php endif; ?>"><span>李歌介绍</span></a>
+                    <a href="javascript:;" data-type="3" class="nav-item table-cell<?php if($type == 3): ?> active<?php endif; ?>"><span>关于课程</span></a>
+                    <a href="javascript:;" data-type="4" class="nav-item table-cell<?php if($type == 4): ?> active<?php endif; ?>"><span>活动信息</span></a>
+                </div>
+            </div>
+            <div class="index-content-div">
+                <div id="index-content-div-1" class="myscroll">
+                    <ul id="data-list" class="index_guide">
+
+                    </ul>
+                    <div class="myscroll-empty hide">
+                        <p class="empty-tip">暂无数据</p>
+                    </div>
+                    <div class="myscroll-upwarp myscroll-hardware">
+                        <p class="upwarp-progress myscroll-rotate"></p>
+                        <p class="upwarp-tip">加载中..</p>
+                    </div>
+                </div>
+                <div id="index-content-div-2" class="hide">
+                    <ul class="index_guide">
+                        <li>
+                            <a href="{:U('Wx/SinglePage/detail',['id'=>$single_page_list[0]['id']])}" style="background-image:url(__CDN__{$single_page_list[0].thumb});">
+                                <div class="bot">
+                                    <h2 class="single-line fs16">{$single_page_list[0].title}</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="index-content-div-3" class="hide">
+                    <ul class="index_guide">
+                        <li>
+                            <a href="{:U('Wx/SinglePage/detail',['id'=>$single_page_list[1]['id']])}" style="background-image:url(__CDN__{$single_page_list[1].thumb});">
+                                <div class="bot">
+                                    <h2 class="single-line fs16">{$single_page_list[1].title}</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="index-content-div-4" class="hide">
+                    <ul class="index_guide">
+                        <li>
+                            <a href="{:U('Wx/SinglePage/detail',['id'=>$single_page_list[2]['id']])}" style="background-image:url(__CDN__{$single_page_list[2].thumb});">
+                                <div class="bot">
+                                    <h2 class="single-line fs16">{$single_page_list[2].title}</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/weui/js/swiper.min.js"></script>
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var curType = {$type};
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Goods/getIndexListData')}", {page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                html += '<li>';
+                html += '<a href="' + data.href + '" style="background-image:url(' + cdnUrl(data.thumb) + ');">';
+                html += '<div class="bot">';
+                html += '<div class="clearfix mb5"><span class="' + data.type + '">' + data.type_name + '</span></div>';
+                html += '<h2 class="single-line fs16">' + data.name + '</h2>';
+                html += '</div>';
+                html += '</a>';
+//                html += '<i class="heart on"></i>';
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        $(function () {
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            var swiperWidth = $('.banner').width(),
+                swiperHeight = swiperWidth * 0.46;
+            $('.banner').css('height', swiperHeight);
+            $('.banner').swiper({
+                pagination: '.swiper-pagination',
+                loop: true,
+                autoplay: 3000,
+                autoplayDisableOnInteraction: false,
+                lazyLoading: true,
+                lazyLoadingInPrevNext: true,
+                lazyLoadingInPrevNextAmount: 1,
+                lazyLoadingonTransitionStart: true
+            });
+            new Swiper('.banner-row', {
+                slidesPerView: 4,
+                spaceBetween: 0,
+                freeMode: true
+            });
+            $('.nav-item').on('click', function () {
+                var $this = $(this),
+                    type = $this.data('type');
+                if (type != curType) {
+                    $this.addClass('active').siblings().removeClass('active');
+                    $('#index-content-div-' + type).show().siblings().hide();
+                    curType = type;
+                    if (type == 1) {
+                        resetUpScroll();
+                    }
+                }
+            });
+        });
+    </script>
+</block>

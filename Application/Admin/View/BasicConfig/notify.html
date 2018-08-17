@@ -1,0 +1,27 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li class="layui-this">通知系统</li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/notify')}" method="post">
+                    <!--
+                    通知类型 	                                      状态 	操作
+                    邮件通知，提示：使用该功能需开启php-sockets扩展               配置，模板，关闭，通知记录
+                    短信通知，提示：使用该功能需开通阿里云短信业务                 配置，模板，关闭，通知记录
+                    -->
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

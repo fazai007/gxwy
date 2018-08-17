@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-12常用信息</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<section class="wrap">
+	<header class="head_fixed">
+		<div class="relative common_header bgf">
+			<a href="javascript:;" class="head_back"></a>
+			<h1 class="fs14 tc">常用信息</h1>
+		</div>
+	</header>
+	<footer class="foot_fixed"style="bottom:30px;">
+		<div class="plr20"><a href="javascript:;" class="longbtn tc fs16 colf">下一步</a></div>
+	</footer>
+	<section class="main min100vh"style="padding-bottom:130px;">
+		<div class="plr15">
+			<p class="fs16 col0 fd mt20">中文常用信息</p>
+			<ul class="comwrap">
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">姓名</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="" value="用户A"/>
+				</li>
+				
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">手机号</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="" value="18112345678"/>
+				</li>
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">邮箱</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入常用求职邮箱" />
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">所在城市</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择"  id="select-site" />
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex">
+					<span class="fs13 col6">个人微信</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入微信号" />
+				</li>
+				<li class="m-list-flex">
+					<span class="fs13 col6">个人网站</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入网址" />
+				</li>
+				<li class="m-list-flex">
+					<span class="fs13 col6">设置为默认信息</span>
+					<div class="m-cell-bd">
+						<div class="switchimg fr"></div>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		
+		
+		
+		
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script>
+	$(function(){
+		$('.switchimg').on('click',function(){
+			$(this).toggleClass('off');
+		})
+	})
+</script>
+<script src="weui/js/city-picker.js"></script> <!--引用weui的js-->
+<script>
+$(function() {
+	$("#select-site").cityPicker({
+		title: "选择地区",
+	});
+});
+</script>
+</body>
+</html>

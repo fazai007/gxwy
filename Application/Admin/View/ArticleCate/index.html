@@ -1,0 +1,54 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">文章分类</li>
+            <li><a href="{:U('Admin/ArticleCate/add')}">添加分类</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:U('Admin/ArticleCate/delete')}">批量删除</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>分类名称</th>
+                                <th style="width:30px">排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="article_cate_level_list" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>
+                                    <?php
+                                    if($vo['level'] != 1){
+                                        echo '|';
+                                        for($i=1;$i<$vo['level'];$i++){
+                                            echo ' ----';
+                                        }
+                                    }
+                                    ?>
+                                    {$vo.name}
+                                </td>
+                                <td>{$vo.sort}</td>
+                                <td>
+                                    <a href="{:U('Admin/ArticleCate/add',['pid'=>$vo['id']])}" class="layui-btn layui-btn-mini">添加子分类</a>
+                                    <a href="{:U('Admin/ArticleCate/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <a href="{:U('Admin/ArticleCate/delete',['ids'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</block>

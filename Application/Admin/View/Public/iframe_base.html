@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>李歌情感大讲堂管理后台</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+        <link rel="stylesheet" href="__PUBLIC__/Admin/css/global.css" media="all">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+        <!--CSS引用-->
+        <block name="css"></block>
+        <!--页面css引用-->
+        <block name="style"></block>
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/plugins/html5shiv.min.js"></script>
+        <script src="__PUBLIC__/plugins/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="layui-layout layui-layout-admin" style="border-top:solid 5px #1aa094">
+            <div class="layui-body" id="admin-body" style="left:0;top:5px">
+                <!--主体引用-->
+                <block name="body"></block>
+            </div>
+            <script>
+                var myConfig = {$my_config|json_encode};
+            </script>
+            <script src="__PUBLIC__/plugins/jquery.min.js"></script>
+            <script src="__PUBLIC__/plugins/plupload/js/plupload.full.min.js" ></script>
+            <!--<script src="__PUBLIC__/plugins/plupload/js/i18n/zh_CN.js" ></script>-->
+            <script src="__PUBLIC__/plugins/layui/lay/dest/layui.all.js"></script>
+            <script src="__PUBLIC__/Admin/js/upload.js"></script>
+            <script src="__PUBLIC__/Admin/js/function.js"></script>
+            <!--JS引用-->
+            <block name="js"></block>
+            <!--页面JS引用-->
+            <block name="script"></block>
+        </div>
+    </body>
+</html>

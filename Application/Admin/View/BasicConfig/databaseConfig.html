@@ -1,0 +1,68 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:185px}
+        .layui-input-block{margin-left:215px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li class="layui-this">数据库设置</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/databaseConfig')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">数据库备份根路径</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="data_backup_path" value="{$database_config.data_backup_path|default=''}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">路径必须以 / 结尾</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">数据库备份卷大小</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="data_backup_part_size" value="{$database_config.data_backup_part_size|default=''}" required lay-verify="required" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">该值用于限制压缩后的分卷最大长度。单位：B；建议设置20M</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">数据库备份文件是否启用压缩</label>
+                        <div class="layui-input-inline">
+                            <select name="data_backup_compress" lay-verify="required">
+                                <option value="0"<?php if(isset($database_config['data_backup_compress']) && $database_config['data_backup_compress'] == 0): ?> selected<?php endif; ?>>不压缩</option>
+                                <option value="1"<?php if(isset($database_config['data_backup_compress']) && $database_config['data_backup_compress'] == 1): ?> selected<?php endif; ?>>启用压缩</option>
+                            </select>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">压缩备份文件需要PHP环境支持gzopen,gzwrite函数</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">数据库备份文件压缩级别</label>
+                        <div class="layui-input-inline">
+                            <select name="data_backup_compress_level" lay-verify="required">
+                                <option value="1"<?php if(isset($database_config['data_backup_compress_level']) && $database_config['data_backup_compress_level'] == 1): ?> selected<?php endif; ?>>普通</option>
+                                <option value="4"<?php if(isset($database_config['data_backup_compress_level']) && $database_config['data_backup_compress_level'] == 4): ?> selected<?php endif; ?>>一般</option>
+                                <option value="9"<?php if(isset($database_config['data_backup_compress_level']) && $database_config['data_backup_compress_level'] == 9): ?> selected<?php endif; ?>>最高</option>
+                            </select>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">数据库备份文件的压缩级别，该配置在开启压缩时生效</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

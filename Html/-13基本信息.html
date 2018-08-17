@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="renderer" content="webkit">
+	<title>-13基本信息</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" href="weui/lib/weui.min.css" />
+	<link rel="stylesheet" href="weui/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="weui/lib/jquery-2.1.4.js"></script>
+	<!--[if lt IE 9 ]>
+	<script src="js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<section class="wrap">
+	<header class="head_fixed"style="top:40px">
+		<div class="table tabs_change tc fs14 bgf">
+				<div class="table-cell active"><span>内容编辑</span></div>
+				<div class="table-cell"><span>填写贴士</span></div>
+		</div>
+	</header>
+	<!-- 头部悬浮 end -->
+	<header class="head_fixed">
+		<div class="relative common_header bgf">
+			<a href="javascript:;" class="head_back"></a>
+			<h1 class="fs14 tc">基本信息</h1>
+		</div>
+	</header>
+	<footer class="foot_fixed"style="bottom:30px;">
+		<div class="plr20 clearfix twobtns">
+			<a href="JavaScript:;" class="btnleft tc fs16 colf">保存</a>
+			<a href="javascript:;" class="btnright tc fs16 colf">下一步</a>
+		</div>
+	</footer>
+	<section class="main min100vh"style="padding-bottom:130px;padding-top:85px">
+		<div class="plr15">
+			<p class="fs14 col0 fd mt10 pl5">基本信息</p>
+			<p class="fs12 mt5 mb5 col7b pl5" >必填信息</p>
+			<ul class="comwrap shadow plr10">
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">姓名</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="" value="用户A"/>
+				</li>
+				
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">手机号</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="" value="18112345678"/>
+				</li>
+				<li class="m-list-flex">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">邮箱</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入常用求职邮箱" />
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<i class="stan mr5">*</i>
+					<span class="fs13 col6">所在城市</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择"  id="select-site" />
+					<div class="m-cell-rt"></div>
+				</li>
+				
+			</ul>
+			
+			
+			
+			<p class="fs12 mt10 mb5 col7b pl5" >求职信息</p>
+			<ul class="comwrap shadow plr10">
+				<li class="m-list-flex">
+					<span class="fs13 col6">求职意向</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="如：产品经理"/>
+				</li>
+				
+				
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">当前状态</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择"  id="status" value="应届生"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">期望薪资</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入薪资(k)"  />
+				</li>
+			</ul>
+			
+			
+			
+			
+			<p class="fs12 mt10 mb5 col7b pl5" >更多信息(根据招聘信息填写)</p>
+			<ul class="comwrap shadow plr10">
+				<li class="m-list-flex">
+					<span class="fs13 col6">个人微信</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入微信号"/>
+				</li>
+				
+				
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">个人网站</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请输入网址" />
+				</li>
+				
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">年龄</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="year"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">性别</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="sex"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">体重</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="weight"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">民族</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="people"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">籍贯</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="province"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">政治面貌</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="lods"/>
+					<div class="m-cell-rt"></div>
+				</li>
+				<li class="m-list-flex m-arrow-right">
+					<span class="fs13 col6">婚姻状况</span>
+					<input type="text" class="form-unify  tr fs13 col0" placeholder="请选择" id="marry"/>
+					<div class="m-cell-rt"></div>
+				</li>
+			</ul>
+		</div>
+		
+		
+		
+		
+	</section>
+	<!-- main end -->
+
+</section>
+<!-- wrap end -->
+
+
+
+
+<!-- jquery-weui插件 -->
+<script src="weui/js/jquery-weui.min.js"></script>
+<!-- 通用js -->
+<script src="js/functions.js"></script>
+<script>
+	$(function(){
+		$('.switchimg').on('click',function(){
+			$(this).toggleClass('off');
+		})
+	})
+</script>
+<script src="weui/js/city-picker.js"></script> <!--引用weui的js-->
+<script>
+$(function() {
+	$("#select-site").cityPicker({
+		title: "选择地区",
+	});
+	
+	 $("#status").picker({
+        title: "当前状态",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['应届生','在读学生']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+      $("#year").picker({
+        title: "选择您的年龄",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['20','21','22','23','24','25','26']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+       $("#sex").picker({
+        title: "选择您的性别",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['男','女']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+      
+       $("#weight").picker({
+        title: "选择您的体重",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['50kg','51kg','52kg','53kg','54kg','55kg','56kg','57kg','58kg','59kg','60kg']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+       $("#people").picker({
+        title: "选择您的民族",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['汉','满']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+       $("#province").picker({
+        title: "选择您的籍贯",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['江苏','上海']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+      
+      $("#lods").picker({
+        title: "选择您的政治面貌",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['团员','党员']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+      $("#marry").picker({
+        title: "选择您的婚姻状况",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['已婚','未婚']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+});
+</script>
+</body>
+</html>

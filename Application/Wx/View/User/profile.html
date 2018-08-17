@@ -1,0 +1,71 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <form action="" method="post">
+                <ul class="member mt15">
+                    <li class="member_top m-list-flex m-arrow-right">
+                        <h2 class="m-cell-bd">头像</h2>
+                        <div class="m-cell-hd br50 pic-view mr10">
+                            <img src="images/shop2.jpg" alt="" class="imgm" />
+                        </div>
+                        <div class="m-cell-rt"></div>
+                    </li>
+                    <li>
+                        <div class="m-list-flex">
+                            <h2>用户名</h2>
+                            <input type="text" value="安之若素丶" class="m-cell-bd form-unify" />
+                        </div>
+                    </li>
+                    <li>
+                        <div  class="m-list-flex m-arrow-right">
+                            <h2>性别</h2>
+                            <input type="text" id="sex" value="男" class="m-cell-bd form-unify" readonly />
+                            <div class="m-cell-rt"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-list-flex m-arrow-right">
+                            <h2>来自</h2>
+                            <input type="text" name="pca" id="pca" value="{$userinfo.province}{$userinfo.city}{$userinfo.area}" class="m-cell-bd form-unify" />
+                            <div class="m-cell-rt"></div>
+                        </div>
+                    </li>
+                    <li style="margin-top:20px">
+                        <div class="m-list-flex">
+                            <h2>我的推荐人</h2>
+                            <div class="tr m-cell-bd col_own pr5 single-line">翠花卖军火</div>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </section>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/weui/js/city-picker.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function () {
+            $('#pca').cityPicker({
+                title: '选择地区'
+            });
+            $("#sex").picker({
+                title: "请选择您的性别",
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: ['男', '女']
+                    }
+                ],
+                onChange: function (p, v, dv) {
+                    console.log(p, v, dv);
+                },
+                onClose: function (p, v, d) {
+                    console.log("close");
+                }
+            });
+        });
+    </script>
+</block>

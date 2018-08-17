@@ -1,0 +1,133 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <div class="foot_fixed">
+            <a href="javascript:;" onclick="openShareMask()" class="btnbarfix fs14 col3">邀请好友送积分</a>
+        </div>
+        <section class="main">
+            <div class="cloud_wrap">
+                <div class="m-list-flex">
+                    <div class="m-cell-bd">
+                        <div class="table cloudtable">
+                            <a href="javascript:;" class="table-cell fs12 col9">账户积分(分)<p class="col_own fs36" id="integral">{$userinfo.integral}</p></a>
+                        </div>
+                    </div>
+                    <?php if($SYSTEM['reward_rule']['sign_open']): ?>
+                    <a href="javascript:;" id="sign-btn" class="fs14 col_own seem">签到</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <h4 class="fs12 col9 demlist_title">积分明细</h4>
+            <div class="table mtabs">
+                <a href="javascript:;" data-type="1" class="nav-item table-cell fs14<?php if($type == 1): ?> active<?php endif; ?>">支出</a>
+                <a href="javascript:;" data-type="2" class="nav-item table-cell fs14"<?php if($type == 2): ?> active<?php endif; ?>>收入</a>
+            </div>
+            <div class="myscroll">
+                <ul class="demlist mt15" id="data-list">
+                    
+                </ul>
+                <div class="myscroll-empty hide">
+                    <p class="empty-tip">暂无数据</p>
+                </div>
+                <div class="myscroll-upwarp myscroll-hardware">
+                    <p class="upwarp-progress myscroll-rotate"></p>
+                    <p class="upwarp-tip">加载中..</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <div class="bg_pop hide" id="sign-mask-bg"></div>
+    <div class="pay_pop pay_pop-bg hide" id="sign-mask-div">
+        <h3 class="fs20 col3 tc">签到成功</h3>
+        <p class="fs14 col3 mt5">尊敬的用户，今日您已成功签到， 获得积分<span id="sign-integral">{$SYSTEM.reward_rule.sign_integral}</span>分</p>
+        <div class="payok mt20">
+            <a href="javascript:;" onclick="closeSignMask()" class="fs14">知道了</a>
+        </div>
+    </div>
+    <include file="./Application/Wx/View/Public/share.html" />
+</block>
+<block name="script">
+    <script>
+        var page = 1;
+        var curType = 1;
+        var isUpScrolling = false;
+        var noMoreData = false;
+        function getListData() {
+            if (isUpScrolling || noMoreData) {
+                return;
+            }
+            isUpScrolling = true;
+            $('.myscroll-upwarp').css('visibility', 'visible');
+            $.get("{:U('Wx/Integral/getListData')}", {type:curType,page:page}, function (data) {
+                isUpScrolling = false;
+                if (data.status == 1) {
+                    var listData = data.info;
+                    if (listData.total_page == 0) {
+                        $('.myscroll-upwarp').css('visibility', 'hidden');
+                        $('.myscroll-empty').show();
+                        noMoreData = true;
+                    } else if (listData.total_page <= listData.current_page) {
+                        $('.myscroll-upwarp').html('<p class="upwarp-nodata">-- 已经全部加载完毕 --</p>');
+                        noMoreData = true;
+                    } else {
+                        page++;
+                    }
+                    listData.root && setListData(listData.root);
+                }
+            });
+        }
+        function resetUpScroll(){
+            page = 1;
+            noMoreData = false;
+            $('#data-list').html('');
+            $('.myscroll-empty').hide();
+            $('.myscroll-upwarp').html('<p class="upwarp-progress myscroll-rotate"></p><p class="upwarp-tip">加载中..</p>').css('visibility', 'visible');
+            getListData();
+        }
+        function setListData(curPageData) {
+            var html = '';
+            for (var i in curPageData) {
+                var data = curPageData[i];
+                html += '<li class="m-list-flex">';
+                html += '<div class="m-cell-bd">';
+                html += '<h3 class="single-line fs16 col_own">' + data.title + '</h3>';
+                html += '<h4 class="single-line fs12 col9">' + data.description + '</h4>';
+                html += '</div>';
+                html += '<div class="tr">';
+                html += '<h3 class="single-line fs16 col_own">' + data.integral + '</h3>';
+                html += '<h4 class="single-line fs12 col9">' + data.create_time + '</h4>';
+                html += '</div>';
+                html += '</li>';
+            }
+            $('#data-list').append(html);
+        }
+        $(function(){
+            getListData();
+            $(window).bind('scroll', function() {
+                checkUpScrolling();
+            });
+            $('.nav-item').on('click', function () {
+                var $this = $(this),
+                    type = $this.data('type');
+                if (type != curType) {
+                    $this.addClass('active').siblings().removeClass('active');
+                    curType = type;
+                    resetUpScroll();
+                }
+            });
+            $('#sign-btn').on('click', function(){
+                $.showLoading();
+                $.post("{:U('Wx/Integral/sign')}", {}, function (data) {
+                    $.hideLoading();
+                    if (data.status === 1) {
+                        $('#integral').html(data.info.integral);
+                        $('#sign-integral').html(data.info.sign_integral);
+                        openSignMask();
+                    } else {
+                        $.alert(data.info);
+                    }
+                });
+            });
+        });
+    </script>
+</block>

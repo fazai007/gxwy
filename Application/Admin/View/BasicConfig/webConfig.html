@@ -1,0 +1,164 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:130px}
+        .layui-input-block{margin-left:160px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">网站设置</li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/webConfig')}" method="post">
+                    <blockquote class="layui-elem-quote">网站基础设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_name" value="{$web_config.web_name}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">官方网址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_url" value="{$web_config.web_url}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keywords" value="{$web_config.keywords}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">用于网站搜索引擎的优化，关键字之间请用英文逗号<i class="important-note">“,”</i>分隔</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站描述</label>
+                        <div class="layui-input-block">
+                            <textarea name="description" class="layui-textarea">{$web_config.description}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站logo</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_logo" id="web-logo" value="{$web_config.web_logo}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-web-logo" data-input-id="web-logo" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站微信分享logo</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="wechat_share_logo" id="wechat-share-logo" value="{$web_config.wechat_share_logo}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-wechat-share-logo" data-input-id="wechat-share-logo" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站二维码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_qrcode" id="web-qrcode" value="{$web_config.web_qrcode}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-web-qrcode" data-input-id="web-qrcode" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站公众号二维码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="gzh_qrcode" id="gzh-qrcode" value="{$web_config.gzh_qrcode}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-gzh-qrcode" data-input-id="gzh-qrcode" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">网站联系设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站联系方式</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_phone" value="{$web_config.web_phone}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站邮箱</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_email" value="{$web_config.web_email}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站QQ号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_qq" value="{$web_config.web_qq}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站微信号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_wechat" value="{$web_config.web_wechat}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">联系地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_address" value="{$web_config.web_address}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">客服二维码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="kf_qrcode" id="kf-qrcode" value="{$web_config.kf_qrcode}" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-kf-qrcode" data-input-id="kf-qrcode" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <blockquote class="layui-elem-quote">备案与统计设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站ICP备案号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_icp" value="{$web_config.web_icp}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站公安备案</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_gov_record" value="{$web_config.web_gov_record}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">网站公安备案链接</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="web_gov_record_url" value="{$web_config.web_gov_record_url}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">第三方统计代码</label>
+                        <div class="layui-input-block">
+                            <textarea name="third_count" class="layui-textarea">{$web_config.third_count}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">页面底部可以显示第三方统计</div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-web-logo', 'upload-wechat-share-logo', 'upload-web-qrcode', 'upload-gzh-qrcode', 'upload-kf-qrcode');
+    </script>
+</block>

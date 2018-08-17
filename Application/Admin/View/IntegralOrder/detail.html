@@ -1,0 +1,92 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div style="margin-bottom:10px">
+                <a href="javascript:;" data-url="{:U('Admin/IntegralOrder/sellerMemo',['id'=>$orderinfo['id']])}" class="layui-btn layui-btn-mini seller-memo">订单备注</a>
+            </div>
+            <div class="layui-tab-item layui-show">
+                <blockquote class="layui-elem-quote">订单信息</blockquote>
+                <table class="layui-table" lay-even="" lay-skin="nob">
+                    <colgroup>
+                        <col width="250">
+                        <col width="300">
+                        <col width="250">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>订单号</td>
+                            <td>{$orderinfo.order_no}</td>
+                            <td>用户【ID】</td>
+                            <td>{$orderinfo.user_nickname}【{$orderinfo.user_id}】</td>
+                        </tr>
+                        <tr>
+                            <td>下单时间</td>
+                            <td colspan="3">{$orderinfo.create_time}</td>
+                        </tr>
+                        <?php if($orderinfo['seller_memo']): ?>
+                        <tr>
+                            <td>卖家备注</td>
+                            <td colspan="3">{$orderinfo.seller_memo}</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <blockquote class="layui-elem-quote">商品信息</blockquote>
+                <table class="layui-table">
+                    <thead>
+                        <tr>
+                            <th>商品名称</th>
+                            <th>商品价格</th>
+                            <th>商品数量</th>
+                            <th>商品单位</th>
+                            <th>小计</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p class="ptb2">
+                                    商品编码：{$orderinfo.goods_code}
+                                </p>
+                                <div class="layui-input-inline" style="padding:10px 10px 10px 0">
+                                    <img src="__CDN__{$orderinfo.goods_thumb}" alt="" width="60" height="60">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <p class="ptb2">{$orderinfo.goods_name}</p>
+                                </div>
+                            </td>
+                            <td>{$orderinfo.goods_integral}</td>
+                            <td>1</td>
+                            <td>{$orderinfo.goods_unit}</td>
+                            <td>{$orderinfo.goods_integral}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            //订单备注
+            $('.seller-memo').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '订单备注',
+                     content: _url,
+                     area: ['50%', '50%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>

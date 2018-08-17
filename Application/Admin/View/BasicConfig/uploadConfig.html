@@ -1,0 +1,163 @@
+<extend name="Public:base" />
+<block name="style">
+    <style>
+        .layui-form-label{width:100px}
+        .layui-input-block{margin-left:130px}
+    </style>
+</block>
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li><a href="{:U('Admin/BasicConfig/regAndVisit')}">注册与访问</a></li>
+            <li class="layui-this">上传设置</li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/uploadConfig')}" method="post">
+                    <blockquote class="layui-elem-quote">上传方式设置</blockquote>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">保存方式</label>
+                        <div class="layui-input-inline">
+                            <select name="type" lay-filter="type">
+                                <option value="local"<?php if(isset($upload_config['type']) && $upload_config['type'] == 'local'): ?> selected<?php endif; ?>>本地</option>
+                                <option value="qiniu"<?php if(isset($upload_config['type']) && $upload_config['type'] == 'qiniu'): ?> selected<?php endif; ?>>七牛</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item<?php if(isset($upload_config['type']) && $upload_config['type'] == 'local'): ?> hide<?php endif; ?>" id="qiniu-tips">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">
+                                <p>七牛云构建了基于容器的计算平台，并基于容器平台构建了功能丰富且开放性的智能媒体云平台。</p>
+                                <p>您只需考虑怎么处理数据，而无需考虑数据的规模和系统性能。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="qiniu-params-div"<?php if(isset($upload_config['type']) && $upload_config['type'] == 'local'): ?> class="hide"<?php endif; ?>>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">AccessKey</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="access_key" value="{$upload_config.access_key}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">请在个人中心 > 密钥管理中获取 > AK</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SecretKey</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="secret_key" value="{$upload_config.secret_key}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">请在个人中心 > 密钥管理中获取 > SK</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">bucket</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="bucket" value="{$upload_config.bucket}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">存储空间名称，请保证bucket为可公共读取的</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">上传接口地址</label>
+                            <div class="layui-input-inline w300">
+                                <select name="upload_url">
+                                    <volist name="upload_url_list" id="vo">
+                                    <option value="{$vo}"<?php if(isset($upload_config['upload_url']) && $upload_config['upload_url'] == $vo): ?> selected<?php endif; ?>>{$key} {$vo}</option>
+                                    </volist>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">CDN地址</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="cdn_url" value="{$upload_config.cdn_url}" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">未绑定CDN的话可使用七牛分配的测试域名</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">启用服务端回调</label>
+                            <div class="layui-input-inline w500">
+                                <input type="radio" name="notify_enabled" value="1" title="是"<?php if(isset($upload_config['notify_enabled']) && $upload_config['notify_enabled'] == 1): ?> checked<?php endif; ?>>
+                                <input type="radio" name="notify_enabled" value="0" title="否"<?php if(isset($upload_config['notify_enabled']) && $upload_config['notify_enabled'] == 0): ?> checked<?php endif; ?>>
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">本地开发请禁用服务端回调</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">回调通知地址</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="notify_url" value="{$upload_config.notify_url}" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">保存文件名</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="save_key" value="{$upload_config.save_key}" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">上传有效时长</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="expire" value="{$upload_config.expire}" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">最大可上传</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="max_size" value="{$upload_config.max_size}" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">可上传后缀格式</label>
+                            <div class="layui-input-inline w500">
+                                <input type="text" name="mime_type" value="{$upload_config.mime_type}" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <blockquote class="layui-elem-quote">上传参数设置</blockquote>
+                    商品图片添加水印
+                    radio 是，否
+                    
+                    水印图片
+                    file
+                    
+                    水印透明度
+                    input
+                    水印的透明度，可选值为0-100。当设置为100时则为不透明。
+                    
+                    水印位置
+                    radio  左上角，右上角，居中，左下角，右下角 
+                    请选择水印位置
+                    
+                    裁剪设置
+                    radio 缩放后填充，居中裁剪，左上角裁剪，右下角裁剪，固定尺寸缩放
+                    请选择图片裁剪类型
+                    -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        form.on('select(type)', function(data) {
+            var type = data.value;
+            if (type == 'qiniu') {
+                $('#qiniu-params-div').show();
+                $('#qiniu-tips').show();
+            } else {
+                $('#qiniu-params-div').hide();
+                $('#qiniu-tips').hide();
+            }
+        });
+    </script>
+</block>

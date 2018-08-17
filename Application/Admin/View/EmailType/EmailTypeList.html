@@ -1,0 +1,59 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">模板列表</li>
+            <li><a href="{:U('Admin/EmailType/addEmailType')}">添加模板</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>模板名称</th>
+                                <th>中英文</th>
+                                <th>是否显示</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="emailTypeList" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>
+                                    {$vo.type_name}
+                                </td>
+                                <td><if condition="$vo.language == 0">中文<else/>英文</if></td>
+                                <td>
+                                    <?php if($vo['status']): ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/EmailType/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>0])}">
+                                        <img src="__PUBLIC__/Admin/images/checked.png" alt="" width="18">
+                                    </a>
+                                    <?php else: ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/EmailType/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>1])}">
+                                        <img src="__PUBLIC__/Admin/images/un_checked.png" alt="" width="18">
+                                    </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>{$vo.sort}</td>
+                                <td>
+                                    <a href="{:U('Admin/EmailType/editEmailType',['id'=>$vo['email_type_id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <a href="{:U('Admin/EmailType/deleteEmailType',['id'=>$vo['email_type_id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    {$page}
+                </div>
+            </form>
+        </div>
+    </div>
+</block>

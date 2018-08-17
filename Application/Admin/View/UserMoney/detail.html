@@ -1,0 +1,103 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <form class="layui-form layui-form-pane" action="{:U('Admin/UserMoney/detail',['user_id'=>$user_id])}" method="get">
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">类别</label>
+                        <div class="layui-input-inline">
+                            <select name="type">
+                                <option value="-1">不限</option>
+                                <volist name="type_list" id="vo">
+                                <option value="{$key}"<?php if($type == $key): ?> selected<?php endif; ?>>{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">发生时间</label>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <input type="text" name="start_date" id="start_date" value="{$start_date}" class="layui-input layer-date" placeholder="请选择开始日期">
+                            </div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="end_date" id="end_date" value="{$end_date}" class="layui-input layer-date" placeholder="请选择结束日期">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn">搜索</button>
+                        <a href="{:U('Admin/UserMoney/detail',['user_id'=>$user_id])}" class="layui-btn layui-btn-normal">重置</a>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <form action="" method="post" class="ajax-form">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th>用户昵称</th>
+                                <th>类别</th>
+                                <th>描述</th>
+                                <th>金额</th>
+                                <th>余额</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="money_list" id="vo">
+                            <tr>
+                                <td>{$vo.nickname}</td>
+                                <td>{$type_list[$vo['type']]}</td>
+                                <td>{$vo.description}</td>
+                                <td>{$vo.money}</td>
+                                <td>{$vo.balance}</td>
+                                <td>{$vo.create_time}</td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    {$page}
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            var start = {
+                elem: '#start_date',
+                min: '1900-01-01',
+                max: '{$today_date}',
+                istoday: false,
+                choose: function (datas) {
+                    end.min = datas;
+                    end.start = datas;
+                }
+            };
+            var end = {
+                elem: '#end_date',
+                min: '1900-01-01',
+                max: '{$today_date}',
+                istoday: false,
+                choose: function (datas) {
+                    start.max = datas;
+                }
+            };
+            document.getElementById('start_date').onclick = function(){
+                start.elem = this;
+                laydate(start);
+            };
+            document.getElementById('end_date').onclick = function(){
+                end.elem = this;
+                laydate(end);
+            };
+        });
+    </script>
+</block>

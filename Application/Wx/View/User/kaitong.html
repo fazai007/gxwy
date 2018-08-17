@@ -1,0 +1,53 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <section class="main">
+            <div class="earnmoney m-list-flex">
+                <span><i><img src="__PUBLIC__/Wx/images/charicon.png" alt="" class="imgm" /></i>金额</span>
+                <div class="m-cell-bd fs15 colf tr"><b>{$SYSTEM.reg_and_visit.member_price}</b>元</div>
+            </div>
+            <div class="earnmoney_bot">
+                <label for="is-agree" class="agreeitem">
+                    <input type="checkbox" name="is_agree" id="is-agree" class="weui-check" checked />
+                    <div class="check-main">我已同意<a href="javascript:;" onclick="openProtocolMask()">《会员条款》</a></div>
+                </label>
+                <a href="javascript:;" onclick="kaitong()" class="nowk">立即开通</a>
+                <div class="mempower">
+                    <h4 class="fs18 colf">会员权益</h4>
+                    <div class="colf">
+                        {:nl2br($SYSTEM['reg_and_visit']['member_benefits'])}
+                    </div>
+                </div>
+            </div>
+            <div class="bg_pop hide" id="protocol-mask-bg"></div>
+            <div class="popmem hide" id="protocol-mask-div">
+                <h2 class="tc fs16">《会员条款》</h2>
+                <div class="popmain">
+                    {:html_entity_decode($protocol['content'])}
+                </div>
+                <div class="nowknow-wrap">
+                    <a href="javascript:;" onclick="closeProtocolMask()" class="nowknow fs16 colf">知道了</a>
+                </div>
+            </div>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        function kaitong(){
+            if (!$('#is-agree').is(':checked')) {
+                $.alert('请阅读并同意《会员条款》');
+                return;
+            }
+            $.showLoading();
+            $.post("{:U('Wx/MemberOrder/check')}", {}, function (data) {
+                $.hideLoading();
+                if (data.status === 1) {
+                    location.href = data.url;
+                } else {
+                    $.alert(data.info);
+                }
+            });
+        }
+    </script>
+</block>

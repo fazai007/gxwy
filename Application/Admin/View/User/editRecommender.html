@@ -1,0 +1,31 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/User/editRecommender')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">推荐人ID</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="recommender_id" value="{$userinfo.recommender_id}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block my-tips">
+                            <div class="layui-form-mid layui-word-aux">若修改为无推荐人，请填写<i class="important-note">0</i></div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block" style="margin-left:0;text-align:center">
+                            <input type="hidden" name="id" value="{$userinfo.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">确认修改</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/iframe.admin.js"></script>
+</block>

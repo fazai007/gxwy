@@ -1,0 +1,72 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/BasicConfig/webConfig')}">网站设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/seoConfig')}">SEO设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/copyright')}">版权</a></li>
+            <li><a href="{:U('Admin/BasicConfig/visitConfig')}">运营</a></li>
+            <li class="layui-this">注册与访问</li>
+            <li><a href="{:U('Admin/BasicConfig/uploadConfig')}">上传设置</a></li>
+            <li><a href="{:U('Admin/BasicConfig/partyLogin')}">第三方登录</a></li>
+            <li><a href="{:U('Admin/BasicConfig/notify')}">通知系统</a></li>
+            <li><a href="{:U('Admin/BasicConfig/databaseConfig')}">数据库设置</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/BasicConfig/regAndVisit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">会员价格</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="member_price" value="{$reg_and_visit.member_price}" class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">元</div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">会员权益</label>
+                        <div class="layui-input-block">
+                            <textarea name="member_benefits" class="layui-textarea">{$reg_and_visit.member_benefits}</textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </div>
+                    </div>
+                    <!--
+                    是否允许注册会员
+                    radio 是，否
+                    设置为不允许则游客无法注册成为站点会员
+                    
+                    注册类型
+                    checkbox 普通注册，邮箱注册，手机注册
+                    如开启邮箱和手机注册，请在通知系统功能中进行邮箱与短信通知配置，游客在注册时通过验证后方能注册成功
+                    
+                    后台验证码是否开启
+                    radio 是，否
+                    
+                    商城验证码是否开启
+                    radio 是，否
+                    
+                    用户名保留关键字
+                    textarea
+                    用户在注册用户名不可使用这些关键字。多个关键字之间以英文“,”分隔开，如“admin,username”
+                    
+                    密码最小长度
+                    input
+                    新用户注册时密码最小长度，0或不填为不限制
+                    
+                    强制密码复杂度
+                    checkbox  数字，小写字母，大写字母，符号 
+                    新用户注册时密码中必须存在所选字符类型，不选择为无限制
+                    
+                    微信端会员注册方式
+                    radio 非自动，自动
+                    用户首次打开微信端商城,，不会自动注册为会员，需要进行普通会员注册或者登录会员账号与微信进行绑定，一般应用于电脑端与微信端会员账号统一管理。
+                    用户首次打开微信端商城,，会自动注册为会员，本微信会员与电脑端会员是两个会员账号。好处是可以自动完成会员注册。一般应用于只在微信端运营的商家。
+                    -->
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

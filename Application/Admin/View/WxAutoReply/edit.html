@@ -1,0 +1,43 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/WxAutoReply/index')}">自动回复</a></li>
+            <li><a href="{:U('Admin/WxAutoReply/add')}">添加关键字</a></li>
+            <li class="layui-this">编辑关键字</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/WxAutoReply/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keyword" value="{$wx_auto_reply.keyword}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">匹配类型</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="match_type" value="1" title="已全匹配"<?php if($wx_auto_reply['match_type'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="match_type" value="0" title="未全匹配"<?php if($wx_auto_reply['match_type'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">回复全部</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="reply_all" value="1" title="是"<?php if($wx_auto_reply['reply_all'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="reply_all" value="0" title="否"<?php if($wx_auto_reply['reply_all'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$wx_auto_reply.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

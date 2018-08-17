@@ -1,0 +1,74 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/WxMenu/index')}">自定义菜单</a></li>
+            <li><a href="{:U('Admin/WxMenu/add')}">添加自定义菜单</a></li>
+            <li class="layui-this">编辑自定义菜单</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/WxMenu/edit')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">菜单名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" value="{$wx_menu.name}" required lay-verify="required" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上级菜单</label>
+                        <div class="layui-input-block">
+                            <select name="pid" lay-verify="required">
+                                <option value="0">顶级菜单</option>
+                                <?php
+                                foreach($top_wx_menu_list as $v){
+                                    echo '<option value="' . $v['id'] . '"';
+                                    if($wx_menu['id'] == $v['id']){
+                                        echo 'disabled';
+                                    }
+                                    if($wx_menu['pid'] == $v['id']){
+                                        echo 'selected';
+                                    }
+                                    echo '>' . $v['name'] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">关键字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="keyword" value="{$wx_menu.keyword}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">链接地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="link" value="{$wx_menu.link}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" value="{$wx_menu.sort}" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否显示</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="status" value="1" title="是"<?php if($wx_menu['status'] == 1): ?> checked<?php endif; ?>>
+                            <input type="radio" name="status" value="0" title="否"<?php if($wx_menu['status'] == 0): ?> checked<?php endif; ?>>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="id" value="{$wx_menu.id}">
+                            <button class="layui-btn" lay-submit lay-filter="*">更新</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>

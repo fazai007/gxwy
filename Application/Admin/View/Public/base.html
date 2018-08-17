@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{$SYSTEM.web_config.web_name}</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+        <link rel="stylesheet" href="__PUBLIC__/plugins/iziToast/css/iziToast.min.css" media="all" />
+        <link rel="stylesheet" href="__PUBLIC__/Admin/css/global.css" media="all">
+        <link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+        <!--CSS引用-->
+        <block name="css"></block>
+        <!--页面CSS引用-->
+        <block name="style"></block>
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/plugins/html5shiv.min.js"></script>
+        <script src="__PUBLIC__/plugins/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="layui-layout layui-layout-admin" style="border-bottom:solid 5px #1aa094">
+            <div class="layui-header header header-demo">
+                <div class="layui-main">
+                    <div class="admin-login-box">
+                        <a href="{:U('Admin/Index/index')}" class="logo" style="left:0">
+                            <span style="font-size:22px">{$SYSTEM.web_config.web_name}</span>
+                        </a>
+                        <div class="admin-side-toggle">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </div>
+                        <div class="admin-side-full">
+                            <i class="fa fa-life-bouy" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <ul class="layui-nav admin-header-item">
+                        <li class="layui-nav-item">
+                            <a href="javascript:;" data-url="{:U('Admin/BasicConfig/clear')}" id="clear-cache">清除缓存</a>
+                        </li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;" class="admin-header-user">
+                                <img src="__CDN__{$admin_avatar}" />
+                                <span>{$admin_name}</span>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd>
+                                    <a href="{:U('Admin/ChangePassword/index')}"><i class="fa fa-gear" aria-hidden="true"></i> 修改密码</a>
+                                </dd>
+                                <dd>
+                                    <a href="{:U('Admin/Login/logout')}"><i class="fa fa-sign-out" aria-hidden="true"></i> 退出登录</a>
+                                </dd>
+                                <dd id="lock">
+                                    <a href="javascript:;">
+                                        <i class="fa fa-lock" aria-hidden="true" style="padding-right:3px;padding-left:1px"></i> 锁屏 (Alt+L)
+                                    </a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <ul class="layui-nav admin-header-item-mobile">
+                        <li class="layui-nav-item">
+                            <a href="{:U('Admin/Login/logout')}"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-side layui-bg-black" id="admin-side">
+                <div class="layui-side-scroll">
+                    <ul class="layui-nav layui-nav-tree beg-navbar">
+                        <li class="layui-nav-item">
+                            <a href="{:U('Admin/Index/index')}"><i class="fa fa-home fa-fw"></i> <cite>后台首页</cite></a>
+                        </li>
+                        <volist name="menu" id="vo">
+                        <?php if(isset($vo['children'])): ?>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;"><i class="{$vo['icon']} fa-fw"></i> <cite>{$vo['title']}</cite></a>
+                            <dl class="layui-nav-child">
+                                <volist name="vo['children']" id="v">
+                                <dd><a href="{:U($v['name'])}"><i class="{$v['icon']} fa-fw"></i> <cite>{$v['title']}</cite></a></dd>
+                                </volist>
+                            </dl>
+                        </li>
+                        <?php else: ?>
+                        <li class="layui-nav-item">
+                            <a href="{:U($vo['name'])}"><i class="{$vo['icon']} fa-fw"></i> <cite>{$vo['title']}</cite></a>
+                        </li>
+                        <?php endif; ?>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-body" id="admin-body" style="top:65px;bottom:0;left:210px">
+                <!--主体引用-->
+                <block name="body"></block>
+            </div>
+            <!--
+            <div class="layui-footer footer footer-demo" id="admin-footer">
+                <div class="layui-main">
+                    <p>2016 &copy;
+                        <a href="http://www.xilukeji.com">xilukeji.com</a> Xilukeji license
+                    </p>
+                </div>
+            </div>
+            -->
+            <div class="site-tree-mobile layui-hide">
+                <i class="layui-icon">&#xe602;</i>
+            </div>
+            <div class="site-mobile-shade"></div>
+            <!--锁屏模板 start-->
+            <script type="text/template" id="lock-temp">
+                <div class="admin-header-lock" id="lock-box">
+                    <div class="admin-header-lock-img">
+                        <img src="__ROOT__/{$admin_avatar}"/>
+                    </div>
+                    <div class="admin-header-lock-name" id="lockUserName">{$admin_name}</div>
+                    <input type="text" class="admin-header-lock-input" value="输入密码解锁.." name="lockPwd" id="lockPwd" />
+                    <button class="layui-btn layui-btn-small" id="unlock">解锁</button>
+                    <input type="hidden" id="lock-url" value="{:U('Admin/Login/lock')}">
+                    <input type="hidden" id="unlock-url" value="{:U('Admin/Login/unLock')}">
+                </div>
+            </script>
+            <!--锁屏模板 end -->
+            <script>
+                var myConfig = {$my_config|json_encode};
+            </script>
+            <script src="__PUBLIC__/plugins/jquery.min.js"></script>
+            <script src="__PUBLIC__/plugins/plupload/js/plupload.full.min.js" ></script>
+            <!--<script src="__PUBLIC__/plugins/plupload/js/i18n/zh_CN.js" ></script>-->
+            <script src="__PUBLIC__/plugins/layui/lay/dest/layui.all.js"></script>
+            <script src="__PUBLIC__/plugins/iziToast/js/iziToast.min.js"></script>
+            <script src="__PUBLIC__/Admin/js/upload.js"></script>
+            <script src="__PUBLIC__/Admin/js/function.js"></script>
+            <script src="__PUBLIC__/Admin/js/admin.js"></script>
+            <!--JS引用-->
+            <block name="js"></block>
+            <!--页面JS引用-->
+            <block name="script"></block>
+        </div>
+    </body>
+</html>

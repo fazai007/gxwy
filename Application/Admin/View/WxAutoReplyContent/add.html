@@ -1,0 +1,72 @@
+<extend name="Public:iframe_base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li><a href="{:U('Admin/WxAutoReplyContent/index',['auto_reply_id'=>$auto_reply_id])}">回复内容</a></li>
+            <li class="layui-this">添加回复内容</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/WxAutoReplyContent/add')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">类型</label>
+                        <div class="layui-input-block">
+                            <select name="type" lay-verify="required">
+                                <option value="">请选择类型</option>
+                                <volist name="wx_auto_replu_content_types" id="vo">
+                                <option value="{$key}">{$vo}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">标题</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图片</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="image" id="image" class="layui-input layui-input-inline">
+                            <button type="button" id="upload-image" data-input-id="image" class="layui-btn layui-btn-normal">上传图片</button>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">链接地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="link" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">内容</label>
+                        <div class="layui-input-block">
+                            <textarea name="content" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序</label>
+                        <div class="layui-input-inline">
+                            <input type="number" name="sort" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                    <input type="hidden" name="auto_reply_id" value="{$auto_reply_id}">
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/Admin/js/admin.js"></script>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-image');
+    </script>
+</block>

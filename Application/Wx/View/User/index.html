@@ -1,0 +1,92 @@
+<extend name="Public:base" />
+<block name="body">
+    <section class="wrap wrap-bg">
+        <include file="./Application/Wx/View/Public/nav.html" />
+        <section class="main">
+            <div class="cent_top">
+                <div class="pic-view">
+                    <img src="{:get_user_avatar($userinfo['avatar'])}" alt="" class="imgm" />
+                </div>
+                <div class="fs16 col_own tc name mt10">
+                    <span>{$userinfo.nickname}</span>
+                    <i class="br5">{$userinfo.level_name|default='普通用户'}</i>
+                </div>
+                <h4 class="tc col_own mt5">{$sex}<i>|</i>{$userinfo.province}</h4>
+            </div>
+            <div class="table centtable">
+                <a href="{:U('Wx/Money/index')}" class="table-cell fs12 col_own tc"><i class="fs20" id="user-money"></i>元 <p>云币</p></a>
+                <a href="{:U('Wx/Integral/index')}" class="table-cell fs12 col_own tc"><i class="fs20" id="user-integral"></i>分 <p>积分</p></a>
+                <a href="{:U('Wx/Team/index')}" class="table-cell fs12 col_own tc"><i class="fs20" id="user-team-count"></i>个<p>下家</p></a>
+            </div>
+            <ul class="cent_lists mb10">
+                <li>
+                    <a href="{:U('Wx/Order/index')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent1.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">我的订单</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('Wx/IntegralOrder/index')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent0.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">积分订单</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('Wx/Address/index')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent2.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">地址管理</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="javascript:;" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent3.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">我的收藏</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                -->
+                <li>
+                    <a href="{:U('Wx/User/poster')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent4.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">推广名片</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('Wx/User/feedback')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent5.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">消息反馈</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:U('Wx/User/message')}" class="m-list-flex m-arrow-right">
+                        <i><img src="__PUBLIC__/Wx/images/cent5.png" alt="" class="imgm" /></i>
+                        <div class="m-cell-bd fs14 col_own">在线留言</div>
+                        <div class="m-cell-rt"></div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </section>
+</block>
+<block name="script">
+    <script>
+        function getUserData() {
+            $.get("{:U('Wx/User/getUserData')}", {}, function (data) {
+                if (data.status == 1) {
+                    $('#user-money').html(data.info.money);
+                    $('#user-integral').html(data.info.integral);
+                    $('#user-team-count').html(data.info.team_count);
+                }
+            });
+        }
+        $(function () {
+            getUserData();
+        });
+    </script>
+</block>

@@ -1,0 +1,70 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <!--<ul class="layui-tab-title">
+            <li><a href="{:U('Admin/GoodsCate/index')}">商品分类</a></li>
+            <li class="layui-this">添加分类</li>
+        </ul>-->
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:U('Admin/Module/addModuleField')}" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">字段名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required lay-verify="required" placeholder="请输入分类名称" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">字段标识</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="field_name" required lay-verify="required" placeholder="请输入分类简称" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">输入类型</label>
+                        <div class="layui-input-block">
+                            <select name="input_type" lay-verify="required">
+                                <foreach name="fieldType" item="type" key="k">
+                                    <option value="{$k}">{$type}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">默认值</label>
+                        <div class="layui-input-block">
+                            <textarea name="default_value" id="content" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="hidden" name="module_id" value="{$moduleId}">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script src="__PUBLIC__/plugins/kindeditor/kindeditor.config.js"></script>
+    <script src="__PUBLIC__/plugins/kindeditor/kindeditor-all-min.js"></script>
+</block>
+<block name="script">
+    <script>
+        var uploadIds = new Array('upload-thumb');
+        $(function () {
+            var _kindEditor;
+            KindEditor.ready(function (K) {
+                _kindEditor = K.create('#content', KindEditorOptions);
+            });
+        });
+    </script>
+</block>

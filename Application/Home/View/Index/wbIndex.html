@@ -1,0 +1,70 @@
+<extend name="Public:base" />
+<block name="body">
+
+	<section class="main min100vh"style="background-repeat: no-repeat;background-size: 100% auto;background-position: bottom center;background-image: url(__PUBLIC__/Home/images/login_bg.png);">
+		<div class="wrap-flex">
+			<div class="bd">
+				<img src="__PUBLIC__/Home/images/lala.png" alt="" class="logoimg imgm"/>
+				<p class="slogan font">高薪无忧</p>
+				<ul class="loginwrap">
+					<li class="br5 mb10 m-list-flex">
+						<img src="__PUBLIC__/Home/images/tel.png" alt="" class="tel1"/>
+						<input name="mobile" type="tel" class="form-unify m-cell-bd" placeholder="请输入手机号"/>
+					</li>
+					<li class="br5 mb10 m-list-flex">
+						<img src="__PUBLIC__/Home/images/key.png" alt="" class="imgm key1"/>
+						<input name="verify_code" type="text" class="form-unify m-cell-bd" placeholder="请输入验证码"/>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="flex_bottom tc">
+				<a onclick="login()" class="block"  ><img src="__PUBLIC__/Home/images/btn2.png" alt="" class="btn imgm"/></a>
+				<p class="cola1 fs14"style="margin-bottom:30px;margin-top:25px;">或使用   <img src="__PUBLIC__/Home/images/wx.png" alt="" class="wx"/>   微信账号 登录</p>
+				<p class="fs13 agp">
+					<i class="check_p brarc"style="display:none"></i>
+					<img src="__PUBLIC__/Home/images/checked.png" alt="" class="checkedcs " />
+					<span>已阅读并同意</span> <a href="javascript:;" class="fs13">高薪无忧服务协议</a>
+				</p>
+			</div>
+		</div>	
+	</section>
+	<!-- main end -->
+
+</block>
+
+<block name="script">
+<script>
+	//获取验证码
+	function get_sms() {
+		$.ajax({
+			url:"{:U('Home/Index/sendSms')}",
+			type:'post',
+			data:{mobile:'18100175970'},
+			success:function (data) {
+				console.log(data);
+			}
+		});
+	}
+
+	//登录
+	function login() {
+		var mobile = $("input[name='mobile']").val();
+		var verify_code = $("input[name='verify_code']").val();
+
+		$.ajax({
+			url:"{:U('Home/Index/login')}",
+			type:'post',
+			data:{mobile:mobile, verify_code:verify_code},
+			success:function (data) {
+				if(data.code) {
+					alert(data.msg);
+				}else{
+					window.location.href = "U('Home/Resume/index')";
+				}
+			}
+		});
+	}
+
+</script>
+</block>

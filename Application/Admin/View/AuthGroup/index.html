@@ -1,0 +1,75 @@
+<extend name="Public:base" />
+<block name="body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">权限组</li>
+            <li><a href="{:U('Admin/AuthGroup/add')}">添加权限组</a></li>
+        </ul>
+        <div class="layui-tab-content">
+            <form action="" method="post" class="ajax-form">
+                <button type="button" class="layui-btn layui-btn-small ajax-action" data-action="{:U('Admin/AuthGroup/batchUpdate',['_action'=>'statusToggle','status'=>1])}">批量启用</button>
+                <button type="button" class="layui-btn layui-btn-warm layui-btn-small ajax-action" data-action="{:U('Admin/AuthGroup/batchUpdate',['_action'=>'statusToggle','status'=>0])}">批量禁用</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-small ajax-action" data-action="{:U('Admin/AuthGroup/delete')}">批量删除</button>
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th style="width:15px">
+                                    <input type="checkbox" class="check-all">
+                                </th>
+                                <th>名称</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="auth_group_list" id="vo">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="ids[]" value="{$vo.id}">
+                                </td>
+                                <td>{$vo.title}</td>
+                                <td>
+                                    <?php if($vo['status']): ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/AuthGroup/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>0])}">
+                                        <img src="__PUBLIC__/Admin/images/checked.png" alt="" width="18">
+                                    </a>
+                                    <?php else: ?>
+                                    <a href="javascript:;" class="ajax-action" data-action="{:U('Admin/AuthGroup/batchUpdate',['_action'=>'statusToggle','ids'=>$vo['id'],'status'=>1])}">
+                                        <img src="__PUBLIC__/Admin/images/un_checked.png" alt="" width="18">
+                                    </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" data-url="{:U('Admin/AuthGroup/auth',['id'=>$vo['id']])}" class="layui-btn layui-btn-mini auth-group-auth">授权</a>
+                                    <a href="{:U('Admin/AuthGroup/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                                    <a href="{:U('Admin/AuthGroup/delete',['ids'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-get">删除</a>
+                                </td>
+                            </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    {$page}
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            $('.auth-group-auth').on('click', function(){
+                var _url = $(this).data('url');
+                if (_url !== 'undefined') {
+                   layer.open({
+                     type: 2,
+                     title: '授权',
+                     content: _url,
+                     area: ['50%', '90%']
+                   });
+                }
+                return false;
+            });
+        });
+    </script>
+</block>
